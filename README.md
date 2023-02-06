@@ -3,7 +3,7 @@
 
 Scanned January 10, 2023 by Nicholas Horton (nhorton@amherst.edu) as part of the STAT210 (Mining the History of Holyoke) class
 
-Many thanks to Eileen Crosby (Holyoke Public Library), Tim Pinault (Amherst College), and Zoe Jacobs Feinstein (Amherst College for their assistance with this project.
+Many thanks to Eileen Crosby (Holyoke Public Library), Tim Pinault (Amherst College), and Zoe Jacobs Feinstein (Amherst College) for their assistance with this project.
 
 Notes:
 
