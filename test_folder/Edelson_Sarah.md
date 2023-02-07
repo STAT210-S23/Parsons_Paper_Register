@@ -1,0 +1,1 @@
+The most surprising thing thus far that I have learned through the readings is the fact that Holyoke was a company town, and that the Hadley Falls Company dictated everything from the name of the city, to the urban planning and housing, and to the types of businesses that could enter the area.
