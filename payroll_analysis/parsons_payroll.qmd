@@ -5,10 +5,6 @@ format: pdf
 editor: visual
 ---
 
-## Quarto
-
-## Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
 ```{r}
 #| label: setup
 #| include: false
@@ -19,9 +15,9 @@ options(digits = 4)
 
 ## How many days in a pay period?
 
--   Register comprised of monthly pay periods from January 1861-April 1869
+-   The Parsons Paper Company register comprises monthly pay periods from January 1861-April 1869
 
--   Pay periods appear a month long with employees typically getting paid on the 1st of each month
+-   Pay periods appear to be a month long with employees typically getting paid on the 1st of the next (?) month
 
 -   Based off the spreadsheet from p. 253, most employees work between 20-30 days each pay period, the average is around 27 so most employees work at least 6 days/week
 
