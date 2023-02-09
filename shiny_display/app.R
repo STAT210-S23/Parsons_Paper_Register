@@ -12,12 +12,12 @@ gauss2d <- function(x, y, r = 0.15) {
 
 ui <-
   fluidPage(
-    titlePanel("Image output"),
+    titlePanel("Image output: your working directory must be in the top level of the Parsons Paper Company GitHub repo"),
     
     fluidRow(
       column(4, wellPanel(
         radioButtons("picture", "Picture:",
-                     c("chainring", "face"))
+                     c("page 253", "face"))
       )),
       column(4,
              imageOutput("image2")
@@ -34,15 +34,15 @@ server <- function(input, output) {
     
     if (input$picture == "face") {
       return(list(
-        src = "../jpg/253.jpg.png",
+        src = "face.png",
         contentType = "image/png",
         alt = "Face"
       ))
-    } else if (input$picture == "chainring") {
+    } else if (input$picture == "page 253") {
       return(list(
-        src = "chainring.jpg",
+        src = "../jpg/253.jpg",
         filetype = "image/jpeg",
-        alt = "This is a chainring"
+        alt = "This is page 253"
       ))
     }
     
