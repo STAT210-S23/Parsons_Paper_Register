@@ -34,7 +34,7 @@ server <- function(input, output) {
     
     if (input$picture == "face") {
       return(list(
-        src = "jpg/253.jpg.png",
+        src = "../jpg/253.jpg.png",
         contentType = "image/png",
         alt = "Face"
       ))
