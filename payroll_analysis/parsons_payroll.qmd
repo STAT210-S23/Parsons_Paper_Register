@@ -36,6 +36,7 @@ options(digits = 4)
 -   Counted 92 employees in April 1861, 141 employees in April 1863, 128 employees in April 1864, 131 employees in April 1867, 153 employees in April 1868, 153 employees in April 1869
 
     -   Average across the measured 6 years = 133 employees between 1861-1869
+        - Subset Pages: 8-10 (1861) 79-81 (1863), 115-117 (1864 - this month also has pay records from the 30th not included in the employee count above) 223-225 (1867), 261-263 (1868), 314-316 (1869)
 
     -   Number of employees generally increased over time
 
