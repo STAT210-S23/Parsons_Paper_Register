@@ -1,0 +1,47 @@
+---
+title: "Parsons_Paper_Register #7"
+author: "Anna Zhou"
+format: pdf
+editor: visual
+---
+
+```{r}
+#| label: setup
+#| include: false
+library(mosaic)
+library(tidyverse)
+options(digits = 4)
+```
+
+## How many days in a pay period?
+
+-   The Parsons Paper Company register comprises monthly pay periods from January 1861-April 1869
+
+-   Pay periods appear to be a month long with employees typically getting paid on the 1st of the next (?) month
+
+-   Based off the spreadsheet from p. 253, most employees work between 20-30 days each pay period, the average is around 27 so most employees work at least 6 days/week
+
+    -   In Chapter IV of Green's book, she writes that male Holyoke paper makers worked 58-72 hours a week
+
+        -   11.25 hours five days a week + 8.75 hours on Saturday was typical for Holyoke textile mills
+
+    -   Women worked slightly shorter hours
+
+-   Pgs. 261-263 appear to comprise an entire pay period for the month of April in 1868 (most pay periods span \~3 pages in the register)
+
+-   Pgs. [223](https://drive.google.com/file/d/1zowekbvRKdivfTpDqQ92lGSLDRSJSi8I/view?usp=sharing)-225 and Pgs. [261](https://drive.google.com/file/d/1C6xBX3jRQw0QxcSf6NeiUpl8LxLUDHlk/view?usp=sharing)-263 above are exactly one year apart in the register (April 1st 1867 + April 1st 1868)
+
+## How many employees during this era?
+
+-   Counted 92 employees in April 1861, 141 employees in April 1863, 128 employees in April 1864, 131 employees in April 1867, 153 employees in April 1868, 153 employees in April 1869
+
+    -   Average across the measured 6 years = 133 employees between 1861-1869
+        - Subset Pages: 8-10 (1861) 79-81 (1863), 115-117 (1864 - this month also has pay records from the 30th not included in the employee count above) 223-225 (1867), 261-263 (1868), 314-316 (1869)
+
+    -   Number of employees generally increased over time
+
+        -   Green mentions that these mills had abnormally high employee retention rates
+
+-   Some pages have a separate section of employees at the bottom under "Repairs" \-- I included these names in the counts above
+
+    -   Presumably employees whose main role was to repair the machines instead of making paper

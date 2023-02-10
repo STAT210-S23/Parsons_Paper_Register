@@ -1,1 +1,0 @@
-What I've found most surprising is that the patterns and trends that I know about economics and industrial history of the early and middle 20th century plays out in remarkably similar ways in the 19th century.
