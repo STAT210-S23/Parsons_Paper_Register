@@ -52,6 +52,6 @@ options(digits = 4)
 
 -   "In 1861, after a period of severe readjustment just prior to the Civil War, twenty-one of the thirty-six manufactures of fine papers met at Pittsfield...to organize a protrective association. They desired to raise prices which had fallen drastically as the result of a decrease in demand. They agreed to reduce output by about one-third for about three months. This was the first trade association established in the paper industry of the United States....The Parsons Paper Company and the Carew Manufacturing Company were charter members of this organization\" (108)
 
--   \"Since the discovery of how to utilize wood for the manufacture of paper in 1867, this raw material has been in increasing demand\"
+-   \"Since the discovery of how to utilize wood for the manufacture of paper in 1867, this raw material has been in increasing demand" (84)
 
 -   "several of the local mills were quite large, employing 200 or more workers" and that there were "about 3700 workers employed in the local paper industry at the turn of the century" (4)
