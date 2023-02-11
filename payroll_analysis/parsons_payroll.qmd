@@ -1,6 +1,6 @@
 ---
 title: "Parsons_Paper_Register #7"
-author: "Anna Zhou"
+author: "Anna Zhou & Sarah Edelson"
 format: pdf
 editor: visual
 ---
@@ -36,7 +36,8 @@ options(digits = 4)
 -   Counted 92 employees in April 1861, 141 employees in April 1863, 128 employees in April 1864, 131 employees in April 1867, 153 employees in April 1868, 153 employees in April 1869
 
     -   Average across the measured 6 years = 133 employees between 1861-1869
-        - Subset Pages: 8-10 (1861) 79-81 (1863), 115-117 (1864 - this month also has pay records from the 30th not included in the employee count above) 223-225 (1867), 261-263 (1868), 314-316 (1869)
+
+        -   Subset Pages: 8-10 (1861) 79-81 (1863), 115-117 (1864 - this month also has pay records from the 30th not included in the employee count above) 223-225 (1867), 261-263 (1868), 314-316 (1869)
 
     -   Number of employees generally increased over time
 
@@ -45,3 +46,4 @@ options(digits = 4)
 -   Some pages have a separate section of employees at the bottom under "Repairs" \-- I included these names in the counts above
 
     -   Presumably employees whose main role was to repair the machines instead of making paper
+    -   There were 5 people under "Repairs" for April 1st, 1867 and 8 under April 1st, 1868
