@@ -33,17 +33,18 @@ options(digits = 4)
 
 ## How many employees during this era?
 
--   Counted 92 employees in April 1861, 141 employees in April 1863, 128 employees in April 1864, 131 employees in April 1867, 153 employees in April 1868, 153 employees in April 1869
+-   Counted 92 employees in April 1861, 122 employees in April 1862, 141 employees in April 1863, 128 employees in April 1864, 159 employees in April 1865, 144 employees in April 1866, 131 employees in April 1867, 153 employees in April 1868, 153 employees in April 1869
+-   
+    -   Average across the measured 9 years = 136 employees between 1861-1869
 
-    -   Average across the measured 6 years = 133 employees between 1861-1869
-
-        -   Subset Pages: 8-10 (1861) 79-81 (1863), 115-117 (1864 - this month also has pay records from the 30th not included in the employee count above) 223-225 (1867), 261-263 (1868), 314-316 (1869)
+        -   Subset Pages: 8-10 (1861) 43-45 (1862), 79-81 (1863), 115-117 (1864 - this month also has pay records from the 30th not included in the employee count above), 151-153 (1865), 187-189 (1866) 223-225 (1867), 261-263 (1868), 314-316 (1869)
 
     -   Number of employees generally increased over time
 
         -   Green mentions that these mills had abnormally high employee retention rates
+        -   Boom in employment towards end of Civil War in 1865
 
--   Some pages have a separate section of employees at the bottom under "Repairs" \-- I included these names in the counts above
+-   Some pages have a separate section of employees at the bottom under "Repairs" and "Reparis & Watchmen" (April 1862 p.45 - 4 employees under 'Repairs & Watchmen') \-- I included these names in the counts above
 
     -   Presumably employees whose main role was to repair the machines instead of making paper
     -   There were 5 people under "Repairs" for April 1st, 1867 and 8 under April 1st, 1868
