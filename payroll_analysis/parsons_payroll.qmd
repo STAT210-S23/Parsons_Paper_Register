@@ -31,13 +31,15 @@ options(digits = 4)
 
 -   Pgs. 261-263 appear to comprise an entire pay period for the month of April in 1868 (most pay periods span \~3 pages in the register)
 
--   Pgs. [223](https://drive.google.com/file/d/1zowekbvRKdivfTpDqQ92lGSLDRSJSi8I/view?usp=sharing)-225 and Pgs. [261](https://drive.google.com/file/d/1C6xBX3jRQw0QxcSf6NeiUpl8LxLUDHlk/view?usp=sharing)-263 above are exactly one year apart in the register (April 1st 1867 + April 1st 1868)
+    ![p. 261](images/Screenshot%202023-02-13%20at%204.08.16%20PM.png){width="220"}![](images/Screenshot%202023-02-13%20at%204.08.28%20PM.png){width="220"}![](images/Screenshot%202023-02-13%20at%204.08.37%20PM.png){width="220"}
+
+-   Pgs. 223-225 below and Pgs. 261-263 above are exactly one year apart in the register (April 1st 1867 + April 1st 1868)
+
+    ![](images/Screenshot%202023-02-13%20at%204.14.02%20PM.png){width="220"}![](images/Screenshot%202023-02-13%20at%204.14.09%20PM-01.png){width="220"}![](images/Screenshot%202023-02-13%20at%204.14.16%20PM.png){width="220"}
 
 ## How many employees during this era?
 
 -   Counted 92 employees in April 1861, 122 employees in April 1862, 141 employees in April 1863, 128 employees in April 1864, 159 employees in April 1865, 144 employees in April 1866, 131 employees in April 1867, 153 employees in April 1868, 153 employees in April 1869
-
--   
 
     -   Average across the measured 9 years = 136 employees between 1861-1869
 
@@ -50,8 +52,11 @@ options(digits = 4)
 
 -   Some pages have a separate section of employees at the bottom under "Repairs" and "Reparis & Watchmen" (April 1862 p.45 - 4 employees under 'Repairs & Watchmen') \-- I included these names in the counts above
 
+    ![](images/Screenshot%202023-02-13%20at%204.18.46%20PM.png){width="404"}
+
     -   Presumably employees whose main role was to repair the machines instead of making paper
-    -   There were 5 people under "Repairs" for April 1st, 1867 and 8 under April 1st, 1868
+
+    -   There were 5 people under "Repairs" for April 1st, 1867 (see p. 225 above) and 8 under April 1st, 1868 (see p. 262 above)
 
 **Quotes from Hickey thesis that may be of relevance to employment from 1861-1869**
 
