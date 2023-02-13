@@ -1,5 +1,8 @@
 ---
 title: "Parsons' Paper Company Workers Database"
+author: "XX add your names"
+date: "2023-02-13"
+date-format: iso
 format: pdf
 editor: visual
 ---
@@ -53,8 +56,8 @@ options(digits = 4)
 ```
 
 ```{r}
-#database <- readr::read_csv(
-  #"https://docs.google.com/spreadsheets/d/1urqUmn_mIRrHS15O5r5G6eSOLpbY2G2-X1pkkrzG3Fo/edit?usp=sharing") |>
-  
-#glimpse(database)
+page253 <- readr::read_csv("../sample_pages/Parsons_page253.csv")
+glimpse(page253)
+ancestry <- readr::read_csv("ancestry_addresses.csv")
+glimpse(ancestry)
 ```
