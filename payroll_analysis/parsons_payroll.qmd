@@ -62,3 +62,5 @@ options(digits = 4)
 -   "several of the local mills were quite large, employing 200 or more workers" and there were "about 3700 workers employed in the local paper industry at the turn of the century" (4)
 
 -   "Repairs, if necessary, are undertaken on Sundays" (94)
+
+-   "In replacing a wire on a Fourdrinier paper machine, workers in the Holyoke mills receive half a day's pay besides their regular pay during the hours they work on the replacement. This acts as an incentive to the workers to get the machine back in operation as soon as possible" (94)
