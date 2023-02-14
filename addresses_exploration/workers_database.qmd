@@ -11,6 +11,10 @@ editor: visual
 
 Tasked with finding information about employees at a paper mill, we used the database ancestry.com.
 
+The link to Amherst's access to ancestry website is \[here\](https://www.ancestrylibrary.com/userid=3084&parentid=3084&expires=2023%2f02%2f14+16%3a41%3a52&libname=AMHERST+COLLEGE&hash=iJB1Fz6IcXxvJ4MeEKhebQ%3d%3d)
+
+!\[your image\](amherst_website.jpeg)
+
 By searching for a name and a place, (Holyoke, Hampden, Massachusetts), we were able to find census information from the 1800s and track down paper mill workers.
 
 The names we used were in a registry from 1863.
@@ -56,8 +60,6 @@ options(digits = 4)
 ```
 
 ```{r}
-page253 <- readr::read_csv("../sample_pages/Parsons_page253.csv")
-glimpse(page253)
-ancestry <- readr::read_csv("ancestry_addresses.csv")
+ancestry <- readr::read_csv("ancestry_addresses_updated.csv")
 glimpse(ancestry)
 ```
