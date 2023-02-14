@@ -11,7 +11,7 @@ editor: visual
 
 Tasked with finding information about employees at a paper mill, we used the database ancestry.com.
 
-The link to Amherst's access to ancestry website is \[here\](https://www.ancestrylibrary.com/userid=3084&parentid=3084&expires=2023%2f02%2f14+16%3a41%3a52&libname=AMHERST+COLLEGE&hash=iJB1Fz6IcXxvJ4MeEKhebQ%3d%3d)
+The link to Amherst's access to ancestry website is \[here\](https://www.ancestrylibrary.com/userid=3084&parentid=3084&expires=2023%2f02%2f14+16%3a41%3a52&libname=AMHERST+COLLEGE&hash=iJB1Fz6IcXxvJ4MeEKhebQ%3d%3d) XX note that your link expires, perhaps move one level earlier from the library list of databases? XX
 
 !\[Amherst website\] (amherst_website.jpeg)
 
@@ -79,3 +79,14 @@ options(digits = 4)
 ancestry <- readr::read_csv("ancestry_addresses_updated.csv")
 glimpse(ancestry)
 ```
+
+```{r}
+#| label: fig-sample
+#| echo: false
+#| fig.cap: "Sample caption"
+knitr::include_graphics("sample.png")
+```
+
+Here is some more sample text that refers to @fig-sample.
+
+Here is a [LINK](https://github.com/STAT210-S23/Parsons_Paper_Register) to this repo
