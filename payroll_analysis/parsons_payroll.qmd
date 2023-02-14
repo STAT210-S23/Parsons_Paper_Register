@@ -69,3 +69,69 @@ options(digits = 4)
 -   "Repairs, if necessary, are undertaken on Sundays" (94)
 
 -   "In replacing a wire on a Fourdrinier paper machine, workers in the Holyoke mills receive half a day's pay besides their regular pay during the hours they work on the replacement. This acts as an incentive to the workers to get the machine back in operation as soon as possible" (94)
+
+## What types of jobs are there?
+
+We are listing the roles and the page \# where it is first introduced
+
+-   ? (001) - looks like "MFC" but we can't decipher it
+
+-   repairs (001)
+
+-   rag room (002)
+
+-   finishers (002)
+
+-   ? (005) - looks like something and then "MFC Mill" --\> we googled and found that this is actually the name of a machine
+
+-   foreman (005)
+
+-   machine room (005)
+
+-   engine room (005)
+
+-   soft hands (005)
+
+-   fireman (005)
+
+-   size hands ? (005)
+
+-   jobbers ? (005)
+
+-   watchmen (005)
+
+-   overseer (006)
+
+-   day hands (007)
+
+-   sorters (007)
+
+-   stamp & sealer (007)
+
+-   count & folder (007)
+
+-   engineers (009)
+
+-   machine hands (009)
+
+-   stamper (011)
+
+-   sealer (011)
+
+-   sorter (011)
+
+-   extra (011)
+
+-   borders (013)
+
+-   linen ? (021)
+
+-   cotton (021)
+
+-   cutter (023)
+
+-   ? reapairs + something else (25)
+
+-   repair & watchmen (030)
+
+-   ? SN (034)
