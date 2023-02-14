@@ -13,9 +13,19 @@ Tasked with finding information about employees at a paper mill, we used the dat
 
 The link to Amherst's access to ancestry website is \[here\](https://www.ancestrylibrary.com/userid=3084&parentid=3084&expires=2023%2f02%2f14+16%3a41%3a52&libname=AMHERST+COLLEGE&hash=iJB1Fz6IcXxvJ4MeEKhebQ%3d%3d)
 
-!\[your image\](amherst_website.jpeg)
+!\[Amherst website\] (amherst_website.jpeg)
+
+Here is how the ancestry website looks at a first glance:
+
+!\[Ancestry website\] (website.jpeg)
 
 By searching for a name and a place, (Holyoke, Hampden, Massachusetts), we were able to find census information from the 1800s and track down paper mill workers.
+
+!\[worker search\] (name_search.jpeg)
+
+The number of names that appear in first search. We used educated guess to selected the most appropriate person.
+
+!\[initial search results\] (multiple_names.jpeg)
 
 The names we used were in a registry from 1863.
 
@@ -23,9 +33,13 @@ The amount of information we could find on each worker varied from name to name 
 
 Lucy Allen was one of the names in the record book.
 
+!\[Lucy Allen\] (Lucy_Allen.jpeg)
+
 She was born in Massachusetts in 1842 and lived in dwelling 42.
 
 We were unable to find the house number or the street name but we did find that Lucy had a sister named Eliza Ann born in 1841.
+
+!\[Eliza Ann Allen\] (Eliza_Allen.jpeg)
 
 Their father's name was Job Allen and their mother was Anna Allen.
 
@@ -38,6 +52,8 @@ Anna Allen stayed at home.
 This was an unfortunate but somewhat common life for a working-class family in Holyoke, Massachusetts in the 1860s.
 
 Conversely, we were able to find records on Joseph C. Parsons; the founder of the Parsons Paper Company.
+
+!\[Joseph Clark\] (Joseph_Clark.jpeg)
 
 Born on February 6, 1814, in Northhampton, Hampshire County, Massachusetts to Lydia and Justice Parsons, Joseph Clark Parsons was a local businessman who became very successful after founding his mill.
 
