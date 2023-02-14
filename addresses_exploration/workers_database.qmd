@@ -11,7 +11,16 @@ editor: visual
 
 Tasked with finding information about employees at a paper mill, we used the database ancestry.com.
 
-The link to Amherst's access to ancestry website is \[here\](https://www.ancestrylibrary.com/userid=3084&parentid=3084&expires=2023%2f02%2f14+16%3a41%3a52&libname=AMHERST+COLLEGE&hash=iJB1Fz6IcXxvJ4MeEKhebQ%3d%3d) XX note that your link expires, perhaps move one level earlier from the library list of databases? XX
+The link to Amherst's access to ancestry website is [here](https://libguides.amherst.edu/c.php?g=944984&p=6812570).
+
+```{r}
+#| label: fig-sample1
+#| echo: false
+#| fig.cap: "Amherst website"
+knitr::include_graphics("amherst_website.jpeg")
+```
+
+@fig-sample1
 
 !\[Amherst website\] (amherst_website.jpeg)
 
