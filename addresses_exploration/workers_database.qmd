@@ -1,6 +1,6 @@
 ---
 title: "Parsons' Paper Company Workers Database"
-author: "XX add your names"
+author: "Lorraine Oloo and Camden Heafitz"
 date: "2023-02-13"
 date-format: iso
 format: pdf
@@ -22,11 +22,21 @@ knitr::include_graphics("amherst_website.jpeg")
 
 @fig-sample1
 
-!\[Amherst website\] (amherst_website.jpeg)
+```{r}
+#| label: fig-sample
+#| echo: false
+#| fig.cap: "Sample caption"
+knitr::include_graphics("amherst_website.jpeg")
+```
 
 Here is how the ancestry website looks at a first glance:
 
-!\[Ancestry website\] (website.jpeg)
+```{r}
+#| label: fig-sample
+#| echo: false
+#| fig.cap: "Sample caption"
+knitr::include_graphics("website.jpeg")
+```
 
 By searching for a name and a place, (Holyoke, Hampden, Massachusetts), we were able to find census information from the 1800s and track down paper mill workers.
 
@@ -34,7 +44,12 @@ By searching for a name and a place, (Holyoke, Hampden, Massachusetts), we were 
 
 The number of names that appear in first search. We used educated guess to selected the most appropriate person.
 
-!\[initial search results\] (multiple_names.jpeg)
+```{r}
+#| label: fig-sample
+#| echo: false
+#| fig.cap: "Sample caption"
+knitr::include_graphics("multiple_names.jpeg")
+```
 
 The names we used were in a registry from 1863.
 
@@ -42,11 +57,23 @@ The amount of information we could find on each worker varied from name to name 
 
 Lucy Allen was one of the names in the record book.
 
-!\[Lucy Allen\] (Lucy_Allen.jpeg)
+```{r}
+#| label: fig-sample
+#| echo: false
+#| fig.cap: "Sample caption"
+knitr::include_graphics("Lucy_Allen.jpeg")
+```
 
 She was born in Massachusetts in 1842 and lived in dwelling 42.
 
 We were unable to find the house number or the street name but we did find that Lucy had a sister named Eliza Ann born in 1841.
+
+```{r}
+#| label: fig-sample
+#| echo: false
+#| fig.cap: "Sample caption"
+knitr::include_graphics("Eliza_Allen.jpeg")
+```
 
 !\[Eliza Ann Allen\] (Eliza_Allen.jpeg)
 
@@ -62,7 +89,12 @@ This was an unfortunate but somewhat common life for a working-class family in H
 
 Conversely, we were able to find records on Joseph C. Parsons; the founder of the Parsons Paper Company.
 
-!\[Joseph Clark\] (Joseph_Clark.jpeg)
+```{r}
+#| label: fig-sample
+#| echo: false
+#| fig.cap: "Sample caption"
+knitr::include_graphics("Joseph_Clark.jpeg")
+```
 
 Born on February 6, 1814, in Northhampton, Hampshire County, Massachusetts to Lydia and Justice Parsons, Joseph Clark Parsons was a local businessman who became very successful after founding his mill.
 
