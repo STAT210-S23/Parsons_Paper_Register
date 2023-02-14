@@ -1,6 +1,8 @@
 ---
 title: "Parsons_Paper_Register #7"
 author: "Anna Zhou & Sarah Edelson"
+date: "2023-02-13"
+date-format: iso
 format: pdf
 editor: visual
 ---
@@ -29,29 +31,41 @@ options(digits = 4)
 
 -   Pgs. 261-263 appear to comprise an entire pay period for the month of April in 1868 (most pay periods span \~3 pages in the register)
 
--   Pgs. [223](https://drive.google.com/file/d/1zowekbvRKdivfTpDqQ92lGSLDRSJSi8I/view?usp=sharing)-225 and Pgs. [261](https://drive.google.com/file/d/1C6xBX3jRQw0QxcSf6NeiUpl8LxLUDHlk/view?usp=sharing)-263 above are exactly one year apart in the register (April 1st 1867 + April 1st 1868)
+    ![p. 261](images/Screenshot%202023-02-13%20at%204.08.16%20PM.png){width="220"}![](images/Screenshot%202023-02-13%20at%204.08.28%20PM.png){width="220"}![](images/Screenshot%202023-02-13%20at%204.08.37%20PM.png){width="220"}
+
+-   Pgs. 223-225 below and Pgs. 261-263 above are exactly one year apart in the register (April 1st 1867 + April 1st 1868)
+
+    ![](images/Screenshot%202023-02-13%20at%204.14.02%20PM.png){width="220"}![](images/Screenshot%202023-02-13%20at%204.14.09%20PM-01.png){width="220"}![](images/Screenshot%202023-02-13%20at%204.14.16%20PM.png){width="220"}
 
 ## How many employees during this era?
 
--   Counted 92 employees in April 1861, 141 employees in April 1863, 128 employees in April 1864, 131 employees in April 1867, 153 employees in April 1868, 153 employees in April 1869
+-   Counted 92 employees in April 1861, 122 employees in April 1862, 141 employees in April 1863, 128 employees in April 1864, 159 employees in April 1865, 144 employees in April 1866, 131 employees in April 1867, 153 employees in April 1868, 153 employees in April 1869
 
-    -   Average across the measured 6 years = 133 employees between 1861-1869
+    -   Average across the measured 9 years = 136 employees between 1861-1869
 
-        -   Subset Pages: 8-10 (1861) 79-81 (1863), 115-117 (1864 - this month also has pay records from the 30th not included in the employee count above) 223-225 (1867), 261-263 (1868), 314-316 (1869)
+        -   Subset Pages: 8-10 (1861) 43-45 (1862), 79-81 (1863), 115-117 (1864 - this month also has pay records from the 30th not included in the employee count above), 151-153 (1865), 187-189 (1866) 223-225 (1867), 261-263 (1868), 314-316 (1869)
 
     -   Number of employees generally increased over time
 
         -   Green mentions that these mills had abnormally high employee retention rates
+        -   Boom in employment towards end of Civil War in 1865
 
--   Some pages have a separate section of employees at the bottom under "Repairs" \-- I included these names in the counts above
+-   Some pages have a separate section of employees at the bottom under "Repairs" and "Reparis & Watchmen" (April 1862 p.45 - 4 employees under 'Repairs & Watchmen') \-- I included these names in the counts above
+
+    ![](images/Screenshot%202023-02-13%20at%204.18.46%20PM.png){width="404"}
 
     -   Presumably employees whose main role was to repair the machines instead of making paper
-    -   There were 5 people under "Repairs" for April 1st, 1867 and 8 under April 1st, 1868
+
+    -   There were 5 people under "Repairs" for April 1st, 1867 (see p. 225 above) and 8 under April 1st, 1868 (see p. 262 above)
 
 **Quotes from Hickey thesis that may be of relevance to employment from 1861-1869**
 
--   "In 1861, after a period of severe readjustment just prior to the Civil War, twenty-one of the thirty-six manufactures of fine papers met at Pittsfield...to organize a protrective association. They desired to raise prices which had fallen drastically as the result of a decrease in demand. They agreed to reduce output by about one-third for about three months. This was the first trade association established in the paper industry of the United States....The Parsons Paper Company and the Carew Manufacturing Company were charter members of this organization\" (108)
+-   "In 1861, after a period of severe readjustment just prior to the Civil War, twenty-one of the thirty-six manufactures of fine papers met at Pittsfield...to organize a protrective association. They desired to raise prices which had fallen drastically as the result of a decrease in demand. They agreed to reduce output by about one-third for about three months. This was the first trade association established in the paper industry of the United States....The Parsons Paper Company and the Carew Manufacturing Company were charter members of this organization" (108)
 
--   \"Since the discovery of how to utilize wood for the manufacture of paper in 1867, this raw material has been in increasing demand" (84)
+-   "Since the discovery of how to utilize wood for the manufacture of paper in 1867, this raw material has been in increasing demand" (84)
 
 -   "several of the local mills were quite large, employing 200 or more workers" and there were "about 3700 workers employed in the local paper industry at the turn of the century" (4)
+
+-   "Repairs, if necessary, are undertaken on Sundays" (94)
+
+-   "In replacing a wire on a Fourdrinier paper machine, workers in the Holyoke mills receive half a day's pay besides their regular pay during the hours they work on the replacement. This acts as an incentive to the workers to get the machine back in operation as soon as possible" (94)
