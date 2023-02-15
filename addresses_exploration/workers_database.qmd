@@ -26,7 +26,7 @@ knitr::include_graphics("amherst_website.png")
 
 Here is how the ancestry website looks at a first glance:
 
-```{r}
+```{r, out.height="32.5%"}
 #| label: fig-sample2
 #| echo: false
 #| fig.cap: "Ancestry.com 'search' screen"
@@ -37,7 +37,7 @@ By searching for a name and a place, (Holyoke, Hampden, Massachusetts), we were 
 
 The number of names that appear in first search. We used educated guess to selected the most appropriate person.
 
-```{r, out.height="40%"}
+```{r, out.height="33%"}
 #| label: fig-sample3
 #| echo: false
 #| fig.cap: "Initial search results"
@@ -47,8 +47,6 @@ knitr::include_graphics("multiple_names.jpeg")
 {{< pagebreak >}}
 
 The amount of information we could find on each worker varied from name to name but in general, we were able to find birth year, birthplace, spouse, children, parents, occupation, and address. We then compiled these results into a spreadsheet. 
-
-{{< pagebreak >}}
 
 Lucy Allen was one of the names in the record book.
 
@@ -82,7 +80,7 @@ This was an unfortunate but somewhat common life for a working-class family in H
 
 Conversely, we were able to find records on Joseph C. Parsons; the founder of the Parsons Paper Company.
 
-```{r}
+```{r, out.height="40%"}
 #| label: fig-sample6
 #| echo: false
 #| fig.cap: "Joseph C. Parsons' Profile"
@@ -101,8 +99,6 @@ This was surprising because we expected him to live in the upper-class district 
 
 First, we accessed the Amherst College Library account for Ancestry.com. Second, we clicked the "Search" option and typed in the names of the workers and set the location to Holyoke, Hampden, MA. Finally, we used common sense by checking if occupation of the worker was the paper industry to figure out which of the search results were our person of interest.
 
-{{< pagebreak >}}
-
 ## Database
 
 This is the aggregated info for some of the workers who worked in Parsons' paper in the 1860s:
@@ -119,14 +115,5 @@ options(digits = 4)
 ancestry <- readr::read_csv("ancestry_addresses_updated.csv")
 glimpse(ancestry)
 ```
-
-```{r}
-#| label: fig-sample
-#| echo: false
-#| fig.cap: "Sample caption"
-knitr::include_graphics("sample.png")
-```
-
-Here is some more sample text that refers to @fig-sample.
 
 Here is a [LINK](https://github.com/STAT210-S23/Parsons_Paper_Register) to this repo
