@@ -16,44 +16,46 @@ The link to Amherst's access to ancestry website is [here](https://libguides.amh
 ```{r}
 #| label: fig-sample1
 #| echo: false
-#| fig.cap: "Amherst website"
+#| fig.cap: "Once on the Amherst website, we clicked the link to Ancestry Library Edition"
 knitr::include_graphics("amherst_website.png")
 ```
 
 @fig-sample1
+
+{{< pagebreak >}}
 
 Here is how the ancestry website looks at a first glance:
 
 ```{r}
 #| label: fig-sample2
 #| echo: false
-#| fig.cap: "Sample caption"
+#| fig.cap: "Ancestry.com 'search' screen"
 knitr::include_graphics("website.jpeg")
 ```
 
 By searching for a name and a place, (Holyoke, Hampden, Massachusetts), we were able to find census information from the 1800s and track down paper mill workers.
 
-!\[worker search\] (name_search.jpeg)
-
 The number of names that appear in first search. We used educated guess to selected the most appropriate person.
 
-```{r}
+```{r, out.height="40%"}
 #| label: fig-sample3
 #| echo: false
-#| fig.cap: "Sample caption"
+#| fig.cap: "Initial search results"
 knitr::include_graphics("multiple_names.jpeg")
 ```
 
-The names we used were in a registry from 1863.
+{{< pagebreak >}}
 
 The amount of information we could find on each worker varied from name to name but in general, we were able to find birth year, birthplace, spouse, children, parents, occupation, and address. We then compiled these results into a spreadsheet. 
 
+{{< pagebreak >}}
+
 Lucy Allen was one of the names in the record book.
 
-```{r}
+```{r, out.width="50%"}
 #| label: fig-sample4
 #| echo: false
-#| fig.cap: "Sample caption"
+#| fig.cap: "Lucy Allen's Profile"
 knitr::include_graphics("Lucy_Allen.jpeg")
 ```
 
@@ -61,14 +63,12 @@ She was born in Massachusetts in 1842 and lived in dwelling 42.
 
 We were unable to find the house number or the street name but we did find that Lucy had a sister named Eliza Ann born in 1841.
 
-```{r}
+```{r, out.width="50%"}
 #| label: fig-sample5
 #| echo: false
-#| fig.cap: "Sample caption"
-knitr::include_graphics("Eliza_Allen.jpeg")
+#| fig.cap: "Eliza Ann Allen's Profile"
+knitr::include_graphics("ELIZA_ANN.png")
 ```
-
-!\[Eliza Ann Allen\] (Eliza_Allen.jpeg)
 
 Their father's name was Job Allen and their mother was Anna Allen.
 
@@ -85,7 +85,7 @@ Conversely, we were able to find records on Joseph C. Parsons; the founder of th
 ```{r}
 #| label: fig-sample6
 #| echo: false
-#| fig.cap: "Sample caption"
+#| fig.cap: "Joseph C. Parsons' Profile"
 knitr::include_graphics("Joseph_Clark.jpeg")
 ```
 
@@ -96,6 +96,12 @@ He married Lucretia Hoyt Parsons and had three daughters; Catherine Turner Taft,
 We found that Parsons lived in house 22 of dwelling 165 on Suffolk street which was quite close to his Mill.
 
 This was surprising because we expected him to live in the upper-class district because wealthier people lived in hills above sea level. 
+
+## **Appendix**
+
+First, we accessed the Amherst College Library account for Ancestry.com. Second, we clicked the "Search" option and typed in the names of the workers and set the location to Holyoke, Hampden, MA. Finally, we used common sense by checking if occupation of the worker was the paper industry to figure out which of the search results were our person of interest.
+
+{{< pagebreak >}}
 
 ## Database
 
