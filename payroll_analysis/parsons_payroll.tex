@@ -189,7 +189,7 @@
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, boxrule=0pt, enhanced, sharp corners, breakable, frame hidden, interior hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, enhanced, breakable, frame hidden, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, sharp corners]}{\end{tcolorbox}}\fi
 
 \hypertarget{how-many-days-in-a-pay-period}{%
 \subsection{How many days in a pay
@@ -399,7 +399,7 @@ register}\label{spreadsheet-tracking-employment-by-job-type-for-first-6-months-a
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(googlesheets4)}
-\FunctionTok{read\_sheet}\NormalTok{(}\StringTok{"https://docs.google.com/spreadsheets/d/1dza87xBB2pgVajOuLYBM\_fHfAobr6IFIZFAu4vFOnhs/edit\#gid=0"}\NormalTok{)}
+\NormalTok{employment }\OtherTok{\textless{}{-}} \FunctionTok{read\_sheet}\NormalTok{(}\StringTok{"https://docs.google.com/spreadsheets/d/1dza87xBB2pgVajOuLYBM\_fHfAobr6IFIZFAu4vFOnhs/edit\#gid=0"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -433,21 +433,12 @@ v Reading from "Parsons Paper Company Employment by Job Type".
 v Range 'Sheet1'.
 \end{verbatim}
 
-\begin{verbatim}
-# A tibble: 10 x 5
-   Month     Year Job          Count `Page #`
-   <chr>    <dbl> <chr>        <dbl> <chr>   
- 1 January   1861 MFC?            25 001     
- 2 January   1861 repairs          4 001     
- 3 January   1861 rag room        25 002     
- 4 January   1861 finishers       23 002     
- 5 February  1861 MFC?            25 003     
- 6 February  1861 repairs          4 003     
- 7 February  1861 rag room        24 004     
- 8 February  1861 finishers       22 004     
- 9 March     1861 foreman          1 005     
-10 <NA>        NA machine room    NA <NA>    
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{view}\NormalTok{(employment)}
+\end{Highlighting}
+\end{Shaded}
+
 
 
 

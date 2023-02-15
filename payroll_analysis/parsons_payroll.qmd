@@ -140,5 +140,7 @@ We are listing the roles and the page \# where it is first introduced
 
 ```{r}
 library(googlesheets4)
-read_sheet("https://docs.google.com/spreadsheets/d/1dza87xBB2pgVajOuLYBM_fHfAobr6IFIZFAu4vFOnhs/edit#gid=0")
+employment <- read_sheet("https://docs.google.com/spreadsheets/d/1dza87xBB2pgVajOuLYBM_fHfAobr6IFIZFAu4vFOnhs/edit#gid=0")
+
+view(employment)
 ```
