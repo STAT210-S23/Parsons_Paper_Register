@@ -17,22 +17,15 @@ The link to Amherst's access to ancestry website is [here](https://libguides.amh
 #| label: fig-sample1
 #| echo: false
 #| fig.cap: "Amherst website"
-knitr::include_graphics("amherst_website.jpeg")
+knitr::include_graphics("amherst_website.png")
 ```
 
 @fig-sample1
 
-```{r}
-#| label: fig-sample
-#| echo: false
-#| fig.cap: "Sample caption"
-knitr::include_graphics("amherst_website.jpeg")
-```
-
 Here is how the ancestry website looks at a first glance:
 
 ```{r}
-#| label: fig-sample
+#| label: fig-sample2
 #| echo: false
 #| fig.cap: "Sample caption"
 knitr::include_graphics("website.jpeg")
@@ -45,7 +38,7 @@ By searching for a name and a place, (Holyoke, Hampden, Massachusetts), we were 
 The number of names that appear in first search. We used educated guess to selected the most appropriate person.
 
 ```{r}
-#| label: fig-sample
+#| label: fig-sample3
 #| echo: false
 #| fig.cap: "Sample caption"
 knitr::include_graphics("multiple_names.jpeg")
@@ -58,7 +51,7 @@ The amount of information we could find on each worker varied from name to name 
 Lucy Allen was one of the names in the record book.
 
 ```{r}
-#| label: fig-sample
+#| label: fig-sample4
 #| echo: false
 #| fig.cap: "Sample caption"
 knitr::include_graphics("Lucy_Allen.jpeg")
@@ -69,7 +62,7 @@ She was born in Massachusetts in 1842 and lived in dwelling 42.
 We were unable to find the house number or the street name but we did find that Lucy had a sister named Eliza Ann born in 1841.
 
 ```{r}
-#| label: fig-sample
+#| label: fig-sample5
 #| echo: false
 #| fig.cap: "Sample caption"
 knitr::include_graphics("Eliza_Allen.jpeg")
@@ -90,7 +83,7 @@ This was an unfortunate but somewhat common life for a working-class family in H
 Conversely, we were able to find records on Joseph C. Parsons; the founder of the Parsons Paper Company.
 
 ```{r}
-#| label: fig-sample
+#| label: fig-sample6
 #| echo: false
 #| fig.cap: "Sample caption"
 knitr::include_graphics("Joseph_Clark.jpeg")
