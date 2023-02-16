@@ -1,0 +1,27 @@
+---
+title: "Testing Missing Page Function"
+format: html
+editor: visual
+---
+
+```{r}
+find_missing_pages <- function(start = 0, end = 10, 
+                               path = "/", suffix = ".png"){
+  files_toCheck <- paste0(path, sprintf("%03d", start:end), suffix)
+  missing_files <- files_toCheck[!file.exists(files_toCheck)]
+  return(missing_files)
+}
+
+
+for(i in 0:100){
+  if(i != 37){
+      file_name <-paste0(sprintf("Test Data/%03d",i),".txt") 
+    file.create(file_name)
+  }
+}
+file_name <-paste0(sprintf("Test Data/%03d",103),".txt")
+file.create(file_name)
+
+find_missing_pages(start = 0, end = 103,
+                   path = "Test Data/", suffix = ".txt")
+```
