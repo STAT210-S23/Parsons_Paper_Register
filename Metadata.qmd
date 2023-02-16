@@ -8,3 +8,87 @@ editor: visual
 ---
 
 ## Metadata
+
+-   File name
+
+-   File path
+
+-   File datastream
+
+-   Item fulltext with server path (for indexing)
+
+-   Local accession
+
+-   Other local identifier
+
+-   Local call number
+
+-   Local barcode
+
+-   ISBN
+
+-   SICI (Serial Item and Contribution Identifier)
+
+-   Primary title
+
+-   Type of resource
+
+-   BASIC genre/form
+
+-   Place of publication
+
+-   Publisher
+
+-   Date Type
+
+-   Date
+
+-   Volume
+
+-   Issue number
+
+-   Edition
+
+-   Edition number
+
+-   Language
+
+-   Physical description
+
+-   Digital origin
+
+-   Summary/Abstract
+
+-   Table of contents
+
+-   Notes (there are different types of note variables; ie. acquisition notes, biographical/historical notes, publication notes, etc.)
+
+-   Host collection
+
+-   Subcollection
+
+-   Constituent
+
+-   Series
+
+-   Subseries
+
+-   Physical location (library)
+
+-   Library department
+
+-   Shelf locator
+
+-   Rights
+
+-   License
+
+-   Description standard
+
+-   Repository Set Name
+
+-   Internet Archive identifier
+
+-   Destination site information
+
+-   Harvesting status
