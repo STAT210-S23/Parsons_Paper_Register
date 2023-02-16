@@ -9,13 +9,22 @@ editor: visual
 
 ## Introduction
 
-Mining the Mystery of Holyoke is a class at Amherst College with a mission statement of curating and publishing a piece of Holyoke's history and making it accessible to the people of Holyoke.
+Mining the Mystery of Holyoke is a class at Amherst College with a mission statement of curating and publishing a piece of Holyoke's history and making it accessible to the town's people.
 
 One way our class has begun this journey is by analyzing an old registry found in an attic in Holyoke.
 
 This book kept the names of employees who worked at the Parsons Paper Mill in Holyoke in the 1860s.
 
 It has been remarkable to track down so much history as each page of this nearly 400 page registry has upwards of 30 names, and each name has its own story worth telling.
+
+In the registry, we can see one's name, number of days worked, their wages, whether or not the worker had rent or board due, the final balance owed, and signature.
+
+```{r}
+#| label: fig-sample
+#| echo: false
+#| fig.cap: "Sample page of the Registry"
+knitr::include_graphics("Registry_page_header.jpeg")
+```
 
 ## Workers' Summary
 
@@ -58,21 +67,29 @@ knitr::include_graphics("multiple_names.jpeg")
 
 The amount of information we could find on each worker varied from name to name but in general, we were able to find birth year, birthplace, spouse, children, parents, occupation, and address. We then compiled these results into a spreadsheet. 
 
-Lucy Allen was one of the names in the record book.
+On page 259, we found two women with the same last name which was common back then but still we decided to search for one of them on Ancestry.com.
+
+Their names were Lucy and E.A. Allen. When we searched for Lucy, we found that E.A. stood for Eliza Ann Allen--they were sisters!
 
 ```{r, out.width="50%"}
 #| label: fig-sample4
+#| echo: false
+#| fig.cap: "Lucy and Eliza Ann Allen in the Registry"
+knitr::include_graphics("Mary and Eliza Allen.jpeg")
+
+```
+
+Lucy was born in Massachusetts in 1842 and Eliza Ann was her older sister born in 1841. They lived in dwelling 42.
+
+```{r, out.width="50%"}
+#| label: fig-sample5
 #| echo: false
 #| fig.cap: "Lucy Allen's Profile"
 knitr::include_graphics("Lucy_Allen.jpeg")
 ```
 
-She was born in Massachusetts in 1842 and lived in dwelling 42.
-
-We were unable to find the house number or the street name but we did find that Lucy had a sister named Eliza Ann born in 1841.
-
 ```{r, out.width="50%"}
-#| label: fig-sample5
+#| label: fig-sample6
 #| echo: false
 #| fig.cap: "Eliza Ann Allen's Profile"
 knitr::include_graphics("ELIZA_ANN.png")
@@ -82,7 +99,16 @@ Their father's name was Job Allen and their mother was Anna Allen.
 
 Job was born in England and moved to the United States sometime before 1841.
 
-The interesting thing about the Allen family is that Eliza Ann, Lucy, and Job all worked at the Parsons Paper Company.
+Like his daughters, he too worked at the Parsons Paper Company.
+
+We found record of him on page 264.
+
+```{r, out.width="50%"}
+#| label: fig-sample7
+#| echo: false
+#| fig.cap: "Job Allen in the Registry"
+knitr::include_graphics("J Allen.jpeg")
+```
 
 Anna Allen stayed at home.
 
@@ -91,13 +117,13 @@ This was an unfortunate but somewhat common life for a working-class family in H
 Conversely, we were able to find records on Joseph C. Parsons; the founder of the Parsons Paper Company.
 
 ```{r, out.height="40%"}
-#| label: fig-sample6
+#| label: fig-sample8
 #| echo: false
 #| fig.cap: "Joseph C. Parsons' Profile"
 knitr::include_graphics("Joseph_Clark.jpeg")
 ```
 
-Born on February 6, 1814, in Northhampton, Hampshire County, Massachusetts to Lydia and Justice Parsons, Joseph Clark Parsons was a local businessman who became very successful after founding his mill.
+Born on February 6, 1814, in Northampton, Hampshire County, Massachusetts to Lydia and Justice Parsons, Joseph Clark Parsons was a local businessman who became very successful after founding his mill.
 
 He married Lucretia Hoyt Parsons and had three daughters; Catherine Turner Taft, Fannie Colton Parsons, and Elizabeth Hoyt Parsons.
 
