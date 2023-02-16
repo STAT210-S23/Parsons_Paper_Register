@@ -9,6 +9,8 @@ editor: visual
 
 ## Metadata
 
+Tags that we can use for the Parsons Paper Register file on the Digital Commonwealth site.
+
 -   File name
 
 -   File path
