@@ -139,6 +139,7 @@ We are listing the roles and the page \# where it is first introduced
 ## Spreadsheet tracking employment by job type for first 6 months and last 6 months of the register
 
 ```{r}
+#| eval: false
 library(googlesheets4)
 employment <- read_sheet("https://docs.google.com/spreadsheets/d/1dza87xBB2pgVajOuLYBM_fHfAobr6IFIZFAu4vFOnhs/edit#gid=0")
 
