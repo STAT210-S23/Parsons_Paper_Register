@@ -1,5 +1,6 @@
 ---
-title: "Parsons_Paper_Register #12"
+title: "
+arsons_Paper_Register #12"
 author: "Sarah Edelson"
 date: "2023-02-16"
 date-format: iso
@@ -9,90 +10,54 @@ editor: visual
 
 ## Metadata
 
-Tags that we can use for the Parsons Paper Register file on the Digital Commonwealth site.
+Required by Digital Commonwealth. A star next to the term indicates that the Digital Commonwealth deems these variables "required if applicable." This list is from the MODS Column Headers Usage Guidelines excel file.
 
--   File name
+-   file name
 
--   File path
+-   file path
 
--   File datastream
+-   file datastream\*
 
--   Item fulltext with server path (for indexing)
+-   item fulltext with server path (for indexing)\*
 
--   Local accession
+-   local accession\*
 
--   Other local identifier
+-   other local identifier\*
 
--   Local call number
+-   local barcode\*
 
--   Local barcode
+-   primary title (required unless "parallel titles" is used)
 
--   ISBN
+-   primary title is cataloger-created\*
 
--   SICI (Serial Item and Contribution Identifier)
+-   language of primary title\*
 
--   Primary title
+-   parallel titles\*
+
+-   alternative title is cataloger-created\*
+
+-   Name: Type\*
+
+-   Name: Authority\*
+
+-   Role\*
+
+-   Role: Value URI\*
 
 -   Type of resource
 
+-   Type of resource: Manuscript\*
+
 -   BASIC genre/form
 
--   Place of publication
+-   BASIC genre/form: Value URI
 
--   Publisher
+-   Other SPECIFIC genre/form: Authority\*
 
--   Date Type
+-   Date type
 
--   Date
+-   Date (single date)\*
 
--   Volume
+-   Date range: Start\*
 
--   Issue number
-
--   Edition
-
--   Edition number
-
--   Language
-
--   Physical description
-
--   Digital origin
-
--   Summary/Abstract
-
--   Table of contents
-
--   Notes (there are different types of note variables; ie. acquisition notes, biographical/historical notes, publication notes, etc.)
-
--   Host collection
-
--   Subcollection
-
--   Constituent
-
--   Series
-
--   Subseries
-
--   Physical location (library)
-
--   Library department
-
--   Shelf locator
-
--   Rights
-
--   License
-
--   Description standard
-
--   Repository Set Name
-
--   Internet Archive identifier
-
--   Destination site information
-
--   Harvesting status
-
--   Subject (different variables for this, ie. subject keyword, subject name, etc.)
+-   Date range: End\*
