@@ -19,29 +19,25 @@ It has been remarkable to track down so much history as each page of this nearly
 
 In the registry, we can see one's name, number of days worked, their wages, whether or not the worker had rent or board due, the final balance owed, and signature.
 
-```{r}
+```{r, out.height="27%"}
 #| label: fig-sample
 #| echo: false
 #| fig.cap: "Sample page of the Registry"
 knitr::include_graphics("Registry_page_header.jpeg")
 ```
 
+{{< pagebreak >}}
+
 ## Workers' Summary
 
-Tasked with finding information about employees at a paper mill, we used the database ancestry.com.
+Tasked with finding information about employees at a paper mill, we used the database ancestry.com. The link to Amherst's access to ancestry website is [here](https://libguides.amherst.edu/c.php?g=944984&p=6812570).
 
-The link to Amherst's access to ancestry website is [here](https://libguides.amherst.edu/c.php?g=944984&p=6812570).
-
-```{r}
+```{r, out.height="30%"}
 #| label: fig-sample1
 #| echo: false
 #| fig.cap: "Once on the Amherst website, we clicked the link to Ancestry Library Edition"
 knitr::include_graphics("amherst_website.png")
 ```
-
-@fig-sample1
-
-{{< pagebreak >}}
 
 Here is how the ancestry website looks at a first glance:
 
@@ -56,14 +52,14 @@ By searching for a name and a place, (Holyoke, Hampden, Massachusetts), we were 
 
 The number of names that appear in first search. We used educated guess to selected the most appropriate person.
 
+{{< pagebreak >}}
+
 ```{r, out.height="33%"}
 #| label: fig-sample3
 #| echo: false
 #| fig.cap: "Initial search results"
 knitr::include_graphics("multiple_names.jpeg")
 ```
-
-{{< pagebreak >}}
 
 The amount of information we could find on each worker varied from name to name but in general, we were able to find birth year, birthplace, spouse, children, parents, occupation, and address. We then compiled these results into a spreadsheet. 
 
@@ -78,6 +74,8 @@ Their names were Lucy and E.A. Allen. When we searched for Lucy, we found that E
 knitr::include_graphics("Mary and Eliza Allen.jpeg")
 
 ```
+
+{{< pagebreak >}}
 
 Lucy was born in Massachusetts in 1842 and Eliza Ann was her older sister born in 1841. They lived in dwelling 42.
 
@@ -94,6 +92,8 @@ knitr::include_graphics("Lucy_Allen.jpeg")
 #| fig.cap: "Eliza Ann Allen's Profile"
 knitr::include_graphics("ELIZA_ANN.png")
 ```
+
+{{< pagebreak >}}
 
 Their father's name was Job Allen and their mother was Anna Allen.
 
@@ -114,6 +114,8 @@ Anna Allen stayed at home.
 
 This was an unfortunate but somewhat common life for a working-class family in Holyoke, Massachusetts in the 1860s.
 
+{{< pagebreak >}}
+
 Conversely, we were able to find records on Joseph C. Parsons; the founder of the Parsons Paper Company.
 
 ```{r, out.height="40%"}
@@ -130,6 +132,8 @@ He married Lucretia Hoyt Parsons and had three daughters; Catherine Turner Taft,
 We found that Parsons lived in house 22 of dwelling 165 on Suffolk street which was quite close to his Mill.
 
 This was surprising because we expected him to live in the upper-class district because wealthier people lived in hills above sea level. 
+
+{{< pagebreak >}}
 
 ## **Appendix**
 
