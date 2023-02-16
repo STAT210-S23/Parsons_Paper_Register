@@ -50,25 +50,13 @@ options(digits = 4)
         -   Green mentions that these mills had abnormally high employee retention rates
         -   Boom in employment towards end of Civil War in 1865
 
--   Some pages have a separate section of employees at the bottom under "Repairs" and "Reparis & Watchmen" (April 1862 p.45 - 4 employees under 'Repairs & Watchmen') \-- I included these names in the counts above
+-   Some pages have a separate section of employees at the bottom under "Repairs" and "Repairs & Watchmen" (April 1862 p.45 - 4 employees under 'Repairs & Watchmen') \-- I included these names in the counts above
 
     ![](images/Screenshot%202023-02-13%20at%204.18.46%20PM.png){width="404"}
 
     -   Presumably employees whose main role was to repair the machines instead of making paper
 
     -   There were 5 people under "Repairs" for April 1st, 1867 (see p. 225 above) and 8 under April 1st, 1868 (see p. 262 above)
-
-**Quotes from Hickey thesis that may be of relevance to employment from 1861-1869**
-
--   "In 1861, after a period of severe readjustment just prior to the Civil War, twenty-one of the thirty-six manufactures of fine papers met at Pittsfield...to organize a protrective association. They desired to raise prices which had fallen drastically as the result of a decrease in demand. They agreed to reduce output by about one-third for about three months. This was the first trade association established in the paper industry of the United States....The Parsons Paper Company and the Carew Manufacturing Company were charter members of this organization" (108)
-
--   "Since the discovery of how to utilize wood for the manufacture of paper in 1867, this raw material has been in increasing demand" (84)
-
--   "several of the local mills were quite large, employing 200 or more workers" and there were "about 3700 workers employed in the local paper industry at the turn of the century" (4)
-
--   "Repairs, if necessary, are undertaken on Sundays" (94)
-
--   "In replacing a wire on a Fourdrinier paper machine, workers in the Holyoke mills receive half a day's pay besides their regular pay during the hours they work on the replacement. This acts as an incentive to the workers to get the machine back in operation as soon as possible" (94)
 
 ## What types of jobs are there?
 
@@ -130,17 +118,39 @@ We are listing the roles and the page \# where it is first introduced
 
 -   cutter (023)
 
--   ? reapairs + something else (25)
+-   ? repairs + something else (25)
 
 -   repair & watchmen (030)
 
 -   ? SN (034)
 
-## Spreadsheet tracking employment by job type for first 6 months and last 6 months of the register
+## Spreadsheet tracking employment by job type for first 6 months of the register (Jan-Jun 1861)
+
+[Spreadsheet LINK](https://docs.google.com/spreadsheets/d/1dza87xBB2pgVajOuLYBM_fHfAobr6IFIZFAu4vFOnhs/edit?usp=sharing)
 
 ```{r}
-library(googlesheets4)
-employment <- read_sheet("https://docs.google.com/spreadsheets/d/1dza87xBB2pgVajOuLYBM_fHfAobr6IFIZFAu4vFOnhs/edit#gid=0")
-
+employment <- read.csv("jobs.csv")
 view(employment)
 ```
+
+-   Role labels become very sporadic after first year
+
+    -   'Repairs' and 'Repairs and Watchmen', however, remain in their own section at the bottom
+
+        -   All males
+
+-   The sorters, stampers, sealers, count&folders, rag room/cutter roles remain throughout 1861-1869, although there are much fewer of them compared to the unlabeled names
+
+    -   These roles were held by almost all women
+
+**Quotes from Hickey thesis that may be of relevance to employment from 1861-1869**
+
+-   "In 1861, after a period of severe readjustment just prior to the Civil War, twenty-one of the thirty-six manufactures of fine papers met at Pittsfield...to organize a protrective association. They desired to raise prices which had fallen drastically as the result of a decrease in demand. They agreed to reduce output by about one-third for about three months. This was the first trade association established in the paper industry of the United States....The Parsons Paper Company and the Carew Manufacturing Company were charter members of this organization" (108)
+
+-   "Since the discovery of how to utilize wood for the manufacture of paper in 1867, this raw material has been in increasing demand" (84)
+
+-   "several of the local mills were quite large, employing 200 or more workers" and there were "about 3700 workers employed in the local paper industry at the turn of the century" (4)
+
+-   "Repairs, if necessary, are undertaken on Sundays" (94)
+
+-   "In replacing a wire on a Fourdrinier paper machine, workers in the Holyoke mills receive half a day's pay besides their regular pay during the hours they work on the replacement. This acts as an incentive to the workers to get the machine back in operation as soon as possible" (94)
