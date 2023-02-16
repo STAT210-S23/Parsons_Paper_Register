@@ -12,9 +12,35 @@ editor: visual
 
 Required by Digital Commonwealth. A star next to the term indicates that the Digital Commonwealth deems these variables "required if applicable." This list is from the MODS Column Headers Usage Guidelines excel file.
 
+**Required:**
+
 -   file name
 
 -   file path
+
+-   Type of resource
+
+-   BASIC genre/form
+
+-   BASIC genre/form: Value URI
+
+-   Date type
+
+-   Digital Origin
+
+-   Host collection
+
+-   Physical location (library)
+
+-   Rights
+
+-   License
+
+-   Description standard
+
+-   Repository Set Name
+
+**Required if applicable:**
 
 -   file datastream\*
 
@@ -44,20 +70,36 @@ Required by Digital Commonwealth. A star next to the term indicates that the Dig
 
 -   Role: Value URI\*
 
--   Type of resource
-
 -   Type of resource: Manuscript\*
 
--   BASIC genre/form
-
--   BASIC genre/form: Value URI
-
 -   Other SPECIFIC genre/form: Authority\*
-
--   Date type
 
 -   Date (single date)\*
 
 -   Date range: Start\*
 
 -   Date range: End\*
+
+-   Volume\*
+
+-   Issue number\*
+
+-   Edition number\*
+
+-   Language code\*
+
+-   Other topical headings: Authority\*
+
+-   Proper name subject: Type\*
+
+-   Proper name subject: Authority\*
+
+-   Uniform title subject: Authority\*
+
+-   Internet Archive Identifier\*
+
+-   Destination site information\*
+
+-   Harvesting status\*
+
+-   Text direction (for reading)\*
