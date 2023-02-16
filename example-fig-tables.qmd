@@ -1,0 +1,45 @@
+---
+title: "sample file with figure and nice table"
+author: "Nicholas Horton (nhorton@amherst.edu)"
+date: "2023-03-16"
+date-format: iso
+format: pdf
+editor: visual
+---
+
+## Including an image (with ref)
+
+```{r}
+#| include: false
+library(tidyverse)
+library(knitr)
+```
+
+```{r}
+#| label: fig-test1
+#| fig.cap: "This is a gratuitous label"
+#| echo: false
+knitr::include_graphics("jpg/253.jpg")
+```
+
+Here is a reference to @fig-test1.
+
+```{r}
+#| label: fig-test2
+#| fig.cap: "This is a gratuitous label"
+#| out.width: "40%"
+#| echo: false
+knitr::include_graphics("jpg/253.jpg")
+```
+
+@fig-test2 is smaller.
+
+\clearpage
+
+## Displaying nice tables
+
+```{r}
+#| echo: false
+ds <- tibble(x = 1:3, y = c("Yes", "No", "Maybe"), z = c("Ann", "Peter", "John"))
+kable(ds)
+```

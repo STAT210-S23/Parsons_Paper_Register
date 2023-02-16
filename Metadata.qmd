@@ -1,5 +1,6 @@
 ---
-title: "Parsons_Paper_Register #12"
+title: "
+arsons_Paper_Register #12"
 author: "Sarah Edelson"
 date: "2023-02-16"
 date-format: iso
@@ -8,3 +9,97 @@ editor: visual
 ---
 
 ## Metadata
+
+Required by Digital Commonwealth. A star next to the term indicates that the Digital Commonwealth deems these variables "required if applicable." This list is from the MODS Column Headers Usage Guidelines excel file.
+
+**Required:**
+
+-   file name
+
+-   file path
+
+-   Type of resource
+
+-   BASIC genre/form
+
+-   BASIC genre/form: Value URI
+
+-   Date type
+
+-   Digital Origin
+
+-   Host collection
+
+-   Physical location (library)
+
+-   Rights
+
+-   License
+
+-   Description standard
+
+-   Repository Set Name
+
+**Required if applicable:**
+
+-   file datastream\*
+
+-   item fulltext with server path (for indexing)\*
+
+-   local accession\*
+
+-   other local identifier\*
+
+-   local barcode\*
+
+-   primary title (required unless "parallel titles" is used)
+
+-   primary title is cataloger-created\*
+
+-   language of primary title\*
+
+-   parallel titles\*
+
+-   alternative title is cataloger-created\*
+
+-   Name: Type\*
+
+-   Name: Authority\*
+
+-   Role\*
+
+-   Role: Value URI\*
+
+-   Type of resource: Manuscript\*
+
+-   Other SPECIFIC genre/form: Authority\*
+
+-   Date (single date)\*
+
+-   Date range: Start\*
+
+-   Date range: End\*
+
+-   Volume\*
+
+-   Issue number\*
+
+-   Edition number\*
+
+-   Language code\*
+
+-   Other topical headings: Authority\*
+
+-   Proper name subject: Type\*
+
+-   Proper name subject: Authority\*
+
+-   Uniform title subject: Authority\*
+
+-   Internet Archive Identifier\*
+
+-   Destination site information\*
+
+-   Harvesting status\*
+
+-   Text direction (for reading)\*

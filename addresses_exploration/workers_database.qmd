@@ -7,6 +7,16 @@ format: pdf
 editor: visual
 ---
 
+## Introduction
+
+Mining the Mystery of Holyoke is a class at Amherst College with a mission statement of curating and publishing a piece of Holyoke's history and making it accessible to the people of Holyoke.
+
+One way our class has begun this journey is by analyzing an old registry found in an attic in Holyoke.
+
+This book kept the names of employees who worked at the Parsons Paper Mill in Holyoke in the 1860s.
+
+It has been remarkable to track down so much history as each page of this nearly 400 page registry has upwards of 30 names, and each name has its own story worth telling.
+
 ## Workers' Summary
 
 Tasked with finding information about employees at a paper mill, we used the database ancestry.com.
