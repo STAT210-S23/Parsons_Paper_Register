@@ -94,3 +94,5 @@ Tags that we can use for the Parsons Paper Register file on the Digital Commonwe
 -   Destination site information
 
 -   Harvesting status
+
+-   Subject (different variables for this, ie. subject keyword, subject name, etc.)
