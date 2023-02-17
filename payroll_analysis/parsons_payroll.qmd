@@ -1,7 +1,7 @@
 ---
-title: "Parsons_Paper_Register #7"
+title: "Parsons Paper Register #7"
 author: "Anna Zhou & Sarah Edelson"
-date: "2023-02-13"
+date: "2023-02-17"
 date-format: iso
 format: pdf
 editor: visual
@@ -12,12 +12,13 @@ editor: visual
 #| include: false
 library(mosaic)
 library(tidyverse)
+library(knitr)
 options(digits = 4)
 ```
 
 ## How many days in a pay period?
 
--   The Parsons Paper Company register comprises monthly pay periods from January 1861-April 1869
+-   The Parsons Paper Company register available from the Holyoke (Massachusetts) Public Library History Room comprises monthly pay periods from January 1861-April 1869
 
 -   Pay periods appear to be a month long with employees typically getting paid on the 1st of the next (?) month
 
