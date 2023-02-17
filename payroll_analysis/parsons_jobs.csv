@@ -1,0 +1,57 @@
+Month,Year,Job,Count,Page #,Monthly Total,Notes
+January,1861,MFC,25,001,77,
+January,1861,repairs,4,001,77,
+January,1861,rag room,25,002,77,
+January,1861,finishers,23,002,77,
+February,1861,MFC,25,003,75,
+February,1861,repairs,4,003,75,
+February,1861,rag room,24,004,75,
+February,1861,finishers,22,004,75,
+March,1861,foreman,1,005,85,
+March,1861,machine room,3,005,85,subgroup of MFC - looks like they broke out subgroups within the MFC
+March,1861,engine room,7,005,85,subgroup of MFC - looks like they broke out subgroups within the MFC
+March,1861,soft hands,4,005,85,subgroup of MFC - looks like they broke out subgroups within the MFC
+March,1861,fireman,2,005,85,subgroup of MFC - looks like they broke out subgroups within the MFC
+March,1861,size hands,2,005,85,subgroup of MFC - looks like they broke out subgroups within the MFC
+March,1861,jobbers?,3,005,85,subgroup of MFC - looks like they broke out subgroups within the MFC
+March,,watchmen,4,005`,85,
+March,1861,rag room,23,006,85,the count includes the overseer
+March,1861,repairs,4,006,85,
+March,1861,finishers,21,007,85,
+March,1861,sorters,5,007,85,
+March,1861,stamper & sealer,2,007,85,
+March,1861,count & folders,2,007,85,
+March,1861,sorter,2,007,85,
+April,1861,rag room,6,008,93,
+April,1861,cutters,17,008,93,subgroup of rag room - looks like they broke out subgroups within the rag room
+April,1861,repairs,4,008,93,
+April,1861,MFC,1,009,93,might be the overseer?
+April,1861,machine hands,3,009,93,within MFC?
+April,1861,engineers,7,009,93,
+April,1861,soft hands,3,009,93,
+April,1861,size hands,2,009,93,
+April,1861,jobbers?,5,009,93,
+April,1861,fireman,4,009,93,"says ""firemen"" here, changing for consistency with previous job label, which said ""fireman"""
+April,1861,finishers,25,010,93,
+April,1861,stamper & sealer,2,010,93,
+April,1861,count & folders,3,010,93,
+April,1861,sorters,11,010,93,
+May,1861,no label,25,011,105,I think these people are finishers though - many of the same people that were labeled finishers for the previous month
+May,1861,stamper,1,011,105,
+May,1861,sealer,1,011,105,
+May,1861,count & folders,2,011,105,
+May,1861,sorter,9,011,105,
+May,1861,extra,1,011,105,
+May,1861,no label,34,012,105,
+May,1861,repairs,3,012,105,
+May,1861,no label,25,013,105,
+May,1861,borders,4,013,,
+June,1861,no label,17,014,95,
+June,1861,repairs,3,014,95,
+June,1861,borders,6,014,95,
+June,1861,no label,24,015,95,
+June,1861,sorters,8,015,95,
+June,1861,count & folders,2,015,95,
+June,1861,stamper,1,015,95,
+June,1861,sealer,1,015,95,
+June,1861,no label,33,016,95,
