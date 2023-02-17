@@ -129,8 +129,9 @@ We are listing the roles and the page \# where it is first introduced
 [Spreadsheet LINK](https://docs.google.com/spreadsheets/d/1dza87xBB2pgVajOuLYBM_fHfAobr6IFIZFAu4vFOnhs/edit?usp=sharing)
 
 ```{r}
-employment <- read.csv("jobs.csv")
-view(employment)
+employment <- read.csv("parsons_jobs.csv")
+
+kable(employment)
 ```
 
 -   Role labels become very sporadic after first year
