@@ -11,7 +11,8 @@ get_Filename <- function(string = "", pattern = "[.]"){
 jpeg_path = "../jpeg"
 
 
-files <- list.files(jpeg_path)
+files <- list.files(jpeg_path) 
+clean_files <- files[str_detect(files, "[0-9][0-9][0-9]\\.jpeg")]  # check for correct format
 file_names <- lapply(files, get_Filename, pattern = "[.]") |> unlist()
 
 ui <-
