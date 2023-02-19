@@ -18,7 +18,7 @@ options(digits = 4)
 
 ## How many days in a pay period?
 
--   The Parsons Paper Company register available from the Holyoke (Massachusetts) Public Library History Room comprises monthly pay periods from January 1861-April 1869
+-   The Parsons Paper Company register available from the Holyoke (Massachusetts) Public Library History Room comprises monthly pay periods from January 1861-April 1869. See <https://r.amherst.edu/apps/nhorton/Parsons-Paper/> for an interactive display.
 
 -   Pay periods appear to be a month long with employees typically getting paid on the 1st of the next (?) month
 
