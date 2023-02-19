@@ -11,19 +11,18 @@ get_Filename <- function(string = "", pattern = "[.]"){
 jpeg_path = "../jpeg"
 
 
-files <- list.files(jpeg_path)
-file_names <- lapply(files, get_Filename, pattern = "[.]") |> unlist()
+files <- list.files(jpeg_path) 
+clean_files <- files[str_detect(files, "[0-9][0-9][0-9]\\.jpeg")]  # check for correct format
+file_names <- lapply(clean_files, get_Filename, pattern = "[.]") |> unlist()
 
 ui <-
   navbarPage("Parson's Paper Exploration",
     tabPanel(
       title = "About",
       mainPanel(
-        p("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Accumsan lacus vel facilisis volutpat. Posuere lorem ipsum dolor sit. Gravida arcu ac tortor dignissim convallis. Pulvinar pellentesque habitant morbi tristique. Facilisis mauris sit amet massa vitae tortor condimentum lacinia quis. Sed turpis tincidunt id aliquet risus feugiat in. Eget dolor morbi non arcu risus quis. Ultricies lacus sed turpis tincidunt id aliquet. Ac turpis egestas integer eget aliquet nibh praesent. Est ullamcorper eget nulla facilisi etiam. Nulla aliquet enim tortor at."),
-        p("Lacus luctus accumsan tortor posuere ac ut consequat semper viverra. Massa sed elementum tempus egestas sed sed risus pretium. Purus faucibus ornare suspendisse sed nisi lacus sed viverra. Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam. Amet massa vitae tortor condimentum lacinia quis vel eros. Turpis egestas integer eget aliquet nibh praesent tristique magna sit. Rhoncus mattis rhoncus urna neque viverra. Malesuada fames ac turpis egestas integer. Amet nisl suscipit adipiscing bibendum est. Eget mi proin sed libero enim sed faucibus turpis in."),
-        p("Tellus elementum sagittis vitae et leo. Pellentesque id nibh tortor id. Eget est lorem ipsum dolor sit amet consectetur adipiscing elit. Pellentesque adipiscing commodo elit at. Mus mauris vitae ultricies leo integer. Donec et odio pellentesque diam volutpat commodo. Faucibus pulvinar elementum integer enim neque volutpat ac tincidunt vitae. Auctor urna nunc id cursus metus aliquam eleifend. Et magnis dis parturient montes nascetur ridiculus. Dictum fusce ut placerat orci nulla pellentesque dignissim. Justo nec ultrices dui sapien eget mi."),
-        p("Enim facilisis gravida neque convallis a cras semper. Morbi leo urna molestie at elementum eu facilisis sed. Gravida neque convallis a cras semper auctor neque vitae. Et netus et malesuada fames ac turpis egestas maecenas pharetra. Mi ipsum faucibus vitae aliquet nec ullamcorper sit. Elit scelerisque mauris pellentesque pulvinar. Sed velit dignissim sodales ut eu sem integer vitae. Nulla aliquet porttitor lacus luctus accumsan. Imperdiet massa tincidunt nunc pulvinar sapien. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt."),
-        p("Tincidunt tortor aliquam nulla facilisi cras fermentum odio eu. Mattis rhoncus urna neque viverra justo nec ultrices dui. Semper eget duis at tellus at. Auctor eu augue ut lectus arcu. Nisl suscipit adipiscing bibendum est ultricies integer quis. Nulla pharetra diam sit amet nisl suscipit adipiscing. Non tellus orci ac auctor augue mauris augue neque. Lorem ipsum dolor sit amet consectetur. Maecenas sed enim ut sem viverra. Aliquam id diam maecenas ultricies mi eget mauris pharetra et. Scelerisque eu ultrices vitae auctor eu. Et ligula ullamcorper malesuada proin libero nunc consequat interdum varius.")
+        p("This app displays information about a payroll register for the Parsons Paper Company (Holyoke, MA) from 1861-1869."),
+        p("Scans, image manipulation, and analyses conducted by Amherst College students, faculty, and staff in STAT210 (Mining the History of Holyoke)."),
+        p("Additional support was provided by Eileen Crosby (Holyoke Public Library History Room).")
     )),
 
     
@@ -38,7 +37,7 @@ ui <-
                        file_names)
         )),
         column(4,
-               imageOutput("image2")
+               imageOutput("image")
         )
       )
       
@@ -48,10 +47,15 @@ ui <-
   
 server <- function(input, output) {
   # image2 sends pre-rendered images
-  output$image2 <- renderImage({
+  output$image <- renderImage({
     index <- which(file_names == input$picture)
+    src <- paste0(jpeg_path, "/", files[index])
+    results <- file.exists(src)
+    if (!results) {
+      showNotification(paste0("unable to open ", src, "\n"))
+    }
     return(list(
-      src = paste0(jpeg_path, "/", files[index]),
+      src = src,
       filetype = "image/jpeg",
       alt = paste("This is", input$picture)
     ))
