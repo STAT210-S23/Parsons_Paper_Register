@@ -18,17 +18,34 @@ options(digits = 4)
 
 ## Introduction
 
-The Parsons Paper Register contains over 300 pages of employee and payroll records from January 1861 to April 1869 from Parsons Paper Company in Holyoke, Massachusetts. Founded in 1853 by Joseph Parsons, Parsons Paper Company was the oldest and largest manufacturer of cotton-based high quality writing papers in Holyoke. The original pages of the register were scanned and screenshots are included in the analysis below. Pages contain information such as employee name and signature, role, days worked, and total wages earned, and are organized by separate pay periods.
+The Parsons Paper Register contains over 300 pages of employee and payroll records from January 1861 to April 1869 from Parsons Paper Company in Holyoke, Massachusetts. Founded in 1853 by Joseph Parsons, Parsons Paper Company was the oldest and largest manufacturer of cotton-based high quality writing papers in Holyoke until its liquidation in 2005. The original pages of the register, which is now property of the Holyoke Public Library, were scanned on January 10, 2023 as part of this class (Mining the History of Holyoke) and screenshots are included in the analysis below. Pages contain information such as employee name and signature, role, days worked, daily pay, and total wages earned, and are organized by separate pay periods.
 
 ```{r}
-    #| label: fig1
-    #| fig.cap: "p. 001 of register - January 1st, 1861"
-    #| out.width: "75%"
-    #| echo: false
-    knitr::include_graphics("images/001.jpg")
+#| label: fig1
+#| fig.cap: "Ex. p. 253 of register - February 1st, 1867"
+#| out.width: "75%"
+#| echo: false
+knitr::include_graphics("images/253.jpg")
 ```
 
-The goal of this report is to explore patterns in employment and different groups of employees over time by analyzing the payroll records in the 1861-1869 time period, both before and after the end of the Civil War. First, we aimed to quantify the length of a single pay period as well as the number of employees working at Parsons Paper Company during the era spanning the register. The 1860s were a time of great growth for the company, and by the beginning of the Civil War in 1861 Parsons Paper Company had already become the largest manufacturer of writing and envelope paper in the United States. We then examined the distribution of different roles within the company, ranging from women who worked in the "rag room" where the raw material for paper was cut and processed, to men who worked in the engine room and repairs.
+```{r}
+#data set transcribed from p.253 above of the register
+register <- readr::read_csv(
+  "https://nhorton.people.amherst.edu/stat210/Parsons_page253.csv") |>
+  mutate(daily_pay = total / number_days)
+glimpse(register)
+```
+
+```{r}
+#comparing number of employees able ('yes) to write their signature vs unable ('no')
+mosaic::tally(~ signature_x, margins = TRUE, data = register)
+mosaic::tally(~ signature_x, format = "prop", data = register)
+gf_boxplot(total ~ signature_x, data = register) 
+```
+
+In the example analysis above, we transcribed page 253 of the register onto a spreadsheet and compared the number of employees who were able to sign their own signatures to the number of employees who were not able to on a singular page. Based off these findings, it appears that a large portion (slightly more than half) of the employees at Parsons Paper Company were illiterate, especially the women, who largely lacked formal education.
+
+The goal of the following report is to further explore patterns in employment and different groups of employees over time by analyzing the payroll records in the 1861-1869 time period, both before and after the end of the Civil War. First, we aimed to quantify the length of a single pay period as well as the number of employees working at Parsons Paper Company during the era spanning the register. The 1860s were a time of great growth for the company, and by the beginning of the Civil War in 1861 Parsons Paper Company had already become the largest manufacturer of writing and envelope paper in the United States. We then examined the distribution of different roles within the company, ranging from women who worked in the "rag room" where the raw material for paper was cut and processed, to men who worked in the engine room and repairs.
 
 In History of the Connecticut Valley in Massachusetts: History of Franklin County. History of Hampden County (1879), access [here](https://books.google.com/books?id=-Z4yAQAAMAAJ&pg=PA919&lpg=PA919&dq=The+first+company+formed+for+the+manufacture+of+paper+in+Holyoke+was+what+is+known+as+the+%22Parsons+Paper+Company,%22+named+from+its+treasurer+and+agent,+Mr.+J.C.+Parsons,+who+is+a+veteran+in+the+manufacture,+having+been+in+the+business+nearly+40+years,+beginning+as+manager+of+the+Ames+Paper+Company+at+Northampton.+The+buildings+of+this+company+are+situated+on+the+river-bank+near+the+dam,+and+were+built+in+1853.+They+are+two+in+number,--the+main+mill,+where+the+paper+is+made,+and+what+is+known+as+the+finishing-mill,+where+it+is+finished.+The+former+is+a+structure+three+stories+and+a+basement+high.+The+upper+floor+and+attic+are+devoted+to+drying+purposed,+while+the+second+story+contains+the+storehouse+and+rag-rooms.+About+175+persons+are+employed+on+the+two+floors.+On+the+ground-floor+is+the+engine-room,+which+contain+sixteen+450-pound+and+fourteen+250-pound+engines.+The+mill+has+three+Fourdrinier+machines,+two+of+them+are+62-inch+and+the+other+72-inch.+It+has+two+bleach-boilers,+of+3+1/2+and+2+1/2+tons+respectively,+and+4+sheet+calendars+and+a+web+calendar+and+2+hydraulic+presses.&source=bl&ots=jF9xOKY_16&sig=ACfU3U3Bf0AysQ4pXWmdXDrO8uW1gy1-iQ&hl=en&sa=X&ved=2ahUKEwiooYz19pr9AhXiFlkFHYjfD8YQ6AF6BAgREAM#v=onepage&q=The%20first%20company%20formed%20for%20the%20manufacture%20of%20paper%20in%20Holyoke%20was%20what%20is%20known%20as%20the%20%22Parsons%20Paper%20Company%2C%22%20named%20from%20its%20treasurer%20and%20agent%2C%20Mr.%20J.C.%20Parsons%2C%20who%20is%20a%20veteran%20in%20the%20manufacture%2C%20having%20been%20in%20the%20business%20nearly%2040%20years%2C%20beginning%20as%20manager%20of%20the%20Ames%20Paper%20Company%20at%20Northampton.%20The%20buildings%20of%20this%20company%20are%20situated%20on%20the%20river-bank%20near%20the%20dam%2C%20and%20were%20built%20in%201853.%20They%20are%20two%20in%20number%2C--the%20main%20mill%2C%20where%20the%20paper%20is%20made%2C%20and%20what%20is%20known%20as%20the%20finishing-mill%2C%20where%20it%20is%20finished.%20The%20former%20is%20a%20structure%20three%20stories%20and%20a%20basement%20high.%20The%20upper%20floor%20and%20attic%20are%20devoted%20to%20drying%20purposed%2C%20while%20the%20second%20story%20contains%20the%20storehouse%20and%20rag-rooms.%20About%20175%20persons%20are%20employed%20on%20the%20two%20floors.%20On%20the%20ground-floor%20is%20the%20engine-room%2C%20which%20contain%20sixteen%20450-pound%20and%20fourteen%20250-pound%20engines.%20The%20mill%20has%20three%20Fourdrinier%20machines%2C%20two%20of%20them%20are%2062-inch%20and%20the%20other%2072-inch.%20It%20has%20two%20bleach-boilers%2C%20of%203%201%2F2%20and%202%201%2F2%20tons%20respectively%2C%20and%204%20sheet%20calendars%20and%20a%20web%20calendar%20and%202%20hydraulic%20presses.&f=false) via Google Books, L.H Everts provides more information about the layout of the mill and the different departments of employment, which helped us determine job names that we could not originally decipher (i.e. "jobber"). Everts writes that,
 
@@ -37,7 +54,7 @@ In History of the Connecticut Valley in Massachusetts: History of Franklin Count
 \
 From Burt's Illustrated Guide of the Connecticut Valley ([page 79](https://quod.lib.umich.edu/m/moa/AAB2140.0001.001/83)), we also know that at the end of 1867, the Parsons Paper Co. employed 150 people and had "nineteen engines for grinding rags," turning out "800 tons of paper yearly.
 
-We hope that this report can provide some insight into the different day-to-day operations at Parsons Paper Company, as well as the individuals who worked there, many of whom stayed for several years. 
+One of the central goals of this class is to make the information contained in the Parsons Paper Register and related materials more accessible and widely available to those interested in the rich history of Holyoke. We hope that this report can provide some insight into the different day-to-day operations at Parsons Paper Company, as well as the individuals who worked there, many of whom stayed for several years.
 
 ## How many days in a pay period?
 
@@ -57,68 +74,36 @@ We hope that this report can provide some insight into the different day-to-day 
 
     ```{r}
     #| label: fig2
-    #| fig.cap: "p. 223 of register"
+    #| fig.cap: "p. 223 of register, see p.224-225 in 'Appendix'"
     #| out.width: "75%"
     #| echo: false
     knitr::include_graphics("images/223.jpeg")
     ```
 
-    ```{r}
-    #| label: fig3
-    #| fig.cap: "p. 224 of register"
-    #| out.width: "75%"
-    #| echo: false
-    knitr::include_graphics("images/224.jpeg")
-    ```
-
-    ```{r}
-    #| label: fig4
-    #| fig.cap: "p. 225 of register"
-    #| out.width: "75%"
-    #| echo: false
-    knitr::include_graphics("images/225.jpeg")
-    ```
-
--   Pgs. 223-225and Pgs. 261-263 below are exactly one year apart in the register (April 1st 1867 + April 1st 1868)
+-   Pgs. 223-225 and Pgs. 261-263 below are exactly one year apart in the register (April 1st 1867 + April 1st 1868)
 
     ```{r}
     #| label: fig5
-    #| fig.cap: "p. 261 of register"
+    #| fig.cap: "p. 261 of register, see p.262-263 in 'Appendix'"
     #| out.width: "75%"
     #| echo: false
     knitr::include_graphics("images/261.jpeg")
     ```
 
-    ```{r}
-    #| label: fig6
-    #| fig.cap: "p. 262 of register"
-    #| out.width: "75%"
-    #| echo: false
-    knitr::include_graphics("images/262.jpeg")
-    ```
-
-    ```{r}
-    #| label: fig7
-    #| fig.cap: "p. 263 of register"
-    #| out.width: "75%"
-    #| echo: false
-    knitr::include_graphics("images/263.jpeg")
-    ```
-
 ## How many employees during this era?
 
--   Counted 92 employees in April 1861, 122 employees in April 1862, 141 employees in April 1863, 128 employees in April 1864, 159 employees in April 1865, 144 employees in April 1866, 131 employees in April 1867, 153 employees in April 1868, 153 employees in April 1869
+-   To quantify this, we counted the number of employees throughout each of the following pay periods by hand by going through the pages of the register one by one:
 
-    -   Average across the measured 9 years = 136 employees between 1861-1869
+    -   Counted 92 employees in April 1861, 122 employees in April 1862, 141 employees in April 1863, 128 employees in April 1864, 159 employees in April 1865, 144 employees in April 1866, 131 employees in April 1867, 153 employees in April 1868, 153 employees in April 1869
 
-        -   Subset Pages: 8-10 (1861) 43-45 (1862), 79-81 (1863), 115-117 (1864 - this month also has pay records from the 30th not included in the employee count above), 151-153 (1865), 187-189 (1866) 223-225 (1867), 261-263 (1868), 314-316 (1869)
+        -   Average across the measured 9 years = **136 employees between 1861-1869**
 
-    -   These numbers were counted by hand
+            -   Subset Pages: 8-10 (1861) 43-45 (1862), 79-81 (1863), 115-117 (1864 - this month also has pay records from the 30th not included in the employee count above), 151-153 (1865), 187-189 (1866) 223-225 (1867), 261-263 (1868), 314-316 (1869)
 
-    -   Number of employees generally increased over time
+        -   Number of employees generally increased over time
 
-        -   Green mentions that these mills had abnormally high employee retention rates
-        -   Boom in employment towards end of Civil War in 1865
+            -   Green mentions that these mills had abnormally high employee retention rates
+            -   Boom in employment towards end of Civil War in 1865
 
 ## What types of jobs are there?
 
@@ -187,7 +172,6 @@ We are listing the roles and the page \# where it is first introduced
 [Link to full spreadsheet](https://docs.google.com/spreadsheets/d/1dza87xBB2pgVajOuLYBM_fHfAobr6IFIZFAu4vFOnhs/edit?usp=sharing)
 
 ```{r}
-
 employment <- read.csv("parsons_jobs.csv")
 
 kable(employment)
@@ -198,7 +182,7 @@ Role labels become very sporadic after first year
 -   'Repairs' and 'Repairs and Watchmen', however, remain in their own section at the bottom throughout all of the pay periods
     -   Presumably employees whose main role was to repair the machines + guard the factory instead of making paper
 
-    -   There were 5 people under "Repairs" for April 1st, 1867 (see p. 225 above) and 8 under April 1st, 1868 (see p. 262 above)
+    -   There were 5 people under "Repairs" for April 1st, 1867 (see p. 225 in 'Appendix') and 8 under April 1st, 1868 (see p. 262 in 'Appendix')
 
         -   First couple pages of unlabeled workers (presumably majority worked in engine and machine room) + Repairs and Watchmen are all males
 
@@ -216,6 +200,17 @@ knitr::include_graphics("images/045.png")
 
     -   Wages tend to be lower than male workers
 
+```{r}
+#| echo: false
+#| fig.height: 4
+#| fig.width: 7
+ggplot(data=employment, aes(x=fct_inorder(Month), y=Count, fill=Job)) +
+  geom_bar(stat="identity", position = "dodge") +
+  labs(x = "Month", y = "Number of Employees", title = "Parsons Paper Company Employment by Job Type in 1861")
+```
+
+The plot above shows the distribution of different roles within the paper company during the first six months of 1861. The unlabeled men, MFC mill workers, finishers, and rag room workers appear to be the most popular roles.
+
 ## **Quotes from Hickey thesis that may be of relevance to employment from 1861-1869**
 
 The quotes below are taken from John P. Hickey's University of Massachusetts thesis 'The Holyoke Area Paper Industry,' which was written in May 1953 and mainly focuses on the Holyoke paper industry in the first half of the 20th century. Quotes relevant to the time period we are interested in examining are included below.
@@ -229,3 +224,37 @@ The quotes below are taken from John P. Hickey's University of Massachusetts the
 -   "Repairs, if necessary, are undertaken on Sundays" (94)
 
 -   "In replacing a wire on a Fourdrinier paper machine, workers in the Holyoke mills receive half a day's pay besides their regular pay during the hours they work on the replacement. This acts as an incentive to the workers to get the machine back in operation as soon as possible" (94)
+
+## Appendix
+
+```{r}
+#| label: fig3
+#| fig.cap: "p. 224 of register"
+#| out.width: "75%"
+#| echo: false
+knitr::include_graphics("images/224.jpeg")
+```
+
+```{r}
+#| label: fig4
+#| fig.cap: "p. 225 of register"
+#| out.width: "75%"
+#| echo: false
+knitr::include_graphics("images/225.jpeg")
+```
+
+```{r}
+#| label: fig6
+#| fig.cap: "p. 262 of register"
+#| out.width: "75%"
+#| echo: false
+knitr::include_graphics("images/262.jpeg")
+```
+
+```{r}
+#| label: fig7
+#| fig.cap: "p. 263 of register"
+#| out.width: "75%"
+#| echo: false
+knitr::include_graphics("images/263.jpeg")
+```
