@@ -1,0 +1,36 @@
+---
+title: "Parsons Paper Company Payroll Register Curation"
+author: "XX"
+date: "2023-02-20"
+date-format: iso
+format: pdf
+editor: visual
+---
+
+```{r}
+#| label: setup
+#| include: false
+library(mosaic)
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+options(digits = 4)
+```
+
+## Introduction
+
+The Parsons Paper Register contains over 300 pages of employee and payroll records from January 1861 to April 1869 from Parsons Paper Company in Holyoke, Massachusetts. Founded in 1853 by Joseph Parsons, Parsons Paper Company was the oldest and largest manufacturer of cotton-based high quality writing papers in Holyoke until its liquidation in 2005. The original pages of the register, which is now property of the Holyoke Public Library, were scanned on January 10, 2023 as part of this class (Mining the History of Holyoke) and screenshots are included in the analysis below. Pages contain information such as employee name and signature, role, days worked, daily pay, and total wages earned, and are organized by separate pay periods.
+
+This document describes the process of scanning, transforming, and curating the images from the register.
+
+```{r}
+#| label: fig1
+#| fig.cap: "Ex. p. 253 of register - February 1st, 1867"
+#| out.width: "100%"
+#| echo: false
+knitr::include_graphics("../jpeg/253.jpeg")
+```
+
+@fig1 displays a sample page from the register.
+
+A Shiny app to display scanned pages can be found at <https://r.amherst.edu/apps/nhorton/Parsons-Paper>.
