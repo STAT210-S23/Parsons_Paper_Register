@@ -13,6 +13,7 @@ editor: visual
 library(mosaic)
 library(tidyverse)
 library(knitr)
+library(kableExtra)
 options(digits = 4)
 ```
 
@@ -37,6 +38,7 @@ glimpse(register)
 ```
 
 ```{r}
+#| echo: false
 #comparing number of employees able ('yes) to write their signature vs unable ('no')
 mosaic::tally(~ signature_x, margins = TRUE, data = register)
 mosaic::tally(~ signature_x, format = "prop", data = register)
@@ -172,9 +174,12 @@ We are listing the roles and the page \# where it is first introduced
 [Link to full spreadsheet](https://docs.google.com/spreadsheets/d/1dza87xBB2pgVajOuLYBM_fHfAobr6IFIZFAu4vFOnhs/edit?usp=sharing)
 
 ```{r}
+#| warning: false
+#| echo: false
 employment <- read.csv("parsons_jobs.csv")
 
-kable(employment)
+kable(employment) |>
+  kable_styling(font_size = 8)
 ```
 
 Role labels become very sporadic after first year
