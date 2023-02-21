@@ -1,6 +1,6 @@
 ---
 title: "Testing Missing Page Function"
-format: html
+format: pdf
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 editor: visual
 ---
