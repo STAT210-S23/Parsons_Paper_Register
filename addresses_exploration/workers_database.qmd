@@ -11,32 +11,24 @@ editor: visual
 
 Mining the History of Holyoke (STAT210) is a class at Amherst College with a mission statement of curating and publishing a piece of Holyoke's history and making it accessible to the town's people.
 
-One way our class has begun this journey is by analyzing an old payroll registry found in an attic in Holyoke and now available in the archives of the Holyoke Public Library History Room.
-This register tracked pay for employees who worked at the Parsons Paper Mill in Holyoke, Massachusetts (the "Paper City") in the 1860s.
+One way our class has begun this journey is by analyzing an old payroll registry found in an attic in Holyoke and now available in the archives of the Holyoke Public Library History Room. This register tracked pay for employees who worked at the Parsons Paper Mill in Holyoke, Massachusetts (the "Paper City") in the 1860s.
 
 It has been remarkable to track down so much history as each page of this nearly 400 page registry has upwards of 30 names, and each name has its own story worth telling.
 
-In the registry, we can see one's name, number of days worked, their wages, whether or not the worker had rent or board due, the final balance owed, and signature (see @fig-sample).
-See [https://r.amherst.edu/apps/nhorton/Parsons-Paper/](https://r.amherst.edu/apps/nhorton/Parsons-Paper/) for an interactive display of the register.
+In the registry, we can see one's name, number of days worked, their wages, whether or not the worker had rent or board due, the final balance owed, and signature (see @fig-sample). See <https://r.amherst.edu/apps/nhorton/Parsons-Paper/> for an interactive display of the register.
 
 ```{r, out.height="47%"}
 #| label: fig-sample
 #| echo: false
-#| fig.cap: "Page XX of the Registry"
+#| fig.cap: "Page 259 of the Registry"
 knitr::include_graphics("Registry_page_header.jpeg")
 ```
 
 ## Workers' Summary
 
-We took on the task of finding information about some of the employees at the paper mill.
-We used the database ancestry.com.
-The link to Amherst's access to ancestry website is [here](https://libguides.amherst.edu/c.php?g=944984&p=6812570).
+We took on the task of finding information about some of the employees at the paper mill. We used the database ancestry.com. The link to Amherst's access to ancestry website is [here](https://libguides.amherst.edu/c.php?g=944984&p=6812570).
 
-```{r, out.height="30%"}
-#| label: fig-sample1
-#| echo: false
-#| fig.cap: "Once on the Amherst website, we clicked the link to Ancestry Library Edition"
-knitr::include_graphics("amherst_website.png")
+```{}
 ```
 
 Here is how the ancestry website looks at a first glance:
@@ -97,7 +89,7 @@ Job was born in England and moved to the United States sometime before 1841.
 
 Like his daughters, he too worked at the Parsons Paper Company.
 
-We found record of him on page 264.
+We found record of him on page 253 and 264.
 
 ```{r, out.width="50%"}
 #| label: fig-sample7
@@ -133,7 +125,18 @@ This was surprising because we expected him to live in the upper-class district 
 
 ## **Appendix**
 
-First, we accessed the Amherst College Library account for Ancestry.com. Second, we clicked the "Search" option and typed in the names of the workers and set the location to Holyoke, Hampden, MA. Finally, we used common sense by checking if occupation of the worker was the paper industry to figure out which of the search results were our person of interest.
+First, we accessed the Amherst College Library account for Ancestry.com.
+
+```{r, out.height="30%"}
+#| label: fig-sample1
+#| echo: false
+#| fig.cap: "Once on the Amherst website, we clicked the link to Ancestry Library Edition"
+knitr::include_graphics("amherst_website.png")
+```
+
+Second, we clicked the "Search" option and typed in the names of the workers and set the location to Holyoke, Hampden, MA.
+
+Finally, we used common sense by checking if occupation of the worker was the paper industry to figure out which of the search results were our person of interest.
 
 ## Database
 
