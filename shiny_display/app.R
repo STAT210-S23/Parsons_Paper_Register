@@ -16,7 +16,7 @@ clean_files <- files[str_detect(files, "[0-9][0-9][0-9]\\.jpeg")]  # check for c
 file_names <- lapply(clean_files, get_Filename, pattern = "[.]") |> unlist()
 
 ui <-
-  navbarPage("Parson's Paper Exploration",
+  navbarPage("Parsons Paper Company Payroll Register Exploration",
     tabPanel(
       title = "About",
       mainPanel(
@@ -29,7 +29,7 @@ ui <-
     
     tabPanel(
       title = "Pages",
-      helpText("Image output: your working directory must be in the top level of the Parsons Paper Company GitHub repo"),
+      helpText("Image output:"),
     
       fluidRow(
         column(4, wellPanel(
