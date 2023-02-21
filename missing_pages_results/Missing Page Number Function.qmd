@@ -1,0 +1,26 @@
+---
+title: "Testing Missing Page Function"
+format: html
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+editor: visual
+---
+
+```{r, include = FALSE}
+library(kableExtra)
+```
+
+```{r}
+find_missing_pages <- function(start = 0, end = 10, 
+                               path = "/", suffix = ".png"){
+  files_toCheck <- paste0(path, sprintf("%03d", start:end), suffix)
+  missing_files <- files_toCheck[!file.exists(files_toCheck)]
+  return(missing_files)
+}
+
+
+missing_pages <- find_missing_pages(start = 0, end = 396,
+                   path = "../jpeg/", suffix = ".jpeg") 
+
+data.frame(missing_pages = missing_pages) |> 
+  kable()
+```
