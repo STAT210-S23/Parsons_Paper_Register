@@ -1,4 +1,4 @@
-Month,Year,Job,Count,Page Number,Monthly Total,Notes
+Month,Year,Job,Count,Page Number,Monthly Total Workers,Notes
 January,1861,MFC,25,001,77,
 January,1861,repairs,4,001,77,
 January,1861,rag room,25,002,77,
@@ -10,7 +10,7 @@ February,1861,finishers,22,004,75,
 March,1861,foreman,1,005,85,
 March,1861,machine room,3,005,85,subgroup of MFC - looks like they broke out subgroups within the MFC
 March,1861,engine room,7,005,85,subgroup of MFC - looks like they broke out subgroups within the MFC
-March,1861,soft hands,4,005,85,subgroup of MFC - looks like they broke out subgroups within the MFC
+March,1861,loft hands,4,005,85,subgroup of MFC - looks like they broke out subgroups within the MFC
 March,1861,fireman,2,005,85,subgroup of MFC - looks like they broke out subgroups within the MFC
 March,1861,size hands,2,005,85,subgroup of MFC - looks like they broke out subgroups within the MFC
 March,1861,joggers,3,005,85,subgroup of MFC - looks like they broke out subgroups within the MFC
@@ -28,7 +28,7 @@ April,1861,repairs,4,008,93,
 April,1861,MFC,1,009,93,might be the overseer?
 April,1861,machine room,3,009,93,within MFC?
 April,1861,engineers,7,009,93,
-April,1861,soft hands,3,009,93,
+April,1861,loft hands,3,009,93,
 April,1861,size hands,2,009,93,
 April,1861,joggers,5,009,93,
 April,1861,fireman,4,009,93,"says ""firemen"" here, changing for consistency with previous job label, which said ""fireman"""
