@@ -110,7 +110,7 @@ One of the central goals of this class is to make the information contained in t
 
 We are listing the roles and the page \# where it is first introduced
 
--   ? (001) - looks like "MFC"
+-   MFC (001)
 
 -   repairs (001)
 
@@ -118,7 +118,7 @@ We are listing the roles and the page \# where it is first introduced
 
 -   finishers (002)
 
--   MFC Mill (005) --\> we Googled this term and found that this is actually the name of a milling machine
+-   MFC Mill (005)
 
 -   foreman (005)
 
