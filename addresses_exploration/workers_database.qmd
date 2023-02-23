@@ -28,9 +28,6 @@ knitr::include_graphics("Registry_page_header.jpeg")
 
 We took on the task of finding information about some of the employees at the paper mill. We used the database ancestry.com. The link to Amherst's access to ancestry website is [here](https://libguides.amherst.edu/c.php?g=944984&p=6812570).
 
-```{}
-```
-
 Here is how the ancestry website looks at a first glance:
 
 ```{r, out.height="32.5%"}
@@ -60,7 +57,7 @@ Their names were Lucy and E.A. Allen. When we searched for Lucy, we found that E
 ```{r, out.width="50%"}
 #| label: fig-sample4
 #| echo: false
-#| fig.cap: "Lucy and Eliza Ann Allen in the Registry"
+#| fig.cap: "Lucy and Eliza Ann Allen in the Registry page 259"
 knitr::include_graphics("Mary and Eliza Allen.jpeg")
 
 ```
@@ -94,13 +91,25 @@ We found record of him on page 253 and 264.
 ```{r, out.width="50%"}
 #| label: fig-sample7
 #| echo: false
-#| fig.cap: "Job Allen in the Registry"
+#| fig.cap: "Job Allen in the Registry page 264"
 knitr::include_graphics("J Allen.jpeg")
 ```
 
 Anna Allen stayed at home.
 
-This was an unfortunate but somewhat common life for a working-class family in Holyoke, Massachusetts in the 1860s.
+This was a common life for a working-class family in Holyoke, Massachusetts in the 1860s. From what we were able to gather, Eliza and Lucy were finishers meaning they helped with finalizing the paper making process. We made this assumption when we found Lucy's name on Page 2 under the label "Finishers." Eliza and Lucy were paid not by the number of hours they worked but rather the number of reams they finished. Additionally, Eliza's name first appeared in 1862
+
+-   pay, daughters paid by the number of hours
+
+-   moved a lot (different addresses, include the directory images), paid board sometimes, didn't at times
+
+-   roles: finishers , father was in manufacturing, expected in the time
+
+-   Lucy first appears in 1861, Eliza appears in 1862
+
+-   Worked for the entire decade
+
+-   Hard to comment on the literacy, consistencies in signature
 
 {{< pagebreak >}}
 
