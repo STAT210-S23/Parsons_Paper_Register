@@ -259,6 +259,7 @@ weekly_wages <- weekly_wages |>
 
 ggplot(data=weekly_wages, aes(x=(year), y=count, fill=Job)) +
   geom_bar(stat="identity", position = "dodge") +
+scale_x_discrete(labels=c("Wages_1860" = "1860", "Wages_1872" = "1872","Wages_1878" = "1878"))+
   labs(x = "Year", y = "Weekly Wage ($)", title = "Weekly Wages of Massachusetts Paper Workmen, 1860-78")
 ```
 
