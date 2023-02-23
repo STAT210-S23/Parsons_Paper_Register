@@ -192,14 +192,14 @@ knitr::include_graphics("Eliza and lucy allen page 34.png")
 #| label: fig-sample11
 #| echo: false
 #| fig.cap: "Job Allen in the 1869 Holyoke Directory"
-knitr::include_graphics("1869Directory.HEIC")
+knitr::include_graphics("1869Directory.jpeg")
 ```
 
 ```{r, out.width="50%"}
 #| label: fig-sample12
 #| echo: false
 #| fig.cap: "Lucy Allen in the 1883 Holyoke Directory"
-knitr::include_graphics("1883Directory.HEIC")
+knitr::include_graphics("1883Directory.jpeg")
 ```
 
 ## Database
