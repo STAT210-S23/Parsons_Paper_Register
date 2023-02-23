@@ -15,6 +15,7 @@ library(tidyverse)
 library(knitr)
 library(kableExtra)
 library (dplyr)
+library(tidyr)
 options(digits = 4)
 ```
 
@@ -237,6 +238,29 @@ The quotes below are taken from John P. Hickey's University of Massachusetts the
 -   "Repairs, if necessary, are undertaken on Sundays" (94)
 
 -   "In replacing a wire on a Fourdrinier paper machine, workers in the Holyoke mills receive half a day's pay besides their regular pay during the hours they work on the replacement. This acts as an incentive to the workers to get the machine back in operation as soon as possible" (94)
+
+## How do Parsons wages compare to the state averages?
+
+The table is adapted from page 314 of *Most Wonderful Machine: Mechanization and Social Change in Berkshire Paper Making, 1801-1885.*
+
+```{r}
+#| warning: false
+#| echo: false
+
+weekly_wages <- read.csv("weekly_wages.csv") |>
+  select(Job, Wages_1860, Wages_1872, Wages_1878)
+
+
+kable(weekly_wages, caption = "Weekly Wages of Massachusetts Paper Workmen, 1860-78") |>
+  kable_styling(font_size = 8)
+
+weekly_wages <- weekly_wages |>
+  pivot_longer(!Job, names_to = "year", values_to = "count")
+
+ggplot(data=weekly_wages, aes(x=(year), y=count, fill=Job)) +
+  geom_bar(stat="identity", position = "dodge") +
+  labs(x = "Year", y = "Weekly Wage ($)", title = "Weekly Wages of Massachusetts Paper Workmen, 1860-78")
+```
 
 ## Appendix
 
