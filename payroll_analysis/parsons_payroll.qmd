@@ -241,7 +241,7 @@ The quotes below are taken from John P. Hickey's University of Massachusetts the
 
 ## How do Parsons wages compare to the state averages?
 
-The table is adapted from page 314 of *Most Wonderful Machine: Mechanization and Social Change in Berkshire Paper Making, 1801-1885.*
+The table is adapted from page 314 of *Most Wonderful Machine: Mechanization and Social Change in Berkshire Paper Making, 1801-1885*, which used data from page 74 of the *Tenth Annual Report of the Bureau of Statistics of Labor* (Boston, 1879)
 
 ```{r}
 #| warning: false
