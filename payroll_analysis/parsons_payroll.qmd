@@ -183,7 +183,7 @@ We are listing the different roles and the page number of where each is first in
 employment <- read.csv("parsons_jobs.csv")
 
 employment2 <- employment |>
-  select(Month, Year, Job, Page.Number, Monthly.Total.Workers)
+  select(Month, Year, Job, Count, Page.Number, Monthly.Total.Workers)
 
 # removed notes column when displaying table
 
