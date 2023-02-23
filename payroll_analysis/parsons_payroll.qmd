@@ -47,6 +47,8 @@ kable(register_clean, caption = "Portion of Register Page 253") |>
     kable_styling(font_size = 8)
 ```
 
+In the example analysis below, we transcribed page 253 of the register onto a spreadsheet and compared the number of employees who were able to sign their own signatures to the number of employees who were not able to on a singular page. Based off these findings, it appears that a large portion (slightly more than half) of the employees at Parsons Paper Company were illiterate, especially the women, who largely lacked formal education.
+
 ```{r}
 #| echo: false
 #| message: false
@@ -56,8 +58,6 @@ mosaic::tally(~ signature_x, margins = TRUE, data = register)
 mosaic::tally(~ signature_x, format = "prop", data = register)
 gf_boxplot(total ~ signature_x, data = register) 
 ```
-
-In the example analysis above, we transcribed page 253 of the register onto a spreadsheet and compared the number of employees who were able to sign their own signatures to the number of employees who were not able to on a singular page. Based off these findings, it appears that a large portion (slightly more than half) of the employees at Parsons Paper Company were illiterate, especially the women, who largely lacked formal education.
 
 The goal of the following report is to further explore patterns in employment and different groups of employees over time by analyzing the payroll records in the 1861-1869 time period, both before and after the end of the Civil War. First, we aimed to quantify the length of a single pay period as well as the number of employees working at Parsons Paper Company during the era spanning the register. The 1860s were a time of great growth for the company, and by the beginning of the Civil War in 1861 Parsons Paper Company had already become the largest manufacturer of writing and envelope paper in the United States. We then examined the distribution of different roles within the company, ranging from women who worked in the "rag room" where the raw material for paper was cut and processed, to men who worked in the engine room and repairs. Most paper mills in the North purchased rags from companies in the South, and Parsons' rag room was considered an "[anomaly](https://www.digitalcommonwealth.org/search/commonwealth:pz50hj728)."
 
@@ -151,6 +151,10 @@ The role labels on the register become very sporadic after 1861:
     -   There were 5 people under "Repairs" for April 1st, 1867 (see p. 225 in 'Appendix') and 8 under April 1st, 1868 (see p. 262 in 'Appendix')
 
         -   First couple pages of unlabeled workers (presumably majority worked in engine and machine room) + Repairs and Watchmen are all males
+-   The sorters, stampers, sealers, count & folders, and rag room/cutter roles all appear to remain throughout 1861-1869, although there are much fewer of them compared to the unlabeled names
+    -   These roles were held by almost all women
+
+    -   Wages tend to be lower than male workers
 
 ```{r}
 #| label: fig9
@@ -159,12 +163,6 @@ The role labels on the register become very sporadic after 1861:
 #| echo: false
 knitr::include_graphics("images/045.png")
 ```
-
--   The sorters, stampers, sealers, count & folders, and rag room/cutter roles all appear to remain throughout 1861-1869, although there are much fewer of them compared to the unlabeled names
-
-    -   These roles were held by almost all women
-
-    -   Wages tend to be lower than male workers
 
 ```{r}
 #| echo: false
@@ -183,17 +181,13 @@ The quotes below are taken from John P. Hickey's University of Massachusetts the
 
 -   "In 1861, after a period of severe readjustment just prior to the Civil War, twenty-one of the thirty-six manufactures of fine papers met at Pittsfield...to organize a protective association. They desired to raise prices which had fallen drastically as the result of a decrease in demand. They agreed to reduce output by about one-third for about three months. This was the first trade association established in the paper industry of the United States....The Parsons Paper Company and the Carew Manufacturing Company were charter members of this organization" (108)
 
--   "Since the discovery of how to utilize wood for the manufacture of paper in 1867, this raw material has been in increasing demand" (84)
-
--   "Several of the local mills were quite large, employing 200 or more workers" and there were "about 3700 workers employed in the local paper industry at the turn of the century" (4)
-
 -   "Repairs, if necessary, are undertaken on Sundays" (94)
 
 -   "In replacing a wire on a Fourdrinier paper machine, workers in the Holyoke mills receive half a day's pay besides their regular pay during the hours they work on the replacement. This acts as an incentive to the workers to get the machine back in operation as soon as possible" (94)
 
 ## How do Parsons wages compare to the Massachusetts state averages?
 
-The table is adapted from page 314 of Judith McGaw's *Most Wonderful Machine: Mechanization and Social Change in Berkshire Paper Making, 1801-1885*, which used data from page 74 of the *Tenth Annual Report of the Bureau of Statistics of Labor* (Boston, 1879)
+The table is adapted from page 314 of Judith McGaw's *Most Wonderful Machine: Mechanization and Social Change in Berkshire Paper Making, 1801-1885*, which used data from page 74 of the *Tenth Annual Report of the Bureau of Statistics of Labor* (Boston, 1879).
 
 ```{r}
 #| warning: false
@@ -201,11 +195,13 @@ The table is adapted from page 314 of Judith McGaw's *Most Wonderful Machine: Me
 #| fig.height: 4
 #| fig.width: 7
 
+# MA Wages
+
 weekly_wages <- read.csv("weekly_wages.csv") |>
   select(Job, Wages_1860, Wages_1872, Wages_1878)
 
 
-kable(weekly_wages, caption = "Weekly Wages of Massachusetts Paper Workmen, 1860-78") |>
+kable(weekly_wages, caption = "Weekly Wages of Massachusetts Paper Workmen, 1860-78", col.names = c("Job", "1860 Weekly Wages ($)", "1872 Weekly Wages ($)", "1878 Weekly Wages ($)")) |>
   kable_styling(font_size = 8) |>
   row_spec(0,bold=TRUE)
 
@@ -216,6 +212,33 @@ ggplot(data=weekly_wages, aes(x=(year), y=count, fill=Job)) +
   geom_bar(stat="identity", position = "dodge") +
 scale_x_discrete(labels=c("Wages_1860" = "1860", "Wages_1872" = "1872","Wages_1878" = "1878"))+
   labs(x = "Year", y = "Weekly Wage ($)", title = "Weekly Wages of Massachusetts Paper Workmen, 1860-78")
+```
+
+```{r}
+#| warning: false
+#| echo: false
+#| fig.height: 4
+#| fig.width: 7
+
+# Parsons Wages
+parsons_weekly_wages <- read.csv("job_wages.csv") |>
+  select(Job, weekly_wages)
+
+
+kable(parsons_weekly_wages, caption = "Parsons Weekly Wages - 1861", col.names = c("Job", "Weekly Wages ($)")) |>
+  kable_styling(font_size = 8) |>
+  row_spec(0,bold=TRUE)
+```
+
+```{r}
+#| warning: false
+#| echo: false
+#| fig.height: 4
+#| fig.width: 7
+
+ggplot(data=parsons_weekly_wages, aes(x = reorder(Job, weekly_wages), y = weekly_wages, fill = Job)) +
+  geom_bar(stat="identity", position = "dodge") +
+   labs(x = "Job", y = "Weekly Wage ($)", title = "Weekly Wages of Parsons Paper Company Workers - 1861")
 ```
 
 ## Appendix
