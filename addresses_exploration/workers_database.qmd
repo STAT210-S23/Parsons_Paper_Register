@@ -17,13 +17,6 @@ It has been remarkable to track down so much history as each page of this nearly
 
 In the registry, we can see one's name, number of days worked, their wages, whether or not the worker had rent or board due, the final balance owed, and signature (see @fig-sample). See <https://r.amherst.edu/apps/nhorton/Parsons-Paper/> for an interactive display of the register.
 
-```{r, out.height="47%"}
-#| label: fig-sample
-#| echo: false
-#| fig.cap: "Page 259 of the Registry"
-knitr::include_graphics("Registry_page_header.jpeg")
-```
-
 ## Workers' Summary
 
 We took on the task of finding information about some of the employees at the paper mill using the database Ancestry.com.
@@ -70,11 +63,7 @@ Ancestry.com showed that the Allen family lived in dwelling 42 with no street na
 
 The Holyoke directory of 1869 shows that the Allen family lived on Dwight Street.
 
-(see @fig-sample11)
-
 Finally, on page 19 of the 1883 directory, Lucy is reported to have lived at 236 Maple Street.
-
-(see @fig-sample12)
 
 It is also worth noting that Lucy, Eliza, and Job worked for roughly the entire decade at the mill suggesting the daughters were not pursuing any form of education.
 
@@ -88,12 +77,7 @@ Lucy Allen died on May 11, 1893 in Holyoke, Ma.
 
 Conversely, we were able to find records on Joseph C. Parsons; the founder of the Parsons Paper Company.
 
-```{r, out.height="40%"}
-#| label: fig-sample8
-#| echo: false
-#| fig.cap: "Joseph C. Parsons' Profile"
-knitr::include_graphics("Joseph_Clark.jpeg")
-```
+(see @fig-sample8)
 
 Born on February 6, 1814, in Northampton, Hampshire County, Massachusetts to Lydia and Justice Parsons, Joseph Clark Parsons was a local businessman who became very successful after founding his mill.
 
@@ -160,6 +144,20 @@ We then compiled these results into a spreadsheet linked below.
 
 ## Photo References
 
+```{r, out.height="47%"}
+#| label: fig-sample
+#| echo: false
+#| fig.cap: "Page 259 of the Registry"
+knitr::include_graphics("Registry_page_header.jpeg")
+```
+
+```{r, out.height="40%"}
+#| label: fig-sample8
+#| echo: false
+#| fig.cap: "Joseph C. Parsons' Profile"
+knitr::include_graphics("Joseph_Clark.jpeg")
+```
+
 ```{r, out.width="50%"}
 #| label: fig-sample4
 #| echo: false
@@ -174,32 +172,18 @@ knitr::include_graphics("Mary and Eliza Allen.jpeg")
 knitr::include_graphics("Job Allen page 3 .png")
 ```
 
-```{r, out.width="50%"}
+```{r, out.width="60%"}
 #| label: fig-sample9
 #| echo: false
 #| fig.cap: "Lucy Allen in the Registry page 2"
 knitr::include_graphics("Lucypg2.jpeg")
 ```
 
-```{r, out.width="50%"}
+```{r, out.width="70%"}
 #| label: fig-sample10
 #| echo: false
 #| fig.cap: "Lucy and Eliza Ann Allen on page 34"
 knitr::include_graphics("Eliza and lucy allen page 34.png")
-```
-
-```{r, out.width="50%"}
-#| label: fig-sample11
-#| echo: false
-#| fig.cap: "Job Allen in the 1869 Holyoke Directory"
-knitr::include_graphics("1869Directory.jpeg")
-```
-
-```{r, out.width="50%"}
-#| label: fig-sample12
-#| echo: false
-#| fig.cap: "Lucy Allen in the 1883 Holyoke Directory"
-knitr::include_graphics("1883Directory.jpeg")
 ```
 
 ## Database

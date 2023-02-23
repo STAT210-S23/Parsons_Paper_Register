@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.15)  23 FEB 2023 16:44
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.15)  23 FEB 2023 16:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -781,7 +781,7 @@ File: bkm-dvipdfm.def 2020-11-06 v1.29 bookmark driver for dvipdfm (HO)
 \BKM@id=\count351
 ))
 Package hyperref Info: Option `colorlinks' set `true' on input line 184.
-No file workers_database.aux.
+(./workers_database.aux)
 \openout1 = `workers_database.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 190.
@@ -1050,9 +1050,6 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring ON on input line 190.
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
 (Font)              scaled to size 14.4pt on input line 192.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
@@ -1083,9 +1080,6 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 192.
 (/Users/camdenheafitz/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
-LaTeX Warning: Reference `fig-sample' on page 1 undefined on input line 213.
-
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
 (Font)              scaled to size 7.665pt on input line 214.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
@@ -1102,48 +1096,25 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 7.66417pt on input line 214.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 5.47441pt on input line 214.
-File: Registry_page_header.jpeg Graphic file (type bmp)
-<Registry_page_header.jpeg>
-
-LaTeX Warning: Reference `fig-sample4' on page 1 undefined on input line 239.
-
 [1
 
 
-] [2]
-
-LaTeX Warning: Reference `fig-sample7' on page 3 undefined on input line 251.
-
-
-LaTeX Warning: Reference `fig-sample9' on page 3 undefined on input line 264.
-
-
-LaTeX Warning: Reference `fig-sample10' on page 3 undefined on input line 274.
-
-
-LaTeX Warning: Reference `fig-sample5' on page 3 undefined on input line 288.
-
-
-LaTeX Warning: Reference `fig-sample11' on page 3 undefined on input line 293.
-
-
-LaTeX Warning: Reference `fig-sample12' on page 3 undefined on input line 298.
-
-[3] [4]
-File: Joseph_Clark.jpeg Graphic file (type bmp)
-<Joseph_Clark.jpeg>
-[5]
+] [2] [3]
 File: amherst_website.png Graphic file (type bmp)
 <amherst_website.png>
 File: website.jpeg Graphic file (type bmp)
 <website.jpeg>
 File: multiple_names.jpeg Graphic file (type bmp)
 <multiple_names.jpeg>
-[6]
+[4]
 File: Lucy_Allen.jpeg Graphic file (type bmp)
 <Lucy_Allen.jpeg>
 File: ELIZA_ANN.png Graphic file (type bmp)
 <ELIZA_ANN.png>
+File: Registry_page_header.jpeg Graphic file (type bmp)
+<Registry_page_header.jpeg>
+File: Joseph_Clark.jpeg Graphic file (type bmp)
+<Joseph_Clark.jpeg>
 File: Mary and Eliza Allen.jpeg Graphic file (type bmp)
 <Mary and Eliza Allen.jpeg>
 File: Job Allen page 3 .png Graphic file (type bmp)
@@ -1152,18 +1123,36 @@ File: Lucypg2.jpeg Graphic file (type bmp)
 <Lucypg2.jpeg>
 File: Eliza and lucy allen page 34.png Graphic file (type bmp)
 <Eliza and lucy allen page 34.png>
-! Unable to load picture or PDF file '1869Directory.jpeg'.
-<to be read again> 
-                   }
-l.468 ...h,height=\textheight]{1869Directory.jpeg}
-                                                   
-Here is how much of TeX's memory you used:
- 36335 strings out of 478687
- 771085 string characters out of 5847673
- 1858007 words of memory out of 5000000
- 55917 multiletter control sequences out of 15000+600000
- 518694 words of font info for 79 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 108i,8n,121p,10611b,429s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on workers_database.pdf (6 pages).
+Overfull \hbox (13.13986pt too wide) in paragraph at lines 478--478
+[]\TU/lmtt/m/n/10.95 -- Column specification --------------------------------------------------------[] 
+ []
+
+
+Overfull \hbox (7.39111pt too wide) in paragraph at lines 480--480
+[]\TU/lmtt/m/n/10.95 chr (11): First name, Last Name, Birthday, Death Day, Address, Spouse, Child...[] 
+ []
+
+
+Overfull \hbox (18.88861pt too wide) in paragraph at lines 483--483
+[]\TU/lmtt/m/n/10.95 i Specify the column types or set `show_col_types = FALSE` to quiet this message.[] 
+ []
+
+[5] [6] [7] [8]
+Overfull \hbox (7.39111pt too wide) in paragraph at lines 495--495
+[]\TU/lmtt/m/n/10.95 $ `First name` <chr> "Ellen", "Joseph", "William", "James", "Patrick", "Patric~[] 
+ []
+
+
+Overfull \hbox (7.39111pt too wide) in paragraph at lines 496--496
+[]\TU/lmtt/m/n/10.95 $ `Last Name`  <chr> "Strick", "Parsons", "Kelly", "Casey", "Kelley", "Hollom"~[] 
+ []
+
+
+Overfull \hbox (7.39111pt too wide) in paragraph at lines 497--497
+[]\TU/lmtt/m/n/10.95 $ Birthday     <chr> "1859", "2/6/1814", "1834", "1843", "1840", "1835", "1849~[] 
+ []
+
+
+Overfull \hbox (7.39111pt too wide) in paragraph at lines 498--498
+[]\TU/lmtt/m/n/1
