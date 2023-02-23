@@ -21,7 +21,7 @@ options(digits = 4)
 
 ## Introduction
 
-The Parsons Paper Register contains nearly 400 pages of employee and payroll records from January 1861 to April 1869 from Parsons Paper Company in Holyoke, Massachusetts. Founded in 1853 by Joseph Parsons, Parsons Paper Company was the oldest and largest manufacturer of cotton-based high quality writing papers in Holyoke until its liquidation in 2005. The original pages of the register, which is now property of the Holyoke Public Library, were scanned on January 10, 2023 as part of this class (Mining the History of Holyoke) and screenshots are included in the analysis below. Pages contain information such as employee name and signature, role, days worked, daily pay, and total wages earned, and are organized by separate pay periods.
+The Parsons Paper Register contains nearly 400 pages of employee, payroll, and financial records from January 1861 to April 1869 from Parsons Paper Company in Holyoke, Massachusetts. Founded in 1853 by Joseph Parsons, Parsons Paper Company was the oldest and largest manufacturer of cotton-based high quality writing papers in Holyoke until its liquidation in 2005. The original pages of the register, which is now property of the Holyoke Public Library, were scanned on January 10, 2023 as part of this class (Mining the History of Holyoke) and screenshots are included in the analysis below. Pages contain information such as employee name and signature, role, days worked, daily pay, and total wages earned, and are organized by separate pay periods.
 
 ```{r}
 #| label: fig1
@@ -113,66 +113,6 @@ In *History of the Connecticut Valley in Massachusetts: History of Franklin Coun
 \
 From *Burt's Illustrated Guide of the Connecticut Valley* ([page 79](https://quod.lib.umich.edu/m/moa/AAB2140.0001.001/83)), we also know that at the end of 1867, the Parsons Paper Co. employed 150 people and had "nineteen engines for grinding rags," turning out "800 tons of paper yearly.
 
-We are listing the different roles and the page number of where each is first introduced. ***do we need these bullet points or should we just take it out since we have the table?***
-
--   MFC (001)
-
--   repairs (001)
-
--   rag room (002)
-
--   finishers (002)
-
--   MFC Mill (005)
-
--   foreman (005)
-
--   machine room (005)
-
--   engine room (005)
-
--   soft hands (005)
-
--   fireman (005)
-
--   size hands (005)
-
--   joggers (005)
-
--   watchmen (005)
-
--   overseer (006)
-
--   day hands (007)
-
--   sorters (007)
-
--   stamp & sealer (007)
-
--   count & folder (007)
-
--   engineers (009)
-
--   machine hands (009)
-
--   stamper (011)
-
--   sealer (011)
-
--   sorter (011)
-
--   extra (011)
-
--   borders (013)
-
--   linen (021)
-
--   cotton (021)
-
--   cutter (023)
-
--   repair & watchmen (030)
-
 ## Spreadsheet tracking employment by job type for first 6 months of the register (Jan-Jun 1861)
 
 [Link to full spreadsheet](https://docs.google.com/spreadsheets/d/1dza87xBB2pgVajOuLYBM_fHfAobr6IFIZFAu4vFOnhs/edit?usp=sharing)
@@ -191,7 +131,7 @@ kable(employment2, caption = "Parsons Employment by Job Type from January-June o
   kable_styling(font_size = 8)
 ```
 
-Role labels become very sporadic after first year
+The role labels on the register become very sporadic after 1861:
 
 -   'Repairs' and 'Repairs and Watchmen', however, remain in their own section at the bottom throughout all of the pay periods
     -   Presumably employees whose main role was to repair the machines + guard the factory instead of making paper
@@ -223,25 +163,25 @@ ggplot(data=employment, aes(x=fct_inorder(Month), y=Count, fill=Job)) +
   labs(x = "Month", y = "Number of Employees", title = "Parsons Paper Company Employment by Job Type in 1861")
 ```
 
-The plot above shows the distribution of different roles within the paper company during the first six months of 1861. The unlabeled men, MFC mill workers, finishers, and rag room workers appear to be the most popular roles.
+The plot above shows the distribution of different roles within the paper company during the first six months of 1861. The unlabeled male laborers, MFC mill workers, finishers, and rag room workers appear to be the most popular roles.
 
 ## **Quotes from Hickey thesis that may be of relevance to employment from 1861-1869**
 
-The quotes below are taken from John P. Hickey's University of Massachusetts thesis *The* *Holyoke Area Paper Industry*, which was written in May 1953 and mainly focuses on the Holyoke paper industry in the first half of the 20th century. Quotes relevant to the time period we are interested in examining are included below.
+The quotes below are taken from John P. Hickey's University of Massachusetts thesis *The* *Holyoke Area Paper Industry*, which was written in May 1953 and mainly focuses on the Holyoke paper industry in the first half of the 20th century. Quotes relevant to the time period we are interested in examining are included below:
 
 -   "In 1861, after a period of severe readjustment just prior to the Civil War, twenty-one of the thirty-six manufactures of fine papers met at Pittsfield...to organize a protective association. They desired to raise prices which had fallen drastically as the result of a decrease in demand. They agreed to reduce output by about one-third for about three months. This was the first trade association established in the paper industry of the United States....The Parsons Paper Company and the Carew Manufacturing Company were charter members of this organization" (108)
 
 -   "Since the discovery of how to utilize wood for the manufacture of paper in 1867, this raw material has been in increasing demand" (84)
 
--   "several of the local mills were quite large, employing 200 or more workers" and there were "about 3700 workers employed in the local paper industry at the turn of the century" (4)
+-   "Several of the local mills were quite large, employing 200 or more workers" and there were "about 3700 workers employed in the local paper industry at the turn of the century" (4)
 
 -   "Repairs, if necessary, are undertaken on Sundays" (94)
 
 -   "In replacing a wire on a Fourdrinier paper machine, workers in the Holyoke mills receive half a day's pay besides their regular pay during the hours they work on the replacement. This acts as an incentive to the workers to get the machine back in operation as soon as possible" (94)
 
-## How do Parsons wages compare to the state averages?
+## How do Parsons wages compare to the Massachusetts state averages?
 
-The table is adapted from page 314 of *Most Wonderful Machine: Mechanization and Social Change in Berkshire Paper Making, 1801-1885*, which used data from page 74 of the *Tenth Annual Report of the Bureau of Statistics of Labor* (Boston, 1879)
+The table is adapted from page 314 of Judith McGaw's *Most Wonderful Machine: Mechanization and Social Change in Berkshire Paper Making, 1801-1885*, which used data from page 74 of the *Tenth Annual Report of the Bureau of Statistics of Labor* (Boston, 1879)
 
 ```{r}
 #| warning: false
