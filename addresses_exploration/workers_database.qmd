@@ -97,7 +97,7 @@ knitr::include_graphics("J Allen.jpeg")
 
 Anna Allen stayed at home.
 
-This was an unfortunate but somewhat common life for a working-class family in Holyoke, Massachusetts in the 1860s.
+This was a common life for a working-class family in Holyoke, Massachusetts in the 1860s. From what we were able to gather, Eliza and Lucy were finishers meaning they helped with finalizing the paper making process. We made this assumption when we found Lucy's name on Page 2 under the label "Finishers." Eliza and Lucy were paid not by the number of hours they worked but rather the number of reams they finished. Additionally, Eliza's name first appeared in 1862
 
 -   pay, daughters paid by the number of hours
 
