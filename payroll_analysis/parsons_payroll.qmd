@@ -32,14 +32,25 @@ knitr::include_graphics("images/253.jpg")
 ```
 
 ```{r}
+#| echo: false
+#| message: false
+
 #data set transcribed from p.253 above of the register
 register <- readr::read_csv(
   "https://nhorton.people.amherst.edu/stat210/Parsons_page253.csv") |>
   mutate(daily_pay = total / number_days)
-glimpse(register)
+
+register_clean <- register |>
+  select(lastname, firstname, number_days, price1, price2, total, rent_or_board, balance_due, signature_x, daily_pay)
+
+kable(register_clean, caption = "Portion of Register Page 253") |>
+    kable_styling(font_size = 8)
 ```
 
 ```{r}
+#| echo: false
+#| message: false
+
 #comparing number of employees able ('yes) to write their signature vs unable ('no')
 mosaic::tally(~ signature_x, margins = TRUE, data = register)
 mosaic::tally(~ signature_x, format = "prop", data = register)
@@ -123,12 +134,13 @@ From *Burt's Illustrated Guide of the Connecticut Valley* ([page 79](https://quo
 employment <- read.csv("parsons_jobs.csv")
 
 employment2 <- employment |>
-  select(Month, Year, Job, Count, Page.Number, Monthly.Total.Workers)
+  select(Month, Year, Page.Number, Job, Count, Monthly.Total.Workers)
 
 # removed notes column when displaying table
 
-kable(employment2, caption = "Parsons Employment by Job Type from January-June of 1861 ") |>
-  kable_styling(font_size = 8)
+kable(employment2, caption = "Parsons Employment by Job Type from January-June of 1861", col.names = c("Month", "Year", "Page Number", "Job", "Count", "Monthly Total Workers")) |>
+  kable_styling(font_size = 8) |>
+  row_spec(0,bold=TRUE)
 ```
 
 The role labels on the register become very sporadic after 1861:
@@ -194,7 +206,8 @@ weekly_wages <- read.csv("weekly_wages.csv") |>
 
 
 kable(weekly_wages, caption = "Weekly Wages of Massachusetts Paper Workmen, 1860-78") |>
-  kable_styling(font_size = 8)
+  kable_styling(font_size = 8) |>
+  row_spec(0,bold=TRUE)
 
 weekly_wages <- weekly_wages |>
   pivot_longer(!Job, names_to = "year", values_to = "count")
