@@ -1,7 +1,7 @@
 ---
 title: "Parsons Paper Company Payroll & Employment Analysis - Stat 210"
 author: "Anna Zhou & Sarah Edelson"
-date: "2023-02-13"
+date: "2023-02-23"
 date-format: iso
 format: pdf
 editor: visual
@@ -21,11 +21,11 @@ options(digits = 4)
 
 ## Introduction
 
-The Parsons Paper Register contains over 300 pages of employee and payroll records from January 1861 to April 1869 from Parsons Paper Company in Holyoke, Massachusetts. Founded in 1853 by Joseph Parsons, Parsons Paper Company was the oldest and largest manufacturer of cotton-based high quality writing papers in Holyoke until its liquidation in 2005. The original pages of the register, which is now property of the Holyoke Public Library, were scanned on January 10, 2023 as part of this class (Mining the History of Holyoke) and screenshots are included in the analysis below. Pages contain information such as employee name and signature, role, days worked, daily pay, and total wages earned, and are organized by separate pay periods.
+The Parsons Paper Register contains nearly 400 pages of employee and payroll records from January 1861 to April 1869 from Parsons Paper Company in Holyoke, Massachusetts. Founded in 1853 by Joseph Parsons, Parsons Paper Company was the oldest and largest manufacturer of cotton-based high quality writing papers in Holyoke until its liquidation in 2005. The original pages of the register, which is now property of the Holyoke Public Library, were scanned on January 10, 2023 as part of this class (Mining the History of Holyoke) and screenshots are included in the analysis below. Pages contain information such as employee name and signature, role, days worked, daily pay, and total wages earned, and are organized by separate pay periods.
 
 ```{r}
 #| label: fig1
-#| fig.cap: "Ex. p. 253 of register - February 1st, 1867"
+#| fig.cap: "Ex. p. 253 of register - February 1st, 1867. Payroll of the Parsons Paper Company (Holyoke, MA)"
 #| out.width: "75%"
 #| echo: false
 knitr::include_graphics("images/253.jpg")
@@ -246,6 +246,8 @@ The table is adapted from page 314 of *Most Wonderful Machine: Mechanization and
 ```{r}
 #| warning: false
 #| echo: false
+#| fig.height: 4
+#| fig.width: 7
 
 weekly_wages <- read.csv("weekly_wages.csv") |>
   select(Job, Wages_1860, Wages_1872, Wages_1878)
