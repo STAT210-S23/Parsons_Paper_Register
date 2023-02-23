@@ -26,59 +26,13 @@ knitr::include_graphics("Registry_page_header.jpeg")
 
 ## Workers' Summary
 
-We took on the task of finding information about some of the employees at the paper mill. We used the database ancestry.com. The link to Amherst's access to ancestry website is [here](https://libguides.amherst.edu/c.php?g=944984&p=6812570).
-
-Here is how the ancestry website looks at a first glance:
-
-```{r, out.height="32.5%"}
-#| label: fig-sample2
-#| echo: false
-#| fig.cap: "Ancestry.com 'search' screen"
-knitr::include_graphics("website.jpeg")
-```
-
-By searching for a name and a place, (Holyoke, Hampden, Massachusetts), we were able to find census information from the 1800s and track down paper mill workers.
-
-The number of names that appear in first search. We used educated guess to selected the most appropriate person.
-
-```{r, out.height="33%"}
-#| label: fig-sample3
-#| echo: false
-#| fig.cap: "Initial search results"
-knitr::include_graphics("multiple_names.jpeg")
-```
-
-The amount of information we could find on each worker varied from name to name but in general, we were able to find birth year, birthplace, spouse, children, parents, occupation, and address. We then compiled these results into a spreadsheet. 
+We took on the task of finding information about some of the employees at the paper mill using the database Ancestry.com.
 
 On page 259, we found two women with the same last name which was common back then but still we decided to search for one of them on Ancestry.com.
 
-Their names were Lucy and E.A. Allen. When we searched for Lucy, we found that E.A. stood for Eliza Ann Allen--they were sisters!
-
-```{r, out.width="50%"}
-#| label: fig-sample4
-#| echo: false
-#| fig.cap: "Lucy and Eliza Ann Allen in the Registry page 259"
-knitr::include_graphics("Mary and Eliza Allen.jpeg")
-
-```
+Their names were Lucy and E.A. Allen. When we searched for Lucy, we found that E.A. stood for Eliza Ann Allen--they were sisters! (see @fig-sample4)
 
 Lucy was born in Massachusetts in 1842 and Eliza Ann was her older sister born in 1841. They lived in dwelling 42.
-
-```{r, out.width="50%"}
-#| label: fig-sample5
-#| echo: false
-#| fig.cap: "Lucy Allen's Profile"
-knitr::include_graphics("Lucy_Allen.jpeg")
-```
-
-```{r, out.width="50%"}
-#| label: fig-sample6
-#| echo: false
-#| fig.cap: "Eliza Ann Allen's Profile"
-knitr::include_graphics("ELIZA_ANN.png")
-```
-
-{{< pagebreak >}}
 
 Their father's name was Job Allen and their mother was Anna Allen.
 
@@ -86,30 +40,49 @@ Job was born in England and moved to the United States sometime before 1841.
 
 Like his daughters, he too worked at the Parsons Paper Company.
 
-We found record of him on page 253 and 264.
-
-```{r, out.width="50%"}
-#| label: fig-sample7
-#| echo: false
-#| fig.cap: "Job Allen in the Registry page 264"
-knitr::include_graphics("J Allen.jpeg")
-```
+We found record of him first on page 3. (see @fig-sample7)
 
 Anna Allen stayed at home.
 
-This was a common life for a working-class family in Holyoke, Massachusetts in the 1860s. From what we were able to gather, Eliza and Lucy were finishers meaning they helped with finalizing the paper making process. We made this assumption when we found Lucy's name on Page 2 under the label "Finishers." Eliza and Lucy were paid not by the number of hours they worked but rather the number of reams they finished. Additionally, Eliza's name first appeared in 1862
+This was a common life for a working-class family in Holyoke, Massachusetts in the 1860s.
 
--   pay, daughters paid by the number of hours
+From what we were able to gather, Eliza and Lucy were finishers meaning they helped with finalizing the paper making process.
 
--   moved a lot (different addresses, include the directory images), paid board sometimes, didn't at times
+We made this assumption when we found Lucy's name on Page 2 under the label "Finishers."
 
--   roles: finishers , father was in manufacturing, expected in the time
+See (@fig-sample9)
 
--   Lucy first appears in 1861, Eliza appears in 1862
+Eliza and Lucy were paid not by the number of hours or days they worked but rather the number of reams they finished.
 
--   Worked for the entire decade
+We can see on page on page 2 that Lucy finished 756 reams of paper for the month of January in 1861.
 
--   Hard to comment on the literacy, consistencies in signature
+Eliza's name first appeared in 1862 on page 34 right below her sisters name, one year after her sister first started working. (see @fig-sample10)
+
+Coincidentally, they were one year apart in age.
+
+Perhaps their father Job did not want his daughters to work until they were 20 years of age.
+
+It seemed that the Allen family had trouble finding a permanent residence as we found a number of addresses reported across different resources.
+
+Ancestry.com showed that the Allen family lived in dwelling 42 with no street name reported.
+
+(see @fig-sample5)
+
+The Holyoke directory of 1869 shows that the Allen family lived on Dwight Street.
+
+(see @fig-sample11)
+
+Finally, on page 19 of the 1883 directory, Lucy is reported to have lived at 236 Maple Street.
+
+(see @fig-sample12)
+
+It is also worth noting that Lucy, Eliza, and Job worked for roughly the entire decade at the mill suggesting the daughters were not pursuing any form of education.
+
+It is difficult to determine if the Allen family were literate or not due to inconsistencies in signatures.
+
+Some signatures have "X" in them while others do not, and the handwriting is different across the decade suggesting they did not always write their own names.
+
+Lucy Allen died on May 11, 1893 in Holyoke, Ma.
 
 {{< pagebreak >}}
 
@@ -130,9 +103,11 @@ We found that Parsons lived in house 22 of dwelling 165 on Suffolk street which 
 
 This was surprising because we expected him to live in the upper-class district because wealthier people lived in hills above sea level. 
 
+If we continued our research, we would aim to find descendants of the Parsons Paper Company that are still living today.
+
 {{< pagebreak >}}
 
-## **Appendix**
+## **Technical Appendix**
 
 First, we accessed the Amherst College Library account for Ancestry.com.
 
@@ -143,9 +118,89 @@ First, we accessed the Amherst College Library account for Ancestry.com.
 knitr::include_graphics("amherst_website.png")
 ```
 
-Second, we clicked the "Search" option and typed in the names of the workers and set the location to Holyoke, Hampden, MA.
+The link to Amherst's access to ancestry website is [here](https://libguides.amherst.edu/c.php?g=944984&p=6812570).
 
-Finally, we used common sense by checking if occupation of the worker was the paper industry to figure out which of the search results were our person of interest.
+Here is how the ancestry website looks at a first glance:
+
+```{r, out.height="32.5%"}
+#| label: fig-sample2
+#| echo: false
+#| fig.cap: "Ancestry.com 'search' screen"
+knitr::include_graphics("website.jpeg")
+```
+
+By searching for a name and a place, (Holyoke, Hampden, Massachusetts), we were able to find census information from the 1800s and track down paper mill workers.
+
+The number of names that appear in first search. We used educated guesses to select the most appropriate person.
+
+```{r, out.height="33%"}
+#| label: fig-sample3
+#| echo: false
+#| fig.cap: "Initial search results"
+knitr::include_graphics("multiple_names.jpeg")
+```
+
+The amount of information we could find on each worker varied from name to name but in general, we were able to find birth year, birthplace, spouse, children, parents, occupation, and address. Here is what Lucy and Eliza Ann's profiles looked like on Ancestry.com
+
+```{r, out.width="50%"}
+#| label: fig-sample5
+#| echo: false
+#| fig.cap: "Lucy Allen's Profile"
+knitr::include_graphics("Lucy_Allen.jpeg")
+```
+
+```{r, out.width="50%"}
+#| label: fig-sample6
+#| echo: false
+#| fig.cap: "Eliza Ann Allen's Profile"
+knitr::include_graphics("ELIZA_ANN.png")
+```
+
+We then compiled these results into a spreadsheet linked below.
+
+## Photo References
+
+```{r, out.width="50%"}
+#| label: fig-sample4
+#| echo: false
+#| fig.cap: "Lucy and Eliza Ann Allen in the Registry page 259"
+knitr::include_graphics("Mary and Eliza Allen.jpeg")
+```
+
+```{r, out.width="50%"}
+#| label: fig-sample7
+#| echo: false
+#| fig.cap: "Job Allen in the Registry page 3"
+knitr::include_graphics("Job Allen page 3 .png")
+```
+
+```{r, out.width="50%"}
+#| label: fig-sample9
+#| echo: false
+#| fig.cap: "Lucy Allen in the Registry page 2"
+knitr::include_graphics("Lucypg2.jpeg")
+```
+
+```{r, out.width="50%"}
+#| label: fig-sample10
+#| echo: false
+#| fig.cap: "Lucy and Eliza Ann Allen on page 34"
+knitr::include_graphics("Eliza and lucy allen page 34.png")
+```
+
+```{r, out.width="50%"}
+#| label: fig-sample11
+#| echo: false
+#| fig.cap: "Job Allen in the 1869 Holyoke Directory"
+knitr::include_graphics("1869Directory.HEIC")
+```
+
+```{r, out.width="50%"}
+#| label: fig-sample12
+#| echo: false
+#| fig.cap: "Lucy Allen in the 1883 Holyoke Directory"
+knitr::include_graphics("1883Directory.HEIC")
+```
 
 ## Database
 
