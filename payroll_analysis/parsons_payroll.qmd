@@ -21,7 +21,7 @@ options(digits = 4)
 
 ## Introduction
 
-The Parsons Paper Register contains nearly 400 pages of employee, payroll, and financial records from January 1861 to April 1869 from Parsons Paper Company in Holyoke, Massachusetts. Founded in 1853 by Joseph Parsons, Parsons Paper Company was the oldest and largest manufacturer of cotton-based high quality writing papers in Holyoke until its liquidation in 2005. The original pages of the register, which is now property of the Holyoke Public Library, were scanned on January 10, 2023 as part of this class (Mining the History of Holyoke) and screenshots are included in the analysis below. Pages contain information such as employee name and signature, role, days worked, daily pay, and total wages earned, and are organized by separate pay periods.
+The Parsons Paper Register contains nearly 400 pages of employee, payroll, and financial records from January 1861 to April 1869 from Parsons Paper Company in Holyoke, Massachusetts. Founded in 1853 by Joseph Parsons, Parsons Paper Company was the oldest and largest manufacturer of cotton-based high quality writing papers in Holyoke until its liquidation in 2005. The original pages of the register, which is now property of the Holyoke Public Library, were scanned on January 10, 2023 as part of this class (Mining the History of Holyoke) and screenshots are included in the analysis below. Pages contain information such as employee name and signature, role, days worked, daily pay, and total wages earned, and are organized by separate pay periods. We are focused mainly on the payroll, which is comprised by pages 1-316 of the register.
 
 ```{r}
 #| label: fig1
