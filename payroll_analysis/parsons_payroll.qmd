@@ -184,10 +184,6 @@ The quotes below are taken from John P. Hickey's University of Massachusetts the
 This agreed upon reduce in output is important because it may indicate that at the start of the register, employee wages were lower than they would have been under normal circumstance. Any subsequent change in payment patterns is important, as it can indicate both local and domestic economic shocks and sector-specific economic factors.
 
 -   "Repairs, if necessary, are undertaken on Sundays" (94)
-
-```{=html}
-<!-- -->
-```
 -   "In replacing a wire on a Fourdrinier paper machine, workers in the Holyoke mills receive half a day's pay besides their regular pay during the hours they work on the replacement. This acts as an incentive to the workers to get the machine back in operation as soon as possible" (94)
 
 These quotes about repairs are important because, as evidenced in the following section, repairmen who worked during the same week could receive different weekly wages. Perhaps those who replaced machinery that was less integral to daily business operations received a lower overtime pay than those who worked on the Fourdrinier. Additionally, repairmen were most likely compensated more for their work on Sunday than on weekdays.
