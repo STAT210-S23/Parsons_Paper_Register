@@ -181,9 +181,16 @@ The quotes below are taken from John P. Hickey's University of Massachusetts the
 
 -   "In 1861, after a period of severe readjustment just prior to the Civil War, twenty-one of the thirty-six manufactures of fine papers met at Pittsfield...to organize a protective association. They desired to raise prices which had fallen drastically as the result of a decrease in demand. They agreed to reduce output by about one-third for about three months. This was the first trade association established in the paper industry of the United States....The Parsons Paper Company and the Carew Manufacturing Company were charter members of this organization" (108)
 
+This agreed upon reduce in output is important because it may indicate that at the start of the register, employee wages were lower than they would have been under normal circumstance. Any subsequent change in payment patterns is important, as it can indicate both local and domestic economic shocks and sector-specific economic factors.
+
 -   "Repairs, if necessary, are undertaken on Sundays" (94)
 
+```{=html}
+<!-- -->
+```
 -   "In replacing a wire on a Fourdrinier paper machine, workers in the Holyoke mills receive half a day's pay besides their regular pay during the hours they work on the replacement. This acts as an incentive to the workers to get the machine back in operation as soon as possible" (94)
+
+These quotes about repairs are important because, as evidenced in the following section, repairmen who worked during the same week could receive different weekly wages. Perhaps those who replaced machinery that was less integral to daily business operations received a lower overtime pay than those who worked on the Fourdrinier. Additionally, repairmen were most likely compensated more for their work on Sunday than on weekdays.
 
 ## How do Parsons wages compare to the Massachusetts state averages?
 
@@ -240,6 +247,8 @@ ggplot(data=parsons_weekly_wages, aes(x = reorder(Job, weekly_wages), y = weekly
   geom_bar(stat="identity", position = "dodge") +
    labs(x = "Job", y = "Weekly Wage ($)", title = "Weekly Wages of Parsons Paper Company Workers - 1861")
 ```
+
+These graphs show how the Parsons Paper Company wages in 1861 were lower than the average wages of Massachusetts paper workmen in 1860 for the lowly roles, such as the rag room and cutters, and significantly higher wages for the more the higher paying jobs of machine room, fireman, engineer, and finisher. The only job in which Parsons Paper Company underpaid relative to the state average is the foreman position. It may be beneficial to compare the Parsons Paper Company wages to those of other paper mills in Holyoke, as opposed to the entire state, to get a better understanding of how the Parsons Paper Company paid relative to its direct competitors.
 
 ## Appendix
 
