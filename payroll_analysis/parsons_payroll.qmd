@@ -227,17 +227,10 @@ kable(parsons_weekly_wages, caption = "Parsons Weekly Wages - 1861", col.names =
 #| fig.height: 4
 #| fig.width: 7
 
-<<<<<<< HEAD
-
-ggplot(data=parsons_weekly_wages, aes(x = reorder(Job, weekly_wages), y = weekly_wages, fill = Job)) +
-  geom_bar(stat="identity", position = "dodge") +
-   labs(x = "Job", y = "Weekly Wage ($)", title = "Weekly Wages of Parsons Paper Company Workers - 1861") + theme(axis.text.x = element_text(size = 6))
-=======
 ggplot(data=parsons_weekly_wages, aes(x = reorder(Role, Weekly.Wages), y = Weekly.Wages, fill = Role)) +
   geom_bar(stat="identity", position = "dodge") +
    labs(x = "Job", y = "Weekly Wage ($)", title = "Weekly Wages of Parsons Paper Company Workers - 1861") + 
   theme(axis.text.x = element_text(size = 6)) 
->>>>>>> 59b25e49ac41d8667b8ce63360c65bf5891ae2cd
 ```
 
 From this graph, we can see that the top paying roles at Parsons Paper Company in 1861 were the foreman, followed by repairs and machine room workers, who each made nearly 15 dollars a week. From John P. Hickey's 1954 University of Massachusetts thesis *The* *Holyoke Area Paper Industry*, we know that repairs were undertaken on Sundays, typically the only day off for many paper workers: "In replacing a wire on a Fourdrinier paper machine, workers in the Holyoke mills receive half a day's pay besides their regular pay during the hours they work on the replacement. This acts as an incentive to the workers to get the machine back in operation as soon as possible" (94).
