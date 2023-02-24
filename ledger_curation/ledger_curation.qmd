@@ -33,13 +33,13 @@ This document describes the process of scanning, transforming, and curating the 
 knitr::include_graphics("../jpeg/253.jpeg")
 ```
 
-Figure \ref{fig:fig1} displays a sample page from the register. These images were saved as a `.tiff` file that we kept in the `tiff_original` directory in our Google Drive. 
+Figure \ref{fig:fig1} displays a sample page from the register. These images were saved as a `.tiff` file that we kept in the `tiff_original` directory in our Google Drive.
 
-As some some pages had multiple scans (saved as `XXXa.tiff`, `XXXb.tiff`, etc.), we used bash commands in the terminal to identify any repeated images. For each page with duplicate scans, we inspected each version and selected the one with the best quality (based on quality of photo, position of page, clarity of the words, and general preference). The rejected scans were moved into a separate folder labeled `deleted`, in the Google Drive. 
+As some some pages had multiple scans (saved as `XXXa.tiff`, `XXXb.tiff`, etc.), we used bash commands in the terminal to identify any repeated images. For each page with duplicate scans, we inspected each version and selected the one with the best quality (based on quality of photo, position of page, clarity of the words, and general preference). The rejected scans were moved into a separate folder labeled `deleted`, in the Google Drive.
 
 Within the Desktop Google Drive app, using command selection every photo in the folder was selected and copy-pasted into the same folder. These copies are automatically labeled as `Copy_of_tiff_XXX.tiff`. A new folder was created called `processing_tiff` and the copies were moved into this folder in batches of 10 using the command select function.
 
-Once the processing folder was set up, the process moved from the online Google Drive platform to the desktop version (which was downloaded). Within the desktop interface, 20 photos were downloaded locally at a time. Starting from the image with the largest number of the downloaded photo, the image was opened with MacOS's `preview` application. In the application, first the photo was cropped to remove excess space on the image. The size of the cropping was set based on making sure every part of the page itself was visible. Dead space was kept in if it preserved parts of the page, for instance more bent pages would retain some dead space as the cropping was done in rectangle shapes for example (...). 
+Once the processing folder was set up, the process moved from the online Google Drive platform to the desktop version (which was downloaded). Within the desktop interface, 20 photos were downloaded locally at a time. Starting from the image with the largest number of the downloaded photo, the image was opened with MacOS's `preview` application. In the application, first the photo was cropped to remove excess space on the image. The size of the cropping was set based on making sure every part of the page itself was visible. Dead space was kept in if it preserved parts of the page, for instance more bent pages would retain some dead space as the cropping was done in rectangle shapes for example (...).
 
 <!-- Add the example above -->
 
@@ -49,7 +49,7 @@ Once all of the edits were made in preview, the image would be renamed to remove
 
 ## Check for Missing Pages
 
-To ensure that no pages were missing, we created a function that will allow us to see if any file was missing given a sequence of numbers. The function we used is replicated below as the `find_missing_pages` method. 
+To identify pages were missing, we created a function that will allow us to see if any file was missing given a sequence of numbers. The function we used is replicated below as the `find_missing_pages` method.
 
 ```{r}
 find_missing_pages <- function(start = 0, end = 10, 
@@ -60,8 +60,46 @@ find_missing_pages <- function(start = 0, end = 10,
 }
 ```
 
-From this method, we were able to see that beyond the pages that we know are missing, we were missing the scans for page 368 and 395 (though page 395 was later found). This was really helpful for us as we were able to make another copy of the missing page when we visited the Holyoke Public Library. With the images all converted to `jpegs`, we were now able to save it into our GitHub repository, and created a interactive Shiny display to help display the images.  
+From this method, we were able to see that beyond the pages that we know are missing, we were missing the scans for page 368 and 395 (though page 395 was later found). This was really helpful for us as we were able to make another copy of the missing page when we visited the Holyoke Public Library. With the images all converted to `jpegs`, we were now able to save it into our GitHub repository, and created a interactive Shiny display to help display the images and view the register.
 
-## Shiny App
+## Viewing the Register
 
-A Shiny app to display scanned pages can be found at <https://r.amherst.edu/apps/nhorton/Parsons-Paper>. Each page has its own radio button in the `pages` tab. More details about Parsons Paper Company and the archive are detailed in the `about` tab. 
+In addition to the publicly accessible Google Drive (<https://drive.google.com/drive/folders/18Aw57Hhga52E3skMttF7sxDfL6KWO-7q?usp=sharing>) that includes the raw (`.CR2`), `.tiff`, and `.jpeg` files, we have created a web interface to view the scanned pages of the register. This interactive web applet can be found at <https://r.amherst.edu/apps/nhorton/Parsons-Paper>. Each page has its own radio button in the `pages` tab. More details about Parsons Paper Company and the archive are detailed in the `about` tab.
+
+## Next Steps: Adding to the Digital Commonwealth
+
+We eventually want to submit our results and our project to the Commonwealth of Massachusetts digital archive. Through email communication with the digital commonwealth that a fellow classmate of ours did, we found the required metadata necessary for submission to the archive. They are listed below:
+
+**Required:**
+
+-   file name
+
+-   file path
+
+-   Type of resource
+
+-   BASIC genre/form
+
+-   BASIC genre/form: Value URI
+
+-   Date type
+
+-   Digital Origin
+
+-   Host collection
+
+-   Physical location (library)
+
+-   Rights
+
+-   License
+
+-   Description standard
+
+-   Repository Set Name
+
+We hope to be able to submit our collection to the archive by following these guidelines. 
+
+## Acknowledgements
+
+We greatly appreciate and would like to thank Eileen  Crosby (Holyoke Public Library), Tim Pinault (Amherst College), and Zoe Jacobs Feinstein (Amherst College) for their assistance with this project. 
