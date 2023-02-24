@@ -1,9 +1,10 @@
 ---
 title: "Parsons Paper Company Payroll & Employment Analysis - Stat 210"
 author: "Anna Zhou & Sarah Edelson"
-date: "2023-02-23"
+date: "2023-02-24"
 date-format: iso
 format: pdf
+extra_dependencies: ["float"]
 editor: visual
 ---
 
@@ -17,15 +18,17 @@ library(kableExtra)
 library (dplyr)
 library(tidyr)
 options(digits = 4)
+
+knitr::opts_chunk$set(fig.pos = "H", out.extra = "")
 ```
 
 ## Introduction
 
 The Parsons Paper Register contains nearly 400 pages of employee, payroll, and financial records from January 1861 to April 1869 from Parsons Paper Company in Holyoke, Massachusetts. Founded in 1853 by Joseph Parsons, Parsons Paper Company was the oldest and largest manufacturer of cotton-based high quality writing papers in Holyoke until its liquidation in 2005. The original pages of the register, which is now property of the Holyoke Public Library, were scanned on January 10, 2023 as part of this class (Mining the History of Holyoke) and screenshots are included in the analysis below. Pages contain information such as employee name and signature, role, days worked, daily pay, and total wages earned, and are organized by separate pay periods. We are focused mainly on the payroll, which is comprised by pages 1-316 of the register.
 
-The goal of the following report is to further explore patterns in employment and different groups of employees over time by analyzing the payroll records in the 1861-1869 time period, both before and after the end of the Civil War. First, we aimed to quantify the length of a single pay period as well as the number of employees working at Parsons Paper Company during the era spanning the register. The 1860s were a time of great growth for the company, and by the beginning of the Civil War in 1861 Parsons Paper Company had already become the largest manufacturer of writing and envelope paper in the United States. We then examined the distribution of different roles within the company, ranging from women who worked in the "rag room" where the raw material for paper was cut and processed, to men who worked in the engine room and repairs. Most paper mills in the North purchased rags from companies in the South, and Parsons' rag room was considered an "[anomaly](https://www.digitalcommonwealth.org/search/commonwealth:pz50hj728)."
+The goal of the following report is to further explore patterns in employment and different groups of employees over time by analyzing the payroll records in the 1861-1869 time period, both before and after the end of the Civil War. First, we aimed to quantify the length of a single pay period as well as the number of employees working at Parsons Paper Company during the era spanning the register. The 1860s were a time of great growth for the company, and by the beginning of the Civil War in 1861 Parsons Paper Company had already become the largest manufacturer of writing and envelope paper in the United States. We then examined the distribution of different roles within the company, ranging from women who worked in the "rag room" where the raw material for paper was cut and processed, to men who worked in the engine room and repairs. Most paper mills in the North purchased rags from companies in the South, and Parsons' rag room was considered an "[anomaly](https://www.digitalcommonwealth.org/search/commonwealth:pz50hj728)." We are also interested in clarifying the meaning of the "Price" column of the payroll, which appears to denote the daily wage rate of the different employees in cents, although the exact meaning and calculation of the fractions remains unclear.
 
-In the example analysis below, we used a transcribed copy of page 253 (Figure 1) of the register to compare the number of employees who were able to sign their own signatures to the number of employees who were not able to on a singular page. Based off these findings, it appears that a large portion (slightly more than half) of the employees at Parsons Paper Company were illiterate, especially the women and immigrants, who largely lacked formal education. Additionally, employees who were literate received significantly higher wages compared to employees who were illiterate. We are also interested in clarifying the meaning of the "Price" column, which appears to denote the daily wage rate of the different employees in cents, although the exact meaning and calculation of the fractions remains unclear.
+In the example analysis below, we used a transcribed copy of page 253 (Figure 1) of the register to compare the number of employees who were able to sign their own signatures to the number of employees who were not able to on a singular page, and examine whether there was a relationship between literacy and pay.
 
 ```{r}
 #| label: fig1
@@ -34,6 +37,9 @@ In the example analysis below, we used a transcribed copy of page 253 (Figure 1)
 #| echo: false
 knitr::include_graphics("images/253.jpg")
 ```
+
+
+\newpage
 
 ```{r}
 #| echo: false
@@ -47,9 +53,14 @@ register <- readr::read_csv(
 register_clean <- register |>
   select(lastname, firstname, number_days, price1, price2, total, rent_or_board, balance_due, signature_x, daily_pay)
 
-kable(register_clean, caption = "Table 1. Portion of Register Page 253") |>
+kable(register_clean, caption = "Example Portion of Parsons Paper Company Register P.253") |>
     kable_styling(font_size = 8)
 ```
+
+\newpage
+
+
+Based off these findings, it appears that a large portion (slightly more than half) of the employees at Parsons Paper Company were illiterate, especially the women and immigrants, who largely lacked formal education. Additionally, employees who were literate received significantly higher wages compared to employees who were illiterate.
 
 ```{r}
 #| echo: false
@@ -69,39 +80,45 @@ One of the central goals of this class is to make the information contained in t
 
 As mentioned in the introduction, the Parsons Paper Company register stored in the Holyoke Public Library comprises monthly pay periods from January 1861-April 1869 (p.1-316 of the register). Pay periods appear to be a month long with employees typically getting paid on the 1st of the next month. Based off Table 1 from p. 253, most employees work between 20-30 days each pay period, with the average being around 27, so most employees work at least 6 days/week. In Chapter IV of Constance Green's *Holyoke, Massachusetts: A Case History of the Industrial Revolution in America* (1939), she writes that male Holyoke paper makers worked 58-72 hours a week. Working 11.25 hours five days a week in addition to 8.75 hours on Saturday was typical for Holyoke textile mills, while women worked slightly shorter hours.
 
--   Pgs. 223-225 appear to comprise an entire pay period for the month of April in 1868 (most pay periods span \~3 pages in the register)
+Pgs. 223-225 (see Figure 2) appear to comprise an entire pay period for the month of April in 1868 (most pay periods span \~3 pages in the register)
 
-    ```{r}
-    #| label: fig2
-    #| fig.cap: "p. 223 of register, see p.224-225 in 'Appendix'"
-    #| out.width: "75%"
-    #| echo: false
-    knitr::include_graphics("images/223.jpeg")
-    ```
+\newpage
 
--   Pgs. 223-225 and Pgs. 261-263 below are exactly one year apart in the register (April 1st 1867 + April 1st 1868)
+```{r}
+#| label: fig2
+#| fig.cap: "p. 223 of register (April 1st, 1867), see p.224-225 in 'Appendix'"
+#| out.width: "75%"
+#| echo: false
+knitr::include_graphics("images/223.jpeg")
+```
 
-    ```{r}
-    #| label: fig5
-    #| fig.cap: "p. 261 of register, see p.262-263 in 'Appendix'"
-    #| out.width: "75%"
-    #| echo: false
-    knitr::include_graphics("images/261.jpeg")
-    ```
+Pgs. 223-225 and Pgs. 261-263 (see Figure 3) are exactly one year apart in the register (April 1st 1867 vs. April 1st 1868).
+
+```{r}
+#| label: fig3
+#| fig.cap: "p. 261 of register (April 1st, 1868), see p.262-263 in 'Appendix'"
+#| out.width: "75%"
+#| echo: false
+knitr::include_graphics("images/261.jpeg")
+```
+
+\newpage
+
+
 
 ## How many employees during this era?
 
-To quantify this, we counted the number of employees throughout each of the following pay periods by hand by going through the pages of the register one by one:
+To quantify this, we counted the number of employees throughout each of the following pay periods by hand by going through the pages of the register one by one. We found that the average number of workers employed at Parsons Paper Company across the measured 9 years spanning the register is **136 employees between 1861-1869**. From Table 2 below, we can see that the number of employees generally increased over the years, with a noticeable boom in employment towards the end of the Civil War in 1865. In Chapter IV of *Holyoke, Massachusetts"*, Green mentions that these paper mills had abnormally high employee retention rates compared to other industries. From *Burt's Illustrated Guide of the Connecticut Valley* ([page 79](https://quod.lib.umich.edu/m/moa/AAB2140.0001.001/83)), we also know that at the end of 1867, Parsons employed 150 people and had "nineteen engines for grinding rags,"turning out "800 tons of paper yearly."
+
 
 ```{r}
+#| echo: false
 employees <- read.csv("parsons_employment.csv")
 
-kable(employees, caption = "Table 2. Number of Parsons Paper Company Employees by Year", col.names = c("Year", "Number of Employees", "Subset Page Numbers")) |>
+kable(employees, caption = "Number of Parsons Paper Company Employees by Year", col.names = c("Year", "Number of Employees", "Subset Page Numbers")) |>
   kable_styling(font_size = 8) |>
   row_spec(0,bold=TRUE)
 ```
-
-The average number of workers employed at Parsons Paper Company across the measured 9 years spanning the register is **136 employees between 1861-1869**. From Table 2 above, we can see that the number of employees generally increased over the years, with a noticeable boom in employment towards the end of the Civil War in 1865. In Chapter IV of *Holyoke, Massachusetts"*, Green mentions that these paper mills had abnormally high employee retention rates compared to other industries. From *Burt's Illustrated Guide of the Connecticut Valley* ([page 79](https://quod.lib.umich.edu/m/moa/AAB2140.0001.001/83)), we also know that at the end of 1867, Parsons employed 150 people and had "nineteen engines for grinding rags, "turning out "800 tons of paper yearly."
 
 ## What types of jobs are there?
 
@@ -109,9 +126,11 @@ In *History of the Connecticut Valley in Massachusetts: History of Franklin Coun
 
 "The buildings of this company are situated on the river-bank near the dam, and were built in 1853. They are two in number,\--the **main mill**, where the paper is made, and what is known as the **finishing-mill**, where it is finished. The former is a structure three stories and a basement high. The upper floor and attic are devoted to drying purposes, while the second story contains the storehouse and **rag-rooms**. About 175 persons are employed on the two floors. On the ground-floor is the **engine-room**, which contains sixteen 450-pound and fourteen 250-pound engines. The mill has three Fourdrinier machines, two of them are 62-inch and the other 72-inch. It has two bleach-boilers, of 3 1/2 and 2 1/2 tons respectively, and 4 sheet calendars and a web calendar and 2 hydraulic presses. The finishing-mill is also situated on the bank of the river, a short distance from the other mill, and, like that, is a brick structure three stories high. The attic and third floor are used for **packing**, and on the second floor the paper is **reeled** and **jogged**. On the first floor are eight 6-roll calendars and three powerful hydraulic presses, and in the basement is a box-factory and plating-machines" (919).
 
-## Spreadsheet tracking employment by job type for first 6 months of the register (Jan-Jun 1861)
+## Tracking employment by job type for first 6 months of the register (Jan-Jun 1861)
 
 [Link to full spreadsheet](https://docs.google.com/spreadsheets/d/1dza87xBB2pgVajOuLYBM_fHfAobr6IFIZFAu4vFOnhs/edit?usp=sharing)
+
+\newpage
 
 ```{r}
 #| warning: false
@@ -123,31 +142,16 @@ employment2 <- employment |>
 
 # removed notes column when displaying table
 
-kable(employment2, caption = "Parsons Employment by Job Type from January-June of 1861", col.names = c("Month", "Year", "Page Number", "Job", "Count", "Monthly Total Workers")) |>
+kable(employment2, caption = "Parsons Paper Company Employment by Job Type (January-June 1861)", col.names = c("Month", "Year", "Page Number", "Job", "Count", "Monthly Total Workers")) |>
   kable_styling(font_size = 8) |>
   row_spec(0,bold=TRUE)
 ```
 
-The role labels on the register become very sporadic after 1861:
+Table 3 displays the different roles recorded for the first six months of the register, from January to June of 1861. The role labels on the register become very sporadic and difficult to track after 1861, however, 'Repairs' and 'Repairs and Watchmen' remain in their own section at the bottom of the register pages throughout all of the pay periods. There were 5 people under "Repairs" for April 1st, 1867 (see Figure 6 in 'Appendix') and 8 people under April 1st, 1868 (see Figure 7 in 'Appendix').
 
--   'Repairs' and 'Repairs and Watchmen', however, remain in their own section at the bottom throughout all of the pay periods
-    -   Presumably employees whose main role was to repair the machines + guard the factory instead of making paper
+The first couple pages of each pay period are comprised by unlabeled laborers (presumably the majority worked in the engine and machine rooms), in addition to Repairs and Watchmen, are all males. The sorters, stampers, sealers, count and folders, and rag room/cutter roles all appear to remain throughout 1861-1869, although there are much fewer of them compared to the unlabeled male laborers. These roles are largely held by women, and their wages tend to be significantly lower than male workers, which can be seen in the next section.
 
-    -   There were 5 people under "Repairs" for April 1st, 1867 (see p. 225 in 'Appendix') and 8 under April 1st, 1868 (see p. 262 in 'Appendix')
-
-        -   First couple pages of unlabeled workers (presumably majority worked in engine and machine room) + Repairs and Watchmen are all males
--   The sorters, stampers, sealers, count & folders, and rag room/cutter roles all appear to remain throughout 1861-1869, although there are much fewer of them compared to the unlabeled names
-    -   These roles were held by almost all women
-
-    -   Wages tend to be lower than male workers
-
-```{r}
-#| label: fig9
-#| fig.cap: "p. 045 of register - 4 Repairs and Watchmen employees"
-#| out.width: "75%"
-#| echo: false
-knitr::include_graphics("images/045.png")
-```
+\newpage
 
 ```{r}
 #| echo: false
@@ -160,19 +164,9 @@ ggplot(data=employment, aes(x=fct_inorder(Month), y=Count, fill=Job)) +
 
 The plot above shows the distribution of different roles within the paper company during the first six months of 1861. The unlabeled male laborers, MFC mill workers, finishers, and rag room workers appear to be the most popular roles.
 
-## **Quotes from Hickey thesis that may be of relevance to employment from 1861-1869**
-
-The quotes below are taken from John P. Hickey's University of Massachusetts thesis *The* *Holyoke Area Paper Industry*, which was written in May 1953 and mainly focuses on the Holyoke paper industry in the first half of the 20th century. Quotes relevant to the time period we are interested in examining are included below:
-
--   "In 1861, after a period of severe readjustment just prior to the Civil War, twenty-one of the thirty-six manufactures of fine papers met at Pittsfield...to organize a protective association. They desired to raise prices which had fallen drastically as the result of a decrease in demand. They agreed to reduce output by about one-third for about three months. This was the first trade association established in the paper industry of the United States....The Parsons Paper Company and the Carew Manufacturing Company were charter members of this organization" (108)
-
--   "Repairs, if necessary, are undertaken on Sundays" (94)
-
--   "In replacing a wire on a Fourdrinier paper machine, workers in the Holyoke mills receive half a day's pay besides their regular pay during the hours they work on the replacement. This acts as an incentive to the workers to get the machine back in operation as soon as possible" (94)
-
 ## How do Parsons wages compare to the Massachusetts state averages?
 
-The table is adapted from page 314 of Judith McGaw's *Most Wonderful Machine: Mechanization and Social Change in Berkshire Paper Making, 1801-1885*, which used data from page 74 of the *Tenth Annual Report of the Bureau of Statistics of Labor* (Boston, 1879).
+Table 4 and the plot below are adapted from page 314 of Judith McGaw's *Most Wonderful Machine: Mechanization and Social Change in Berkshire Paper Making, 1801-1885*, which used data from page 74 of the *Tenth Annual Report of the Bureau of Statistics of Labor* (Boston, 1879).
 
 ```{r}
 #| warning: false
@@ -189,7 +183,13 @@ weekly_wages <- read.csv("weekly_wages.csv") |>
 kable(weekly_wages, caption = "Weekly Wages of Massachusetts Paper Workmen, 1860-78", col.names = c("Job", "1860 Weekly Wages ($)", "1872 Weekly Wages ($)", "1878 Weekly Wages ($)")) |>
   kable_styling(font_size = 8) |>
   row_spec(0,bold=TRUE)
+```
 
+```{r}
+#| warning: false
+#| echo: false
+#| fig.height: 4
+#| fig.width: 7
 weekly_wages <- weekly_wages |>
   pivot_longer(!Job, names_to = "year", values_to = "count")
 
@@ -199,6 +199,12 @@ scale_x_discrete(labels=c("Wages_1860" = "1860", "Wages_1872" = "1872","Wages_18
   labs(x = "Year", y = "Weekly Wage ($)", title = "Weekly Wages of Massachusetts Paper Workmen, 1860-78")
 ```
 
+\newpage
+
+From Table 5, we can see that Parsons Paper Company employees were, for the most part, paid at comparable rates to other Massachusetts paper factory workers across the state, although the pay for several common roles, especially those held by women (finisher, cutter), is noticeably lower compared to the state average, while other roles such as engineer and mechanic tended to be paid more at Parsons compared to other Massachusetts paper mills.
+
+
+
 ```{r}
 #| warning: false
 #| echo: false
@@ -207,7 +213,7 @@ scale_x_discrete(labels=c("Wages_1860" = "1860", "Wages_1872" = "1872","Wages_18
 
 # Parsons Wages
 parsons_weekly_wages <- read.csv("job_wages.csv") |>
-  select(Job, weekly_wages)
+  select(Role, Weekly.Wages)
 
 
 kable(parsons_weekly_wages, caption = "Parsons Weekly Wages - 1861", col.names = c("Job", "Weekly Wages ($)")) |>
@@ -221,24 +227,29 @@ kable(parsons_weekly_wages, caption = "Parsons Weekly Wages - 1861", col.names =
 #| fig.height: 4
 #| fig.width: 7
 
-ggplot(data=parsons_weekly_wages, aes(x = reorder(Job, weekly_wages), y = weekly_wages, fill = Job)) +
+ggplot(data=parsons_weekly_wages, aes(x = reorder(Role, Weekly.Wages), y = Weekly.Wages, fill = Role)) +
   geom_bar(stat="identity", position = "dodge") +
-   labs(x = "Job", y = "Weekly Wage ($)", title = "Weekly Wages of Parsons Paper Company Workers - 1861")
+   labs(x = "Job", y = "Weekly Wage ($)", title = "Weekly Wages of Parsons Paper Company Workers - 1861") + 
+  theme(axis.text.x = element_text(size = 6)) 
 ```
+
+From this graph, we can see that the top paying roles at Parsons Paper Company in 1861 were the foreman, followed by repairs and machine room workers, who each made nearly 15 dollars a week. From John P. Hickey's 1954 University of Massachusetts thesis *The* *Holyoke Area Paper Industry*, we know that repairs were undertaken on Sundays, typically the only day off for many paper workers: "In replacing a wire on a Fourdrinier paper machine, workers in the Holyoke mills receive half a day's pay besides their regular pay during the hours they work on the replacement. This acts as an incentive to the workers to get the machine back in operation as soon as possible" (94).
+
+In contrast, female laborers who worked in the rag room and as cutters and finishers were paid much lower wages, with almost all women being paid less than 5 dollars a week.
 
 ## Appendix
 
 ```{r}
-#| label: fig3
-#| fig.cap: "p. 224 of register"
+#| label: fig4
+#| fig.cap: "p. 224 of register - April 1st, 1867"
 #| out.width: "75%"
 #| echo: false
 knitr::include_graphics("images/224.jpeg")
 ```
 
 ```{r}
-#| label: fig4
-#| fig.cap: "p. 225 of register"
+#| label: fig5
+#| fig.cap: "p. 225 of register - April 1st, 1867"
 #| out.width: "75%"
 #| echo: false
 knitr::include_graphics("images/225.jpeg")
@@ -246,7 +257,7 @@ knitr::include_graphics("images/225.jpeg")
 
 ```{r}
 #| label: fig6
-#| fig.cap: "p. 262 of register"
+#| fig.cap: "p. 262 of register - April 1st, 1868"
 #| out.width: "75%"
 #| echo: false
 knitr::include_graphics("images/262.jpeg")
@@ -254,7 +265,7 @@ knitr::include_graphics("images/262.jpeg")
 
 ```{r}
 #| label: fig7
-#| fig.cap: "p. 263 of register"
+#| fig.cap: "p. 263 of register - April 1st, 1868"
 #| out.width: "75%"
 #| echo: false
 knitr::include_graphics("images/263.jpeg")
