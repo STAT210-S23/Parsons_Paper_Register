@@ -201,8 +201,7 @@ scale_x_discrete(labels=c("Wages_1860" = "1860", "Wages_1872" = "1872","Wages_18
 
 \newpage
 
-From Table 5, we can see that Parsons Paper Company employees were, for the most part, paid at comparable rates to other Massachusetts paper factory workers across the state, although the pay for several common roles, especially those held by women (finisher, cutter), is noticeably lower compared to the state average, while other roles such as engineer and mechanic tended to be paid more at Parsons compared to other Massachusetts paper mills.
-
+From Table 5, we can see that Parsons Paper Company employees were, for the most part, paid at comparable rates to other Massachusetts paper factory workers across the state, although the pay for several common roles, especially those held by women (finisher, cutter), is noticeably lower compared to the state average, while other more "important" roles such as engineer and mechanic tended to be paid more at Parsons compared to other Massachusetts paper mills.  It may be beneficial to compare the Parsons Paper Company wages to those of other paper mills in Holyoke, as opposed to the entire state, to get a better understanding of how the Parsons Paper Company paid relative to its direct competitors.
 
 
 ```{r}
@@ -236,6 +235,12 @@ ggplot(data=parsons_weekly_wages, aes(x = reorder(Role, Weekly.Wages), y = Weekl
 From this graph, we can see that the top paying roles at Parsons Paper Company in 1861 were the foreman, followed by repairs and machine room workers, who each made nearly 15 dollars a week. From John P. Hickey's 1954 University of Massachusetts thesis *The* *Holyoke Area Paper Industry*, we know that repairs were undertaken on Sundays, typically the only day off for many paper workers: "In replacing a wire on a Fourdrinier paper machine, workers in the Holyoke mills receive half a day's pay besides their regular pay during the hours they work on the replacement. This acts as an incentive to the workers to get the machine back in operation as soon as possible" (94).
 
 In contrast, female laborers who worked in the rag room and as cutters and finishers were paid much lower wages, with almost all women being paid less than 5 dollars a week.
+
+From Hickey's thesis, we also found the following quote: 
+
+In 1861, after a period of severe readjustment just prior to the Civil War, twenty-one of the thirty-six manufactures of fine papers met at Pittsfield...to organize a protective association. They desired to raise prices which had fallen drastically as the result of a decrease in demand. They agreed to reduce output by about one-third for about three months. This was the first trade association established in the paper industry of the United States....The Parsons Paper Company and the Carew Manufacturing Company were charter members of this organization". (108)
+
+This agreed upon reduce in output in 1861 is important because it may indicate that at the start of the register, employee wages were lower than they would have been under normal circumstance. Any subsequent change in payment patterns throughout the rest of the 19th century is important for future analysis, as it can indicate both local and domestic economic shocks and sector-specific economic factors.
 
 ## Appendix
 
