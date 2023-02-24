@@ -189,7 +189,7 @@
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, frame hidden, sharp corners, borderline west={3pt}{0pt}{shadecolor}, enhanced, breakable, interior hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, breakable, borderline west={3pt}{0pt}{shadecolor}, enhanced, sharp corners, interior hidden, boxrule=0pt]}{\end{tcolorbox}}\fi
 
 \hypertarget{introduction}{%
 \subsection{Introduction}\label{introduction}}
@@ -211,7 +211,7 @@ its own story worth telling.
 In the registry, we can see one's name, number of days worked, their
 wages, whether or not the worker had rent or board due, the final
 balance owed, and signature (see Figure~\ref{fig-sample}). See
-\url{https://r.amherst.edu/apps/nhorton/Parsons-Paper/} for an
+\href{https://r.amherst.edu/apps/nhorton/Parsons-Paper/}{here} for an
 interactive display of the register.
 
 \hypertarget{workers-summary}{%
@@ -272,29 +272,29 @@ It seemed that the Allen family had trouble finding a permanent
 residence as we found a number of addresses reported across different
 resources.
 
+In 1869, the Holyoke city directory shows that the Allen family lived on
+Dwight Street.
+
 Ancestry.com showed that the Allen family lived in dwelling 42 with no
-street name reported.
+street name reported in 1870.
 
 (see Figure~\ref{fig-sample5})
 
-The Holyoke directory of 1869 shows that the Allen family lived on
-Dwight Street.
-
-Finally, on page 19 of the 1883 directory, Lucy is reported to have
-lived at 236 Maple Street.
+We were able to follow Lucy's places of residence in several years after
+1870 until her death on May 11, 1893 in Holyoke, MA. Here is a
+\textbf{map} that shows Lucy's places of residence.
 
 It is also worth noting that Lucy, Eliza, and Job worked for roughly the
 entire decade at the mill suggesting the daughters were not pursuing any
-form of education.
+form of education in this period. Lucy also appears to have continued
+working in the PPC mill until her death.
 
-It is difficult to determine if the Allen family were literate or not
-due to inconsistencies in signatures.
+It is difficult to determine if the Allen family's literacy due to
+inconsistencies in signatures.
 
 Some signatures have ``X'' in them while others do not, and the
-handwriting is different across the decade suggesting they did not
-always write their own names.
-
-Lucy Allen died on May 11, 1893 in Holyoke, Ma.
+handwriting is different across the decade suggesting they multiple
+people could have been signing for them.
 
 \newpage{}
 
@@ -329,7 +329,7 @@ First, we accessed the Amherst College Library account for Ancestry.com.
 
 \begin{figure}
 
-{\centering \includegraphics[width=\textwidth,height=0.3\textheight]{amherst_website.png}
+{\centering \includegraphics[width=9.51in,height=0.3\textheight]{amherst_website.png}
 
 }
 
@@ -345,7 +345,7 @@ Here is how the ancestry website looks at a first glance:
 
 \begin{figure}
 
-{\centering \includegraphics[width=\textwidth,height=0.325\textheight]{website.jpeg}
+{\centering \includegraphics[width=9.6in,height=0.325\textheight]{website.jpeg}
 
 }
 
@@ -362,7 +362,7 @@ guesses to select the most appropriate person.
 
 \begin{figure}
 
-{\centering \includegraphics[width=\textwidth,height=0.33\textheight]{multiple_names.jpeg}
+{\centering \includegraphics[width=9.31in,height=0.33\textheight]{multiple_names.jpeg}
 
 }
 
@@ -402,7 +402,7 @@ We then compiled these results into a spreadsheet linked below.
 
 \begin{figure}
 
-{\centering \includegraphics[width=\textwidth,height=0.47\textheight]{Registry_page_header.jpeg}
+{\centering \includegraphics[width=9.8in,height=0.47\textheight]{Registry_page_header.jpeg}
 
 }
 
@@ -412,7 +412,7 @@ We then compiled these results into a spreadsheet linked below.
 
 \begin{figure}
 
-{\centering \includegraphics[width=\textwidth,height=0.4\textheight]{Joseph_Clark.jpeg}
+{\centering \includegraphics[width=9.36in,height=0.4\textheight]{Joseph_Clark.jpeg}
 
 }
 
@@ -460,6 +460,36 @@ page 259}
 \caption{\label{fig-sample10}Lucy and Eliza Ann Allen on page 34}
 
 \end{figure}
+
+\hypertarget{map-of-lucy-allens-places-of-residency}{%
+\subsection{Map of Lucy Allen's places of
+residency}\label{map-of-lucy-allens-places-of-residency}}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\textwidth,height=\textheight]{Lucy Allen map.png}
+
+}
+
+\caption{\label{fig-sample11}Lucy Allen Residency between 1869-91}
+
+\end{figure}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#library(leaflet)}
+\CommentTok{\#m \textless{}{-} leaflet() \%\textgreater{}\%}
+  \CommentTok{\#addTiles() \%\textgreater{}\%  \# Add default OpenStreetMap map tiles}
+ \CommentTok{\# addMarkers(lng={-}72.610583, lat=42.208699, popup="Lucy\textquotesingle{}s residence in 1869, Dwight Street")\%\textgreater{}\%}
+ \CommentTok{\# addMarkers(lng={-}72.60885324421784, lat=42.207205320691806, popup="Lucy\textquotesingle{}s residence in 1883, 236 Maple Street")\%\textgreater{}\%}
+ \CommentTok{\# addMarkers(lng={-}72.59690708839962, lat=42.2048726160808, popup="Lucy\textquotesingle{}s residence in 1888{-}1890, rooms 5 Mosher")\%\textgreater{}\%}
+  \CommentTok{\# addMarkers(lng={-}72.59879076909023, lat=42.20659749781258, popup="Lucy\textquotesingle{}s residence in 1887 and 1891")\%\textgreater{}\%}
+ \CommentTok{\# addMarkers(lng={-}72.61248214421803, lat=42.199421732536955, popup="Parsons Paper Company in the 1800s")}
+
+
+\CommentTok{\#m  \# Print the map}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{database}{%
 \subsection{Database}\label{database}}
