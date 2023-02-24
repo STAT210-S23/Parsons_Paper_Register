@@ -5,6 +5,7 @@ date: "2023-02-17"
 date-format: iso
 format: pdf
 editor: visual
+always_allow_html: true
 ---
 
 ## Introduction
@@ -15,7 +16,7 @@ One way our class has begun this journey is by analyzing an old payroll registry
 
 It has been remarkable to track down so much history as each page of this nearly 400 page registry has upwards of 30 names, and each name has its own story worth telling.
 
-In the registry, we can see one's name, number of days worked, their wages, whether or not the worker had rent or board due, the final balance owed, and signature (see @fig-sample). See <https://r.amherst.edu/apps/nhorton/Parsons-Paper/> for an interactive display of the register.
+In the registry, we can see one's name, number of days worked, their wages, whether or not the worker had rent or board due, the final balance owed, and signature (see @fig-sample). See [here](https://r.amherst.edu/apps/nhorton/Parsons-Paper/) for an interactive display of the register.
 
 ## Workers' Summary
 
@@ -57,21 +58,19 @@ Perhaps their father Job did not want his daughters to work until they were 20 y
 
 It seemed that the Allen family had trouble finding a permanent residence as we found a number of addresses reported across different resources.
 
-Ancestry.com showed that the Allen family lived in dwelling 42 with no street name reported.
+In 1869, the Holyoke city directory shows that the Allen family lived on Dwight Street.
+
+Ancestry.com showed that the Allen family lived in dwelling 42 with no street name reported in 1870.
 
 (see @fig-sample5)
 
-The Holyoke directory of 1869 shows that the Allen family lived on Dwight Street.
+We were able to follow Lucy's places of residence in several years after 1870 until her death on May 11, 1893 in Holyoke, MA. Here is a **map** that shows Lucy's places of residence.
 
-Finally, on page 19 of the 1883 directory, Lucy is reported to have lived at 236 Maple Street.
+It is also worth noting that Lucy, Eliza, and Job worked for roughly the entire decade at the mill suggesting the daughters were not pursuing any form of education in this period. Lucy also appears to have continued working in the PPC mill until her death.
 
-It is also worth noting that Lucy, Eliza, and Job worked for roughly the entire decade at the mill suggesting the daughters were not pursuing any form of education.
+It is difficult to determine if the Allen family's literacy due to inconsistencies in signatures.
 
-It is difficult to determine if the Allen family were literate or not due to inconsistencies in signatures.
-
-Some signatures have "X" in them while others do not, and the handwriting is different across the decade suggesting they did not always write their own names.
-
-Lucy Allen died on May 11, 1893 in Holyoke, Ma.
+Some signatures have "X" in them while others do not, and the handwriting is different across the decade suggesting they multiple people could have been signing for them.
 
 {{< pagebreak >}}
 
@@ -184,6 +183,25 @@ knitr::include_graphics("Lucypg2.jpeg")
 #| echo: false
 #| fig.cap: "Lucy and Eliza Ann Allen on page 34"
 knitr::include_graphics("Eliza and lucy allen page 34.png")
+```
+
+## Map of Lucy Allen's places of residency
+
+```{r}
+#| label: fig-map
+library(leaflet)
+m <- leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lng=-72.610583, lat=42.208699, popup="Lucy's residence in 1869, Dwight Street")%>%
+  addMarkers(lng=-72.60885324421784, lat=42.207205320691806, popup="Lucy's residence in 1883, 236 Maple Street")%>%
+  addMarkers(lng=-72.59690708839962, lat=42.2048726160808, popup="Lucy's residence in 1888-1890, rooms 5 Mosher")%>%
+   addMarkers(lng=-72.59879076909023, lat=42.20659749781258, popup="Lucy's residence in 1887 and 1891")%>%
+  addMarkers(lng=-72.61248214421803, lat=42.199421732536955, popup="Parsons Paper Company in the 1800s")
+
+
+m  # Print the map
+
+ 
 ```
 
 ## Database
