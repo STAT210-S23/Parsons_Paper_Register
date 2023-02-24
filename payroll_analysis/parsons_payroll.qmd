@@ -38,7 +38,6 @@ In the example analysis below, we used a transcribed copy of page 253 (Figure 1)
 knitr::include_graphics("images/253.jpg")
 ```
 
-
 \newpage
 
 ```{r}
@@ -58,7 +57,6 @@ kable(register_clean, caption = "Example Portion of Parsons Paper Company Regist
 ```
 
 \newpage
-
 
 Based off these findings, it appears that a large portion (slightly more than half) of the employees at Parsons Paper Company were illiterate, especially the women and immigrants, who largely lacked formal education. Additionally, employees who were literate received significantly higher wages compared to employees who were illiterate.
 
@@ -104,12 +102,9 @@ knitr::include_graphics("images/261.jpeg")
 
 \newpage
 
-
-
 ## How many employees during this era?
 
 To quantify this, we counted the number of employees throughout each of the following pay periods by hand by going through the pages of the register one by one. We found that the average number of workers employed at Parsons Paper Company across the measured 9 years spanning the register is **136 employees between 1861-1869**. From Table 2 below, we can see that the number of employees generally increased over the years, with a noticeable boom in employment towards the end of the Civil War in 1865. In Chapter IV of *Holyoke, Massachusetts"*, Green mentions that these paper mills had abnormally high employee retention rates compared to other industries. From *Burt's Illustrated Guide of the Connecticut Valley* ([page 79](https://quod.lib.umich.edu/m/moa/AAB2140.0001.001/83)), we also know that at the end of 1867, Parsons employed 150 people and had "nineteen engines for grinding rags,"turning out "800 tons of paper yearly."
-
 
 ```{r}
 #| echo: false
@@ -202,8 +197,6 @@ scale_x_discrete(labels=c("Wages_1860" = "1860", "Wages_1872" = "1872","Wages_18
 \newpage
 
 From Table 5, we can see that Parsons Paper Company employees were, for the most part, paid at comparable rates to other Massachusetts paper factory workers across the state, although the pay for several common roles, especially those held by women (finisher, cutter), is noticeably lower compared to the state average, while other roles such as engineer and mechanic tended to be paid more at Parsons compared to other Massachusetts paper mills.
-
-
 
 ```{r}
 #| warning: false
