@@ -19,15 +19,23 @@ options(digits = 4)
 
 ## Introduction
 
-The Parsons Paper Register contains over 300 pages of employee and payroll records from January 1861 to April 1869 from Parsons Paper Company in Holyoke, Massachusetts. Founded in 1853 by Joseph Parsons, Parsons Paper Company was the oldest and largest manufacturer of cotton-based high quality writing papers in Holyoke until its liquidation in 2005. The original pages of the register, which is now property of the Holyoke Public Library, were scanned on January 10, 2023 as part of this class (Mining the History of Holyoke) and screenshots are included in the analysis below. Pages contain information such as employee name and signature, role, days worked, daily pay, and total wages earned, and are organized by separate pay periods.
+The Parsons Paper Copy Register contains near 400pages of employee payroll and accounting records from January 1861 to April 1869 from Parsons Paper Company in Holyoke, Massachusetts. Founded in 1853 by Joseph Parsons, Parsons Paper Company was the oldest and largest manufacturer of cotton-based high quality writing papers in Holyoke until its liquidation in 2005.
+
+The original pages of the register, which is now property of the Holyoke Public Library History Room, were scanned on January 10, 2023 as part of this class (Mining the History of Holyoke) and screenshots are included in the analysis below. Pages contain information such as employee name and signature, role, days worked, daily pay, and total wages earned, and are organized by separate pay periods.
+
+It is important to note that the pages from the register had some interesting peculiarities --- as it is common due to how old it is, the register is missing some pages, and it has cutouts on some pages where we believe may have contained stamps before. Furthermore, there are some pages where there seems to be scraps of paper attached to them that offer additional context/information about what the page was about. For a current list of pages with these issues, please look at the public Github repository here: <https://github.com/STAT210-S23/Parsons_Paper_Register>
 
 This document describes the process of scanning, transforming, and curating the images from the register.
+
+## Scanning Process
+
+**Nick please finish filling out this part**
 
 ## Conversion Process
 
 ```{r}
 #| label: fig1
-#| fig.cap: "\\label{fig:fig1}Ex. p. 253 of register - February 1st, 1867"
+#| fig.cap: "\\label{fig:fig1}Ex. p. 253 of register - part of the February 1st, 1867 payroll"
 #| out.width: "100%"
 #| echo: false
 knitr::include_graphics("../jpeg/253.jpeg")
@@ -37,7 +45,7 @@ Figure \ref{fig:fig1} displays a sample page from the register. These images wer
 
 As some some pages had multiple scans (saved as `XXXa.CR2`, `XXXb.CR2`, etc.), we used bash commands in the terminal to identify any repeated images. For each page with duplicate scans, we inspected each version and selected the one with the best quality (based on quality of photo, position of page, clarity of the words, and general preference). The rejected scans were moved into a separate folder labeled `raw_deleted`, in the Google Drive. If the scan remaining in `raw` was the second version, it was renamed to remove the additional letter.
 
-\-\-- Here describe the process to convert the CR2 files to tiff \-\--
+### Process to convert `.CR2` files to `.tiff`
 
 Within the Desktop Google Drive app, using command selection every photo in the folder was selected and copy-pasted into the same `tiff_original` folder. These copies are automatically labeled as `Copy of tiff_XXX.tiff`. A new folder was created called `processing_tiff` and the copies were moved into this folder in batches of 10 using the command select function.
 
