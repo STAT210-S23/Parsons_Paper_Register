@@ -147,7 +147,7 @@ kable(employment2, caption = "Parsons Paper Company Employment by Job Type (Janu
   row_spec(0,bold=TRUE)
 ```
 
-Table 3 displays the different roles recorded for the first six months of the register, from January to June of 1861. The role labels on the register become very sporadic and difficult to track after 1861, however, 'Repairs' and 'Repairs and Watchmen' remain in their own section at the bottom of the register pages throughout all of the pay periods. There were 5 people under "Repairs" for April 1st, 1867 (see Figure 6 in 'Appendix') and 8 people under April 1st, 1868 (see Figure 7 in 'Appendix').
+Table 3 below displays the different roles recorded for the first six months of the register, from January to June of 1861. The role labels on the register become very sporadic and difficult to track after 1861, however, 'Repairs' and 'Repairs and Watchmen' remain in their own section at the bottom of the register pages throughout all of the pay periods. There were 5 people under "Repairs" for April 1st, 1867 (see Figure 6 in 'Appendix') and 8 people under April 1st, 1868 (see Figure 7 in 'Appendix').
 
 The first couple pages of each pay period are comprised by unlabeled laborers (presumably the majority worked in the engine and machine rooms), in addition to Repairs and Watchmen, are all males. The sorters, stampers, sealers, count and folders, and rag room/cutter roles all appear to remain throughout 1861-1869, although there are much fewer of them compared to the unlabeled male laborers. These roles are largely held by women, and their wages tend to be significantly lower than male workers, which can be seen in the next section.
 
@@ -238,7 +238,7 @@ In contrast, female laborers who worked in the rag room and as cutters and finis
 
 From Hickey's thesis, we also found the following quote: 
 
-In 1861, after a period of severe readjustment just prior to the Civil War, twenty-one of the thirty-six manufactures of fine papers met at Pittsfield...to organize a protective association. They desired to raise prices which had fallen drastically as the result of a decrease in demand. They agreed to reduce output by about one-third for about three months. This was the first trade association established in the paper industry of the United States....The Parsons Paper Company and the Carew Manufacturing Company were charter members of this organization". (108)
+In 1861, after a period of severe readjustment just prior to the Civil War, twenty-one of the thirty-six manufactures of fine papers met at Pittsfield...to organize a protective association. They desired to raise prices which had fallen drastically as the result of a decrease in demand. They agreed to reduce output by about one-third for about three months. This was the first trade association established in the paper industry of the United States....The Parsons Paper Company and the Carew Manufacturing Company were charter members of this organization" (108).
 
 This agreed upon reduce in output in 1861 is important because it may indicate that at the start of the register, employee wages were lower than they would have been under normal circumstance. Any subsequent change in payment patterns throughout the rest of the 19th century is important for future analysis, as it can indicate both local and domestic economic shocks and sector-specific economic factors.
 
