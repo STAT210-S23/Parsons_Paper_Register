@@ -22,7 +22,11 @@ ui <-
       mainPanel(
         p("This app displays information about a payroll register for the Parsons Paper Company (Holyoke, MA) from 1861-1869."),
         p("Scans, image manipulation, and analyses conducted by Amherst College students, faculty, and staff in STAT210 (Mining the History of Holyoke)."),
-        p("Additional support was provided by Eileen Crosby (Holyoke Public Library History Room).")
+        p("Note that pages 255-256 and 309-312 had been cut out of the register."),
+        p("Note that revenue stamps appear for the first time on page 133."),
+        p("The first pages are payroll. Financial accounting records for 1861 start on page 317."),
+        p("Many thanks to Zoe Jacobs and Tim Pinault (Amherst College) for technical support."),
+        p("This project would not have been made possible without the efforts of Eileen Crosby (Holyoke Public Library History Room).")
     )),
 
     
