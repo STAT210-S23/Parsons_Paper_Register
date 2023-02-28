@@ -1,11 +1,12 @@
 ---
 title: "Parsons Paper Company Payroll & Employment Analysis - Stat 210"
-author: "Anna Zhou & Sarah Edelson"
-date: "2023-02-24"
+author: "Anna Zhou and Sarah Edelson"
+date: "2023-02-28"
 date-format: iso
 format: pdf
 extra_dependencies: ["float"]
 editor: visual
+bibliography: references.bib
 ---
 
 ```{r}
@@ -24,7 +25,7 @@ knitr::opts_chunk$set(fig.pos = "H", out.extra = "")
 
 ## Introduction
 
-The Parsons Paper Register contains nearly 400 pages of employee, payroll, and financial records from January 1861 to April 1869 from Parsons Paper Company in Holyoke, Massachusetts. Founded in 1853 by Joseph Parsons, Parsons Paper Company was the oldest and largest manufacturer of cotton-based high quality writing papers in Holyoke until its liquidation in 2005. The original pages of the register, which is now property of the Holyoke Public Library, were scanned on January 10, 2023 as part of this class (Mining the History of Holyoke) and screenshots are included in the analysis below. Pages contain information such as employee name and signature, role, days worked, daily pay, and total wages earned, and are organized by separate pay periods. We are focused mainly on the payroll, which is comprised by pages 1-316 of the register.
+The Parsons Paper Register contains nearly 400 pages of employee, payroll, and financial records from January 1861 to April 1869 from Parsons Paper Company in Holyoke, Massachusetts. Founded in 1853 by Joseph Parsons, Parsons Paper Company was the oldest and largest manufacturer of cotton-based high quality writing papers in Holyoke until its liquidation in 2005. The original pages of the register, which is now property of the Holyoke Public Library, were scanned on January 10, 2023 as part of this class (STAT210: Mining the History of Holyoke) and screenshots are included in the analysis below. Pages contain information such as employee name and signature, role, days worked, daily pay, and total wages earned, and are organized by separate pay periods. We are focused mainly on the payroll, which is comprised by pages 1-316 of the register.
 
 The goal of the following report is to further explore patterns in employment and different groups of employees over time by analyzing the payroll records in the 1861-1869 time period, both before and after the end of the Civil War. First, we aimed to quantify the length of a single pay period as well as the number of employees working at Parsons Paper Company during the era spanning the register. The 1860s were a time of great growth for the company, and by the beginning of the Civil War in 1861 Parsons Paper Company had already become the largest manufacturer of writing and envelope paper in the United States. We then examined the distribution of different roles within the company, ranging from women who worked in the "rag room" where the raw material for paper was cut and processed, to men who worked in the engine room and repairs. Most paper mills in the North purchased rags from companies in the South, and Parsons' rag room was considered an "[anomaly](https://www.digitalcommonwealth.org/search/commonwealth:pz50hj728)." We are also interested in clarifying the meaning of the "Price" column of the payroll, which appears to denote the daily wage rate of the different employees in cents, although the exact meaning and calculation of the fractions remains unclear.
 
@@ -37,7 +38,6 @@ In the example analysis below, we used a transcribed copy of page 253 (Figure 1)
 #| echo: false
 knitr::include_graphics("images/253.jpg")
 ```
-
 
 \newpage
 
@@ -59,7 +59,6 @@ kable(register_clean, caption = "Example Portion of Parsons Paper Company Regist
 
 \newpage
 
-
 Based off these findings, it appears that a large portion (slightly more than half) of the employees at Parsons Paper Company were illiterate, especially the women and immigrants, who largely lacked formal education. Additionally, employees who were literate received significantly higher wages compared to employees who were illiterate.
 
 ```{r}
@@ -78,7 +77,7 @@ One of the central goals of this class is to make the information contained in t
 
 ## How many days in a pay period?
 
-As mentioned in the introduction, the Parsons Paper Company register stored in the Holyoke Public Library comprises monthly pay periods from January 1861-April 1869 (p.1-316 of the register). Pay periods appear to be a month long with employees typically getting paid on the 1st of the next month. Based off Table 1 from p. 253, most employees work between 20-30 days each pay period, with the average being around 27, so most employees work at least 6 days/week. In Chapter IV of Constance Green's *Holyoke, Massachusetts: A Case History of the Industrial Revolution in America* (1939), she writes that male Holyoke paper makers worked 58-72 hours a week. Working 11.25 hours five days a week in addition to 8.75 hours on Saturday was typical for Holyoke textile mills, while women worked slightly shorter hours.
+As mentioned in the introduction, the Parsons Paper Company register stored in the Holyoke Public Library comprises monthly pay periods from January 1861-April 1869 (p.1-316 of the register). Pay periods appear to be a month long with employees typically getting paid on the 1st of the next month. Based off Table 1 from p. 253, most employees work between 20-30 days each pay period, with the average being around 27, so most employees work at least 6 days/week. In Chapter IV of Constance Green's *Holyoke, Massachusetts: A Case History of the Industrial Revolution in America* [@green:1939], it is reported that male Holyoke paper makers worked 58-72 hours a week. Working 11.25 hours five days a week in addition to 8.75 hours on Saturday was typical for Holyoke textile mills, while women tended to work slightly shorter hours.
 
 Pgs. 223-225 (see Figure 2) appear to comprise an entire pay period for the month of April in 1868 (most pay periods span \~3 pages in the register)
 
@@ -104,12 +103,9 @@ knitr::include_graphics("images/261.jpeg")
 
 \newpage
 
-
-
 ## How many employees during this era?
 
 To quantify this, we counted the number of employees throughout each of the following pay periods by hand by going through the pages of the register one by one. We found that the average number of workers employed at Parsons Paper Company across the measured 9 years spanning the register is **136 employees between 1861-1869**. From Table 2 below, we can see that the number of employees generally increased over the years, with a noticeable boom in employment towards the end of the Civil War in 1865. In Chapter IV of *Holyoke, Massachusetts"*, Green mentions that these paper mills had abnormally high employee retention rates compared to other industries. From *Burt's Illustrated Guide of the Connecticut Valley* ([page 79](https://quod.lib.umich.edu/m/moa/AAB2140.0001.001/83)), we also know that at the end of 1867, Parsons employed 150 people and had "nineteen engines for grinding rags,"turning out "800 tons of paper yearly."
-
 
 ```{r}
 #| echo: false
@@ -201,8 +197,7 @@ scale_x_discrete(labels=c("Wages_1860" = "1860", "Wages_1872" = "1872","Wages_18
 
 \newpage
 
-From Table 5, we can see that Parsons Paper Company employees were, for the most part, paid at comparable rates to other Massachusetts paper factory workers across the state, although the pay for several common roles, especially those held by women (finisher, cutter), is noticeably lower compared to the state average, while other more "important" roles such as engineer and mechanic tended to be paid more at Parsons compared to other Massachusetts paper mills.  It may be beneficial to compare the Parsons Paper Company wages to those of other paper mills in Holyoke, as opposed to the entire state, to get a better understanding of how the Parsons Paper Company paid relative to its direct competitors.
-
+From Table XX Please autonumber all Figure and Table refs XX, we can see that Parsons Paper Company employees were, for the most part, paid at comparable rates to other Massachusetts paper factory workers across the state, although the pay for several common roles, especially those held by women (finisher, cutter), is noticeably lower compared to the state average, while other more "important" roles such as engineer and mechanic tended to be paid more at Parsons compared to other Massachusetts paper mills. It may be beneficial to compare the Parsons Paper Company wages to those of other paper mills in Holyoke, as opposed to the entire state, to get a better understanding of how the Parsons Paper Company paid relative to its direct competitors.
 
 ```{r}
 #| warning: false
@@ -236,11 +231,16 @@ From this graph, we can see that the top paying roles at Parsons Paper Company i
 
 In contrast, female laborers who worked in the rag room and as cutters and finishers were paid much lower wages, with almost all women being paid less than 5 dollars a week.
 
-From Hickey's thesis, we also found the following quote: 
+From Hickey's thesis, we also found the following quote:
 
 In 1861, after a period of severe readjustment just prior to the Civil War, twenty-one of the thirty-six manufactures of fine papers met at Pittsfield...to organize a protective association. They desired to raise prices which had fallen drastically as the result of a decrease in demand. They agreed to reduce output by about one-third for about three months. This was the first trade association established in the paper industry of the United States....The Parsons Paper Company and the Carew Manufacturing Company were charter members of this organization" (108).
 
 This agreed upon reduce in output in 1861 is important because it may indicate that at the start of the register, employee wages were lower than they would have been under normal circumstance. Any subsequent change in payment patterns throughout the rest of the 19th century is important for future analysis, as it can indicate both local and domestic economic shocks and sector-specific economic factors.
+
+## References
+
+::: {#refs}
+:::
 
 ## Appendix
 
