@@ -4,6 +4,7 @@ author: "Anna Zhou and Sarah Edelson"
 date: "2023-02-28"
 date-format: iso
 format: pdf
+toc: true
 extra_dependencies: ["float"]
 editor: visual
 bibliography: references.bib
