@@ -26,11 +26,11 @@ ui <-
         p("Note that revenue stamps appear for the first time on page 133."),
         p("The first pages are payroll. Financial accounting records for 1861 start on page 317."),
         p("Many thanks to Zoe Jacobs and Tim Pinault (Amherst College) for technical support."),
-        p("This project would not have been made possible without the efforts of Eileen Crosby (Holyoke Public Library History Room).")
+        p("This project would not have been made possible without the efforts of Eileen Crosby (Holyoke Public Library History Room)."),
+        uiOutput("tab")
     )),
 
-    
-    
+
     tabPanel(
       title = "Pages",
       helpText("Image output:"),
@@ -64,6 +64,12 @@ server <- function(input, output) {
       alt = paste("This is", input$picture)
     ))
   }, deleteFile = FALSE)
+  
+  url <- a("Register page scans on Google Drive", href="https://drive.google.com/drive/u/0/folders/18Aw57Hhga52E3skMttF7sxDfL6KWO-7q")
+  output$tab <- renderUI({
+    tagList("Link to scanned pages:", url)
+  })
+  
 }
 
 
