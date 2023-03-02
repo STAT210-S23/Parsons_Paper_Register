@@ -1,9 +1,11 @@
 ---
-title: "Parsons' Paper Company Workers Database"
+title: "STAT 210 Parsons' Paper Company Workers Database"
 author: "Lorraine Oloo and Camden Heafitz"
-date: "2023-02-17"
+date: "2023-03-03"
 date-format: iso
-format: pdf
+format:
+  pdf:
+    toc: TRUE
 editor: visual
 always_allow_html: true
 ---
@@ -68,6 +70,8 @@ knitr::include_graphics("Eliza and lucy allen page 34.png")
 knitr::include_graphics("Joseph_Clark.jpeg")
 ```
 
+\clearpage
+
 ## Map of Lucy Allen's places of residency
 
 ```{r, out.width="70%"}
@@ -78,7 +82,6 @@ knitr::include_graphics("Lucy Allen map.png")
 ```
 
 ```{r}
-#| echo: false
 
 #library(leaflet)
 #m <- leaflet() %>%
@@ -94,6 +97,7 @@ knitr::include_graphics("Lucy Allen map.png")
 
  
 ```
+
 
 ## Database
 
@@ -113,6 +117,8 @@ glimpse(ancestry)
 ```
 
 Here is a [LINK](https://github.com/STAT210-S23/Parsons_Paper_Register) to this repo
+
+
 ## **Technical Appendix**
 
 First, we accessed the Amherst College Library account for Ancestry.com.
