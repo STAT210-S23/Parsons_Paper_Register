@@ -76,7 +76,8 @@ kable(register_clean) |>
 
 ```{r}
 #| label: fig3
-#| fig.cap: "Distribution of total wages for 44 employees at Parsons Paper Company in February 1867. Data is taken from Table 1 from p.253 of the register. Literacy is measured by an employee's ability to sign their own name in the payroll."
+#| fig.cap: "Distribution of total wages for 44 employees at Parsons Paper Company in February 1867"
+#| fig-subcap: Data from Table 1 from p.253 of the register. Literacy is measured by an employee's ability to sign their own name in the payroll."
 #| echo: false
 #| message: false
 
@@ -156,7 +157,7 @@ kable(employment2, col.names = c("Month", "Year", "Page Number", "Job", "Count",
   row_spec(0,bold=TRUE)
 ```
 
-@tbl-roles displays the different roles recorded for the first six months of the register, from January to June of 1861. The role labels on the register become very sporadic and difficult to track after 1861, however, 'Repairs' and 'Repairs and Watchmen' remain in their own section at the bottom of the register pages throughout all of the pay periods. There were 5 people under "Repairs" for April 1st, 1867 (see Figure 7 in 'Appendix') and 8 people under April 1st, 1868 (see Figure 8 in 'Appendix').
+@tbl-roles displays the different roles recorded for the first six months of the register, from January to June of 1861. The role labels on the register become very sporadic and difficult to track after 1861, however, 'Repairs' and 'Repairs and Watchmen' remain in their own section at the bottom of the register pages throughout all of the pay periods. There were 5 people under "Repairs" for April 1st, 1867 (see Figure 10 in 'Appendix') and 8 people under April 1st, 1868 (see Figure 11 in 'Appendix').
 
 The first pages of each pay period are typically comprised of unlabeled laborers (presumably the majority worked in the engine and machine rooms), in addition to Repairs and Watchmen, who are all males. The sorters, stampers, sealers, count and folders, and rag room/cutter roles all appear to remain throughout 1861-1869, although there are much fewer of them compared to the unlabeled male laborers. These roles are largely held by women, and their wages tend to be significantly lower than male workers, which can be seen in the next section.
 
@@ -164,7 +165,8 @@ The first pages of each pay period are typically comprised of unlabeled laborers
 
 ```{r}
 #| echo: false
-#| label: fig6
+#| label: fig-ggplot6
+#| fig-cap: "This plot shows the distribution of different roles within the paper company during the first six months of 1861. The unlabeled male laborers, MFC mill workers, finishers, and rag room workers appear to be the most popular roles."
 #| fig.height: 4
 #| fig.width: 7
 ggplot(data=employment, aes(x=fct_inorder(Month), y=Count, fill=Job)) +
@@ -172,11 +174,9 @@ ggplot(data=employment, aes(x=fct_inorder(Month), y=Count, fill=Job)) +
   labs(x = "Month", y = "Number of Employees", title = "Parsons Paper Company Employment by Job Type in 1861")
 ```
 
-The plot above shows the distribution of different roles within the paper company during the first six months of 1861. The unlabeled male laborers, MFC mill workers, finishers, and rag room workers appear to be the most popular roles.
-
 ## How do Parsons wages compare to the Massachusetts state averages?
 
-@tbl-wages and the plot below are adapted from page 314 of Judith McGaw's *Most Wonderful Machine: Mechanization and Social Change in Berkshire Paper Making, 1801-1885*, which used data from page 74 of the *Tenth Annual Report of the Bureau of Statistics of Labor* (Boston, 1879).
+@tbl-wages and Figure 7 are adapted from page 314 of Judith McGaw's *Most Wonderful Machine: Mechanization and Social Change in Berkshire Paper Making, 1801-1885*, which used data from page 74 of the *Tenth Annual Report of the Bureau of Statistics of Labor* (Boston, 1879).
 
 ```{r}
 #| warning: false
@@ -200,9 +200,11 @@ kable(weekly_wages, col.names = c("Job", "1860 Weekly Wages ($)", "1872 Weekly W
 ```{r}
 #| warning: false
 #| echo: false
-#| label: fig7
+#| label: fig-ggplot7
+#| fig-cap: "This plot, adapted from Table 4, displays average weekly wages for various roles in paper factories across Massachusetts between 1860-1878."
 #| fig.height: 4
 #| fig.width: 7
+
 weekly_wages <- weekly_wages |>
   pivot_longer(!Job, names_to = "year", values_to = "count")
 
@@ -237,7 +239,8 @@ kable(parsons_weekly_wages, col.names = c("Job", "Weekly Wages ($)")) |>
 ```{r}
 #| warning: false
 #| echo: false
-#| label: fig8
+#| label: fig-ggplot8
+#| fig-cap: "Weekly wage breakdown for various worker roles in Parsons Paper Company in 1861"
 #| fig.height: 4
 #| fig.width: 7
 
@@ -247,7 +250,7 @@ ggplot(data=parsons_weekly_wages, aes(x = reorder(Role, Weekly.Wages), y = Weekl
   theme(axis.text.x = element_text(size = 6)) 
 ```
 
-From this graph, we can see that the top paying roles at Parsons Paper Company in 1861 were the foreman, followed by repairs and machine room workers, who each made nearly 15 dollars a week. From John P. Hickey's 1954 University of Massachusetts thesis *The* *Holyoke Area Paper Industry*, we know that repairs were undertaken on Sundays, typically the only day off for many paper workers: "In replacing a wire on a Fourdrinier paper machine, workers in the Holyoke mills receive half a day's pay besides their regular pay during the hours they work on the replacement. This acts as an incentive to the workers to get the machine back in operation as soon as possible" (94).
+From Figure 8, we can see that the top paying roles at Parsons Paper Company in 1861 were the foreman, followed by repairs and machine room workers, who each made nearly 15 dollars a week. From John P. Hickey's 1954 University of Massachusetts thesis *The* *Holyoke Area Paper Industry*, we know that repairs were undertaken on Sundays, typically the only day off for many paper workers: "In replacing a wire on a Fourdrinier paper machine, workers in the Holyoke mills receive half a day's pay besides their regular pay during the hours they work on the replacement. This acts as an incentive to the workers to get the machine back in operation as soon as possible" (94).
 
 In contrast, female laborers who worked in the rag room and as cutters and finishers were paid much lower wages, with almost all women being paid less than 5 dollars a week.
 
