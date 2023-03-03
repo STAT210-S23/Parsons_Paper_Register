@@ -32,7 +32,7 @@ The goal of the following report is to further explore patterns in employment an
 
 One of the central goals of this class is to make the information contained in the Parsons Paper Register and related materials more accessible and widely available to those interested in the rich history of Holyoke. A Shiny app is available to view individual scans of the register at [r.amherst.edu/apps/nhorton/Parsons-Paper/](https://r.amherst.edu/apps/nhorton/Parsons-Paper/). We hope that this report can provide some insight into the different day-to-day operations at Parsons Paper Company, as well as the individuals who worked there, many of whom stayed for several years.
 
-In the illustrative analysis below, we used a transcribed copy of page 253 (Figure 1) of the register to compare the number of employees who were able to sign their own signatures to the number of employees who were not able to on a singular page, and examine whether there was a relationship between literacy and pay. @tbl-example displays the transcript of page 253.
+In the illustrative analysis below, we used a transcribed copy of page 253 (see Figure 1) of the register to compare the number of employees who were able to sign their own signatures to the number of employees who were not able to on a singular page, and examine whether there was a relationship between literacy and pay. @tbl-example displays the transcript of page 253.
 
 ```{r}
 #| label: fig1
@@ -76,8 +76,7 @@ kable(register_clean) |>
 
 ```{r}
 #| label: fig3
-#| fig.cap: "Distribution of total wages for 44 employees at Parsons Paper Company in February 1867"
-#| fig-subcap: Data from Table 1 from p.253 of the register. Literacy is measured by an employee's ability to sign their own name in the payroll."
+#| fig.cap: "This plot shows the distribution of total wages for 44 employees at Parsons Paper Company in February 1867 from Table 1. Literacy is measured by an employee's ability to sign their own name in the payroll."
 #| echo: false
 #| message: false
 
@@ -176,7 +175,7 @@ ggplot(data=employment, aes(x=fct_inorder(Month), y=Count, fill=Job)) +
 
 ## How do Parsons wages compare to the Massachusetts state averages?
 
-@tbl-wages and Figure 7 are adapted from page 314 of Judith McGaw's *Most Wonderful Machine: Mechanization and Social Change in Berkshire Paper Making, 1801-1885*, which used data from page 74 of the *Tenth Annual Report of the Bureau of Statistics of Labor* (Boston, 1879).
+@tbl-wages and @fig-ggplot7 are adapted from page 314 of Judith McGaw's *Most Wonderful Machine: Mechanization and Social Change in Berkshire Paper Making, 1801-1885*, which used data from page 74 of the *Tenth Annual Report of the Bureau of Statistics of Labor* (Boston, 1879).
 
 ```{r}
 #| warning: false
@@ -250,7 +249,7 @@ ggplot(data=parsons_weekly_wages, aes(x = reorder(Role, Weekly.Wages), y = Weekl
   theme(axis.text.x = element_text(size = 6)) 
 ```
 
-From Figure 8, we can see that the top paying roles at Parsons Paper Company in 1861 were the foreman, followed by repairs and machine room workers, who each made nearly 15 dollars a week. From John P. Hickey's 1954 University of Massachusetts thesis *The* *Holyoke Area Paper Industry*, we know that repairs were undertaken on Sundays, typically the only day off for many paper workers: "In replacing a wire on a Fourdrinier paper machine, workers in the Holyoke mills receive half a day's pay besides their regular pay during the hours they work on the replacement. This acts as an incentive to the workers to get the machine back in operation as soon as possible" (94).
+From @fig-ggplot8, we can see that the top paying roles at Parsons Paper Company in 1861 were the foreman, followed by repairs and machine room workers, who each made nearly 15 dollars a week. From John P. Hickey's 1954 University of Massachusetts thesis *The* *Holyoke Area Paper Industry*, we know that repairs were undertaken on Sundays, typically the only day off for many paper workers: "In replacing a wire on a Fourdrinier paper machine, workers in the Holyoke mills receive half a day's pay besides their regular pay during the hours they work on the replacement. This acts as an incentive to the workers to get the machine back in operation as soon as possible" (94).
 
 In contrast, female laborers who worked in the rag room and as cutters and finishers were paid much lower wages, with almost all women being paid less than 5 dollars a week.
 
