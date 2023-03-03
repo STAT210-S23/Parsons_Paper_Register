@@ -32,7 +32,7 @@ The goal of the following report is to further explore patterns in employment an
 
 One of the central goals of this class is to make the information contained in the Parsons Paper Register and related materials more accessible and widely available to those interested in the rich history of Holyoke. A Shiny app is available to view individual scans of the register at [r.amherst.edu/apps/nhorton/Parsons-Paper/](https://r.amherst.edu/apps/nhorton/Parsons-Paper/). We hope that this report can provide some insight into the different day-to-day operations at Parsons Paper Company, as well as the individuals who worked there, many of whom stayed for several years.
 
-In the illustrative analysis below, we used a transcribed copy of page 253 (Figure 1) of the register to compare the number of employees who were able to sign their own signatures to the number of employees who were not able to on a singular page, and examine whether there was a relationship between literacy and pay. Table 1 displays the transcript of page 253.
+In the illustrative analysis below, we used a transcribed copy of page 253 (Figure 1) of the register to compare the number of employees who were able to sign their own signatures to the number of employees who were not able to on a singular page, and examine whether there was a relationship between literacy and pay. @tbl-example displays the transcript of page 253.
 
 ```{r}
 #| label: fig1
@@ -52,10 +52,11 @@ knitr::include_graphics("images/253.jpg")
 knitr::include_graphics("images/253mini.jpeg")
 ```
 
-
 ```{r}
 #| echo: false
 #| message: false
+#| label: tbl-example
+#| tbl-cap: "Example Portion of Parsons Paper Company Register P.253"
 
 #data set transcribed from p.253 above of the register
 register <- readr::read_csv(
@@ -65,7 +66,7 @@ register <- readr::read_csv(
 register_clean <- register |>
   select(lastname, firstname, number_days, price1, price2, total, rent_or_board, balance_due, signature_x, daily_pay)
 
-kable(register_clean, caption = "Example Portion of Parsons Paper Company Register P.253") |>
+kable(register_clean) |>
     kable_styling(font_size = 8)
 ```
 
@@ -86,7 +87,7 @@ gf_boxplot(total ~ signature_x, data = register) +
 
 ## How many days in a pay period?
 
-As mentioned in the introduction, the Parsons Paper Company register stored in the Holyoke Public Library comprises monthly pay periods from January 1861-April 1869 (p.1-316 of the register). Pay periods appear to be a month long with employees typically getting paid on the 1st of the next month. Based off Table 1 from p. 253, most employees work between 20-30 days each pay period, with the average being around 27, so most employees work at least 6 days/week. In Chapter IV of Constance Green's *Holyoke, Massachusetts: A Case History of the Industrial Revolution in America* [@green:1939], it is reported that male Holyoke paper makers worked 58-72 hours a week. Working 11.25 hours five days a week in addition to 8.75 hours on Saturday was typical for Holyoke textile mills, while women tended to work slightly shorter hours.
+As mentioned in the introduction, the Parsons Paper Company register stored in the Holyoke Public Library comprises monthly pay periods from January 1861-April 1869 (p.1-316 of the register). Pay periods appear to be a month long with employees typically getting paid on the 1st of the next month. Based off @tbl-example from p. 253, most employees work between 20-30 days each pay period, with the average being around 27, so most employees work at least 6 days/week. In Chapter IV of Constance Green's *Holyoke, Massachusetts: A Case History of the Industrial Revolution in America* [@green:1939], it is reported that male Holyoke paper makers worked 58-72 hours a week. Working 11.25 hours five days a week in addition to 8.75 hours on Saturday was typical for Holyoke textile mills, while women tended to work slightly shorter hours.
 
 Pgs. 223-225 (see Figure 4) appear to comprise an entire pay period for the month of April in 1868 (most pay periods span \~3 pages in the register)
 
@@ -114,13 +115,16 @@ knitr::include_graphics("images/261.jpeg")
 
 ## How many employees during this era?
 
-To quantify this, we counted the number of employees throughout each of the following pay periods by hand by going through the pages of the register one by one. We found that the average number of workers employed at Parsons Paper Company across the measured 9 years spanning the register is **136 employees between 1861-1869**. From Table 2 below, we can see that the number of employees generally increased over the years, with a noticeable boom in employment towards the end of the Civil War in 1865. In Chapter IV of *Holyoke, Massachusetts"*, Green mentions that these paper mills had abnormally high employee retention rates compared to other industries. From *Burt's Illustrated Guide of the Connecticut Valley* ([page 79](https://quod.lib.umich.edu/m/moa/AAB2140.0001.001/83)), we also know that at the end of 1867, Parsons employed 150 people and had "nineteen engines for grinding rags,"turning out "800 tons of paper yearly."
+To quantify this, we counted the number of employees throughout each of the following pay periods by hand by going through the pages of the register one by one. We found that the average number of workers employed at Parsons Paper Company across the measured 9 years spanning the register is **136 employees between 1861-1869**. From @tbl-employees, we can see that the number of employees generally increased over the years, with a noticeable boom in employment towards the end of the Civil War in 1865. In Chapter IV of *Holyoke, Massachusetts"*, Green mentions that these paper mills had abnormally high employee retention rates compared to other industries. From *Burt's Illustrated Guide of the Connecticut Valley* ([page 79](https://quod.lib.umich.edu/m/moa/AAB2140.0001.001/83)), we also know that at the end of 1867, Parsons employed 150 people and had "nineteen engines for grinding rags,"turning out "800 tons of paper yearly."
 
 ```{r}
 #| echo: false
+#| label: tbl-employees
+#| tbl-cap: "Number of Parsons Paper Company Employees by Year"
+
 employees <- read.csv("parsons_employment.csv")
 
-kable(employees, caption = "Number of Parsons Paper Company Employees by Year", col.names = c("Year", "Number of Employees", "Subset Page Numbers")) |>
+kable(employees, col.names = c("Year", "Number of Employees", "Subset Page Numbers")) |>
   kable_styling(font_size = 8) |>
   row_spec(0,bold=TRUE)
 ```
@@ -135,10 +139,11 @@ In *History of the Connecticut Valley in Massachusetts: History of Franklin Coun
 
 [Link to full spreadsheet](https://docs.google.com/spreadsheets/d/1dza87xBB2pgVajOuLYBM_fHfAobr6IFIZFAu4vFOnhs/edit?usp=sharing)
 
-
 ```{r}
 #| warning: false
 #| echo: false
+#| label: tbl-roles
+#| tbl-cap: "Parsons Paper Company Employment by Job Type (January-June 1861)"
 employment <- read.csv("parsons_jobs.csv")
 
 employment2 <- employment |>
@@ -146,12 +151,12 @@ employment2 <- employment |>
 
 # removed notes column when displaying table
 
-kable(employment2, caption = "Parsons Paper Company Employment by Job Type (January-June 1861)", col.names = c("Month", "Year", "Page Number", "Job", "Count", "Monthly Total Workers")) |>
+kable(employment2, col.names = c("Month", "Year", "Page Number", "Job", "Count", "Monthly Total Workers")) |>
   kable_styling(font_size = 8) |>
   row_spec(0,bold=TRUE)
 ```
 
-Table 3 displays the different roles recorded for the first six months of the register, from January to June of 1861. The role labels on the register become very sporadic and difficult to track after 1861, however, 'Repairs' and 'Repairs and Watchmen' remain in their own section at the bottom of the register pages throughout all of the pay periods. There were 5 people under "Repairs" for April 1st, 1867 (see Figure 6 in 'Appendix') and 8 people under April 1st, 1868 (see Figure 7 in 'Appendix').
+@tbl-roles displays the different roles recorded for the first six months of the register, from January to June of 1861. The role labels on the register become very sporadic and difficult to track after 1861, however, 'Repairs' and 'Repairs and Watchmen' remain in their own section at the bottom of the register pages throughout all of the pay periods. There were 5 people under "Repairs" for April 1st, 1867 (see Figure 7 in 'Appendix') and 8 people under April 1st, 1868 (see Figure 8 in 'Appendix').
 
 The first pages of each pay period are typically comprised of unlabeled laborers (presumably the majority worked in the engine and machine rooms), in addition to Repairs and Watchmen, who are all males. The sorters, stampers, sealers, count and folders, and rag room/cutter roles all appear to remain throughout 1861-1869, although there are much fewer of them compared to the unlabeled male laborers. These roles are largely held by women, and their wages tend to be significantly lower than male workers, which can be seen in the next section.
 
@@ -171,13 +176,15 @@ The plot above shows the distribution of different roles within the paper compan
 
 ## How do Parsons wages compare to the Massachusetts state averages?
 
-Table 4 and the plot below are adapted from page 314 of Judith McGaw's *Most Wonderful Machine: Mechanization and Social Change in Berkshire Paper Making, 1801-1885*, which used data from page 74 of the *Tenth Annual Report of the Bureau of Statistics of Labor* (Boston, 1879).
+@tbl-wages and the plot below are adapted from page 314 of Judith McGaw's *Most Wonderful Machine: Mechanization and Social Change in Berkshire Paper Making, 1801-1885*, which used data from page 74 of the *Tenth Annual Report of the Bureau of Statistics of Labor* (Boston, 1879).
 
 ```{r}
 #| warning: false
 #| echo: false
 #| fig.height: 4
 #| fig.width: 7
+#| label: tbl-wages
+#| tbl-cap: "Weekly Wages of Massachusetts Paper Workmen, 1860-78"
 
 # MA Wages
 
@@ -185,7 +192,7 @@ weekly_wages <- read.csv("weekly_wages.csv") |>
   select(Job, Wages_1860, Wages_1872, Wages_1878)
 
 
-kable(weekly_wages, caption = "Weekly Wages of Massachusetts Paper Workmen, 1860-78", col.names = c("Job", "1860 Weekly Wages ($)", "1872 Weekly Wages ($)", "1878 Weekly Wages ($)")) |>
+kable(weekly_wages, col.names = c("Job", "1860 Weekly Wages ($)", "1872 Weekly Wages ($)", "1878 Weekly Wages ($)")) |>
   kable_styling(font_size = 8) |>
   row_spec(0,bold=TRUE)
 ```
@@ -202,25 +209,27 @@ weekly_wages <- weekly_wages |>
 ggplot(data=weekly_wages, aes(x=(year), y=count, fill=Job)) +
   geom_bar(stat="identity", position = "dodge") +
 scale_x_discrete(labels=c("Wages_1860" = "1860", "Wages_1872" = "1872","Wages_1878" = "1878"))+
-  labs(x = "Year", y = "Weekly Wage ($)", title = "Weekly Wages of Massachusetts Paper Workmen, 1860-78")
+  labs(x = "Year", y = "Weekly Wage ($)", title = "Weekly Wages of Massachusetts Paper Workmen, 1860-78",)
 ```
 
 \newpage
 
-From Table XX Please autonumber all Figure and Table refs XX, we can see that Parsons Paper Company employees were, for the most part, paid at comparable rates to other Massachusetts paper factory workers across the state, although the pay for several common roles, especially those held by women (finisher, cutter), is noticeably lower compared to the state average, while other more "important" roles such as engineer and mechanic tended to be paid more at Parsons compared to other Massachusetts paper mills. It may be beneficial to compare the Parsons Paper Company wages to those of other paper mills in Holyoke, as opposed to the entire state, to get a better understanding of how the Parsons Paper Company paid relative to its direct competitors.
+From @tbl-parsons, we can see that Parsons Paper Company employees were, for the most part, paid at comparable rates to other Massachusetts paper factory workers across the state, although the pay for several common roles, especially those held by women (finisher, cutter), is noticeably lower compared to the state average, while other more "important" roles such as engineer and mechanic tended to be paid more at Parsons compared to other Massachusetts paper mills. It may be beneficial to compare the Parsons Paper Company wages to those of other paper mills in Holyoke, as opposed to the entire state, to get a better understanding of how the Parsons Paper Company paid relative to its direct competitors.
 
 ```{r}
 #| warning: false
 #| echo: false
 #| fig.height: 4
 #| fig.width: 7
+#| tbl-cap: "Parsons Weekly Wages - 1861"
+#| label: tbl-parsons
 
 # Parsons Wages
 parsons_weekly_wages <- read.csv("job_wages.csv") |>
   select(Role, Weekly.Wages)
 
 
-kable(parsons_weekly_wages, caption = "Parsons Weekly Wages - 1861", col.names = c("Job", "Weekly Wages ($)")) |>
+kable(parsons_weekly_wages, col.names = c("Job", "Weekly Wages ($)")) |>
   kable_styling(font_size = 8) |>
   row_spec(0,bold=TRUE)
 ```
