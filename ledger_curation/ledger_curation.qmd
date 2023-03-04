@@ -38,11 +38,9 @@ Lastly, we created an interactive web app that can help display the converted sc
 
 It is important to note that the pages from the register had some interesting peculiarities---as it is common due to how old it is, the register is missing some pages, and it has cutouts on some pages where we believe may have contained revenue stamps before (as seen on Figure \ref{fig:fig1}).
 
--insert example of additional pages-
-
 ```{r}
 #| label: fig1
-#| fig.cap: "\\label{fig:fig1} preview display of p. 198 of register after color correcting. In the bottom left is the colord adjustment window. The 'Auto Levels' button was used for the adjustments."
+#| fig.cap: "\\label{fig:fig1} p. 286 of register after color correcting. On the left is a large rectangle cut off, a little bigger than the width of the stamps, suggesting they were cut off."
 #| out.width: "75%"
 #| echo: false
 knitr::include_graphics("lc_images/Figure_1.jpg")
