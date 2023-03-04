@@ -19,6 +19,7 @@ library(knitr)
 library(kableExtra)
 options(digits = 4)
 ```
+
 \newpage
 
 # Introduction
@@ -29,26 +30,31 @@ The original pages of the register, which is now property of the Holyoke Public 
 
 XX insert information about Shared Google Drive and Shiny app here XX
 
-The original scanned files can be found on our Shared Google Drive here:
-<https://drive.google.com/drive/folders/18Aw57Hhga52E3skMttF7sxDfL6KWO-7q?usp=sharing>
+The original scanned files can be found on our Shared Google Drive here: <https://drive.google.com/drive/folders/18Aw57Hhga52E3skMttF7sxDfL6KWO-7q?usp=sharing>
 
 For a current list of pages with issues, please look at the public Github repository here: <https://github.com/STAT210-S23/Parsons_Paper_Register>
 
 Lastly, we created an interactive web app that can help display the converted scans. This interactive web applet can be found at <https://r.amherst.edu/apps/nhorton/Parsons-Paper>
 
-It is important to note that the pages from the register had some interesting peculiarities---as it is common due to how old it is, the register is missing some pages, and it has cutouts on some pages where we believe may have contained revenue stamps before. 
+It is important to note that the pages from the register had some interesting peculiarities---as it is common due to how old it is, the register is missing some pages, and it has cutouts on some pages where we believe may have contained revenue stamps before (as seen on Figure \ref{fig:fig1}).
 
 -insert example of additional pages-
 
--insert example of revenue stamp page with cuts-
+```{r}
+#| label: fig1
+#| fig.cap: "\\label{fig:fig1} preview display of p. 198 of register after color correcting. In the bottom left is the colord adjustment window. The 'Auto Levels' button was used for the adjustments."
+#| out.width: "75%"
+#| echo: false
+knitr::include_graphics("lc_images/Figure_1.jpg")
+```
 
-This document describes the process of scanning, transforming, and curating the images from the register and details how the register might be useful for historians and residents. Specifically, the links above can be used by historians and residents to more easily view this aspect of Holyoke's history: 
+This document describes the process of scanning, transforming, and curating the images from the register and details how the register might be useful for historians and residents. Specifically, the links above can be used by historians and residents to more easily view this aspect of Holyoke's history:
 
-- Original Scans: <https://drive.google.com/drive/folders/18Aw57Hhga52E3skMttF7sxDfL6KWO-7q?usp=sharing>
-- GitHub: <https://github.com/STAT210-S23/Parsons_Paper_Register>
-- Interactive Web Viewer of Ledger Pages: <https://r.amherst.edu/apps/nhorton/Parsons-Paper>
+-   Original Scans: <https://drive.google.com/drive/folders/18Aw57Hhga52E3skMttF7sxDfL6KWO-7q?usp=sharing>
+-   GitHub: <https://github.com/STAT210-S23/Parsons_Paper_Register>
+-   Interactive Web Viewer of Ledger Pages: <https://r.amherst.edu/apps/nhorton/Parsons-Paper>
 
-# Processes to Curate Ledger 
+# Processes to Curate Ledger
 
 ## Scanning Process
 
@@ -128,14 +134,14 @@ Some additional images (to replace missing or blurry images) were scanned with a
 ## Conversion Process
 
 ```{r}
-#| label: fig1
-#| fig.cap: "\\label{fig:fig1}Ex. p. 253 of register - part of the February 1st, 1867 payroll"
+#| label: fig2
+#| fig.cap: "\\label{fig:fig2}Ex. p. 253 of register - part of the February 1st, 1867 payroll"
 #| out.width: "100%"
 #| echo: false
 knitr::include_graphics("../jpeg/253.jpeg")
 ```
 
-Figure \ref{fig:fig1} displays a sample page from the register. These images were from raw camera files (`.CR2`) to `.tiff` files that we kept in the `tiff_original` directory in our Google Drive.
+Figure \ref{fig:fig2} displays a sample page from the register. These images were from raw camera files (`.CR2`) to `.tiff` files that we kept in the `tiff_original` directory in our Google Drive.
 
 As some some pages had multiple scans (saved as `XXXa.CR2`, `XXXb.CR2`, etc.), we used bash commands in the terminal to identify any repeated images. For each page with duplicate scans, we inspected each version and selected the one with the best quality (based on quality of photo, position of page, clarity of the words, and general preference). The rejected scans were moved into a separate folder labeled `raw_deleted`, in the Google Drive. If the scan remaining in `raw` was the second version, it was renamed to remove the additional letter.
 
@@ -143,19 +149,11 @@ As some some pages had multiple scans (saved as `XXXa.CR2`, `XXXb.CR2`, etc.), w
 
 Within the Google Drive for Desktop app, using command selection every photo in the folder was selected and copy-pasted into the same `tiff_original` folder. These copies are automatically labeled as `Copy of tiff_XXX.tiff`. A new folder was created called `processing_tiff` and the copies were moved into this folder in batches of 10 using the command select function.
 
-The process moved from the online Google Drive platform to the desktop version (which was downloaded). Within the desktop interface, 20 images were downloaded locally at a time. Starting from the image with the largest number, the image was opened with MacOS's `preview` application. In the application, first the image was cropped to remove excess space on the image. The size of the cropping was set based on making sure every part of the page itself was visible, see Figure \ref{fig:fig2} for an example. Dead space was kept in if it preserved parts of the page, for instance more bent pages would retain some dead space as the cropping was done in rectangle shapes, see Figure \ref{fig:fig3} for an example.
-
-```{r}
-#| label: fig2
-#| fig.cap: "\\label{fig:fig2} Ex. cropping p. 198 of register in preview"
-#| out.width: "75%"
-#| echo: false
-knitr::include_graphics("lc_images/Figure_2.jpg")
-```
+The process moved from the online Google Drive platform to the desktop version (which was downloaded). Within the desktop interface, 20 images were downloaded locally at a time. Starting from the image with the largest number, the image was opened with MacOS's `preview` application. In the application, first the image was cropped to remove excess space on the image. The size of the cropping was set based on making sure every part of the page itself was visible, see Figure \ref{fig:fig3} for an example. Dead space was kept in if it preserved parts of the page, for instance more bent pages would retain some dead space as the cropping was done in rectangle shapes, see Figure \ref{fig:fig4} for an example.
 
 ```{r}
 #| label: fig3
-#| fig.cap: "\\label{fig:fig3} p. 304 of register, see the top and bottom where the pages bend."
+#| fig.cap: "\\label{fig:fig3} Ex. cropping p. 198 of register in preview"
 #| out.width: "75%"
 #| echo: false
 knitr::include_graphics("lc_images/Figure_3.jpg")
@@ -163,7 +161,7 @@ knitr::include_graphics("lc_images/Figure_3.jpg")
 
 ```{r}
 #| label: fig4
-#| fig.cap: "\\label{fig:fig4} preview display of p. 198 of register, a red arrow was added to the image indicating where the adjust color interface is"
+#| fig.cap: "\\label{fig:fig4} p. 304 of register, see the top and bottom where the pages bend."
 #| out.width: "75%"
 #| echo: false
 knitr::include_graphics("lc_images/Figure_4.jpg")
@@ -171,13 +169,21 @@ knitr::include_graphics("lc_images/Figure_4.jpg")
 
 ```{r}
 #| label: fig5
-#| fig.cap: "\\label{fig:fig5} preview display of p. 198 of register after color correcting. In the bottom left is the colord adjustment window. The 'Auto Levels' button was used for the adjustments."
+#| fig.cap: "\\label{fig:fig5} preview display of p. 198 of register, a red arrow was added to the image indicating where the adjust color interface is"
+#| out.width: "75%"
+#| echo: false
+knitr::include_graphics("lc_images/Figure_4.jpg")
+```
+
+```{r}
+#| label: fig6
+#| fig.cap: "\\label{fig:fig6} preview display of p. 198 of register after color correcting. In the bottom left is the colord adjustment window. The 'Auto Levels' button was used for the adjustments."
 #| out.width: "75%"
 #| echo: false
 knitr::include_graphics("lc_images/Figure_5.jpg")
 ```
 
-After rotating, the color correction for the image was opened in preview and the automatic correction was applied, see Figures \ref{fig:fig4} and \ref{fig:fig5}.
+After rotating, the color correction for the image was opened in preview and the automatic correction was applied, see Figures \ref{fig:fig5} and \ref{fig:fig6}.
 
 Once all of the edits for the image were made in preview, the image would be renamed to remove the `Copy of` and leave only the number `XXX.tiff`. This indicates that the image has been processed. The process was then repeated to each of the batch of 20 images downloaded locally. Once all of the images were processed in a batch, the download was removed for the batch and another batch of 20 was downloaded and processed. This continued until every image was processed.
 
