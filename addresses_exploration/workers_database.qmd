@@ -113,12 +113,10 @@ options(digits = 4)
 
 ```{r}
 #| echo: false
-#| fig.cap: "Employee's Database"
-#| label: fig-sample14
 ancestry <- readr::read_csv("ancestry_addresses_updated.csv",  show_col_types = FALSE)
 ancestry|>
   select('Last Name', 'Birthday', 'Death Day', 'Spouse', Birthplace) |>
-  kable() |>
+  kable(caption = "\\label{table}Employee Databse") |>
   kable_styling(latex_options="scale_down")
 
 ```
@@ -158,7 +156,7 @@ The are a number of names that appear in first search. We used educated guesses 
 knitr::include_graphics("multiple_names.jpeg")
 ```
 
-The amount of information we could find on each worker varied from name to name but in general, we were able to find birth year, birthplace, spouse, children, parents, occupation, and address. Here is what Eliza Ann's profile looks like on Ancestry.com. We then compiled these results into a spreadsheet linked above.
+The amount of information we could find on each worker varied from name to name but in general, we were able to find birth year, birthplace, spouse, children, parents, occupation, and address. Here is what Eliza Ann's profile looks like on Ancestry.com. We then compiled these results into this table\ref{table}.
 
 ```{r, out.width="50%"}
 #| label: fig-sample12
