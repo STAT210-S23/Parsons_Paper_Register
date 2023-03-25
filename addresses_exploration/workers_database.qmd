@@ -74,7 +74,7 @@ knitr::include_graphics("Lucy Allen map.png")
 ```{r, out.height="40%"}
 #| label: fig-sample8
 #| echo: false
-#| fig.cap: "Joseph C. Parsons' Profile"
+#| fig.cap: "Joseph C. Parsons' Profile (1814-1886)"
 knitr::include_graphics("Joseph_Clark.jpeg")
 ```
 
@@ -100,7 +100,7 @@ knitr::include_graphics("Joseph_Clark.jpeg")
 
 ## Database
 
-Here is the database we made. It tells us personal information about Parson's Paper employees. We can find who they are, when they were born, their address, family members, and place of origin. Naturally, with data this old, we could not find each and every piece of information for all of the employees. This is just a start that will hopefully fuel other individuals to contribute to this document. The table shown below shows some of the columns of the data set. More information is viewable in the full spreadsheet. This is the aggregated info for some of the workers who worked in Parsons' paper in the 1860s:
+Here is the database we created. It displays personal information about Parson's Paper employees. We can find who they are, when they were born, their address, family members, and place of origin. Naturally, with data this old, we could not find each and every piece of information for all of the employees. This is just a start that will hopefully fuel other individuals to contribute to this document. If we had extended time and resources, we would search up more employees on Ancestry.com and try and find their living descendants today. For this project, we were only able to access basic information on Ancestry.com. It would be great to access the full database and find more documentation of the employees as each additional document provides more information about someone's life that we might not have had before. The table shown below shows some of the columns of the data set. More information is viewable in the full spreadsheet. This is the aggregated info for some of the workers who worked in Parsons' paper in the 1860s:
 
 ```{r}
 #| label: setup
@@ -111,9 +111,10 @@ library(kableExtra)
 options(digits = 4)
 ```
 
-
 ```{r}
 #| echo: false
+#| fig.cap: "Employee's Database"
+#| label: fig-sample14
 ancestry <- readr::read_csv("ancestry_addresses_updated.csv",  show_col_types = FALSE)
 ancestry|>
   select('Last Name', 'Birthday', 'Death Day', 'Spouse', Birthplace) |>
@@ -122,12 +123,11 @@ ancestry|>
 
 ```
 
-Here is a [LINK](https://github.com/STAT210-S23/Parsons_Paper_Register) to this repo
-
 \clearpage
+
 ## **Technical Appendix**
 
-The goal of this technical appendix is to provide an account of our process of collecting the information from Ancestry.com. First, we accessed the Amherst College Library account for Ancestry.com.
+The goal of this technical appendix is to provide a repeatable procedure of our process of collecting the information from Ancestry.com so that other passionate historians can build off our work. First, we accessed the Amherst College Library account for Ancestry.com.
 
 ```{r, out.height="30%"}
 #| label: fig-sample9
@@ -149,7 +149,7 @@ knitr::include_graphics("website.jpeg")
 
 By searching for a name and a place, (Holyoke, Hampden, Massachusetts), we were able to find census information from the 1800s and track down paper mill workers.
 
-The are a number of names that appear in first search. We used educated guesses to select the most appropriate person.
+The are a number of names that appear in first search. We used educated guesses to select the most appropriate person looking at dates of birth and death, places lived, and any other information that might've given us a clue.
 
 ```{r, out.height="33%"}
 #| label: fig-sample11
@@ -158,21 +158,18 @@ The are a number of names that appear in first search. We used educated guesses 
 knitr::include_graphics("multiple_names.jpeg")
 ```
 
-The amount of information we could find on each worker varied from name to name but in general, we were able to find birth year, birthplace, spouse, children, parents, occupation, and address. Here is what Eliza Ann's profile looks like on Ancestry.com We then compiled these results into a spreadsheet linked above.
+The amount of information we could find on each worker varied from name to name but in general, we were able to find birth year, birthplace, spouse, children, parents, occupation, and address. Here is what Eliza Ann's profile looks like on Ancestry.com. We then compiled these results into a spreadsheet linked above.
 
 ```{r, out.width="50%"}
 #| label: fig-sample12
 #| echo: false
-#| fig.cap: "Eliza Ann Allen's Profile"
+#| fig.cap: "Eliza Ann Allen's Profile (1841-?)"
 knitr::include_graphics("ELIZA_ANN.png")
 ```
 
-```{r, out.width="50%"}
+```{r, out.width="70%"}
 #| label: fig-sample13
 #| echo: false
 #| fig.cap: "Zoomed in Image of the 1870 Census"
 knitr::include_graphics("Allens family 1870 census Data.png")
 ```
-
-
-
