@@ -26,9 +26,15 @@ knitr::opts_chunk$set(fig.pos = "H", out.extra = "")
 
 ## Introduction
 
-The Parsons Paper Register contains nearly 400 pages of employee, payroll, and financial records from January 1861 to April 1869 from Parsons Paper Company in Holyoke, Massachusetts. Founded in 1853 by Joseph Parsons, Parsons Paper Company was the oldest and largest manufacturer of cotton-based high quality writing papers in Holyoke until its liquidation in 2005. The original pages of the register, which is now property of the Holyoke Public Library, were scanned on January 10, 2023 as part of this class (STAT210: Mining the History of Holyoke) and screenshots are included in the analysis below. Pages contain information such as employee name and signature, role, days worked, daily pay, and total wages earned, and are organized by separate pay periods. We are focused mainly on the payroll, which is comprised by pages 1-316 of the register.
+The Parsons Paper Register contains nearly 400 pages of employee, payroll, and financial records from January 1861 to April 1869 from Parsons Paper Company in Holyoke, Massachusetts. Founded in 1853 by Joseph Parsons, Parsons Paper Company was the oldest and largest manufacturer of cotton-based high quality writing papers in Holyoke until its liquidation in 2005.
 
-The goal of the following report is to further explore patterns in employment and different groups of employees over time by analyzing the payroll records in the 1861-1869 time period, both before and after the end of the Civil War. First, we aimed to quantify the length of a single pay period as well as the number of employees working at Parsons Paper Company during the era spanning the register. The 1860s were a time of great growth for the company, and by the beginning of the Civil War in 1861 Parsons Paper Company had already become the largest manufacturer of writing and envelope paper in the United States. Secondly, we examined the distribution of different roles within the company, ranging from women who worked in the "rag room" where the raw material for paper was cut and processed, to men who worked in the engine room and repairs. Most paper mills in the North purchased rags from companies in the South, and Parsons' rag room was considered an "anomaly" [@holyoke:1891]. Finally, we are also interested in clarifying the meaning of the "Price" column of the payroll, which appears to denote the daily wage rate of the different employees in cents, although the exact meaning and calculation of the fractions remains unclear.
+The original pages of the register, which is now property of the Holyoke Public Library, were scanned on January 10, 2023 as part of this class (STAT210: Mining the History of Holyoke) and screenshots are included in the analysis below. Pages contain information such as employee name and signature, role, days worked, daily pay, and total wages earned, and are organized by separate pay periods. We are focused mainly on the payroll, which is comprised by pages 1-316 of the register.
+
+The goal of the following report is to explore patterns in employment by groups of employees over time by analyzing the payroll records in the 1861-1869 time period, both before and after the end of the Civil War.
+
+In the first section we aimed to quantify the length of a single pay period as well as the number of employees working at Parsons Paper Company during the era spanning the register.
+
+The 1860s were a time of great growth for the company, and by the beginning of the Civil War in 1861 Parsons Paper Company had already become the largest manufacturer of writing and envelope paper in the United States. Secondly, we examined the distribution of different roles within the company, ranging from women who worked in the "rag room" where the raw material for paper was cut and processed, to men who worked in the engine room and repairs. Most paper mills in the North purchased rags from companies in the South, and Parsons' rag room was considered an "anomaly" [@holyoke:1891]. Finally, we are also interested in clarifying the meaning of the "Price" column of the payroll, which appears to denote the daily wage rate of the different employees in cents, although the exact meaning and calculation of the fractions remains unclear.
 
 One of the central goals of this class is to make the information contained in the Parsons Paper Register and related materials more accessible and widely available to those interested in the rich history of Holyoke. A Shiny app is available to view individual scans of the register at [r.amherst.edu/apps/nhorton/Parsons-Paper/](https://r.amherst.edu/apps/nhorton/Parsons-Paper/). We hope that this report can provide some insight into the different day-to-day operations at Parsons Paper Company, as well as the individuals who worked there, many of whom stayed for several years.
 
@@ -36,7 +42,7 @@ In the illustrative analysis below, we used a transcribed copy of page 253 (see 
 
 ```{r}
 #| label: fig1
-#| fig.cap: "Ex. p. 253 of register - February 1st, 1867. Payroll of the Parsons Paper Company (Holyoke, MA)"
+#| fig.cap: "Page 253 of register - February 1st, 1867. Payroll of the Parsons Paper Company (Holyoke, MA)"
 #| out.width: "75%"
 #| echo: false
 knitr::include_graphics("images/253.jpg")
@@ -46,7 +52,7 @@ knitr::include_graphics("images/253.jpg")
 
 ```{r}
 #| label: fig2
-#| fig.cap: "Close-up of p. 253 of register from Figure 1. Signatures with an 'x' in the middle (like John Flynn above) indicate the worker was not able to sign their own name"
+#| fig.cap: "Close-up of page 253 of register from Figure 1. Signatures with an 'x' in the middle (like John Flynn above) indicate the worker was not able to sign their own name"
 #| out.width: "75%"
 #| echo: false
 knitr::include_graphics("images/253mini.jpeg")
@@ -56,7 +62,7 @@ knitr::include_graphics("images/253mini.jpeg")
 #| echo: false
 #| message: false
 #| label: tbl-example
-#| tbl-cap: "Example Portion of Parsons Paper Company Register P.253"
+#| tbl-cap: "Example Portion of Parsons Paper Company Register - Page 253."
 
 #data set transcribed from p.253 above of the register
 register <- readr::read_csv(
@@ -66,7 +72,7 @@ register <- readr::read_csv(
 register_clean <- register |>
   select(lastname, firstname, number_days, price1, price2, total, rent_or_board, balance_due, signature_x, daily_pay)
 
-kable(register_clean) |>
+kable(register_clean, col.names = c("Last Name", "First Name", "# of Days", "Price 1", "Price 2", "Total", "Rent/Board", "Paid", "Signed", "Daily Pay")) |>
     kable_styling(font_size = 8)
 ```
 
@@ -81,21 +87,23 @@ kable(register_clean) |>
 #| message: false
 
 gf_boxplot(total ~ signature_x, data = register) + 
-  labs(title = "Parsons Paper Company Employees Wages vs. Literacy (February 1867)", x = "Is Literate?", y = "Total Wages ($)")
+  labs(title = "Parsons Paper Company Employees Wages vs. Literacy (February 1867)", x = "Signed for Payroll", y = "Monthly Total Wages ($)")
 
 ```
 
 ## How many days in a pay period?
 
-As mentioned in the introduction, the Parsons Paper Company register stored in the Holyoke Public Library comprises monthly pay periods from January 1861-April 1869 (p.1-316 of the register). Pay periods appear to be a month long with employees typically getting paid on the 1st of the next month. Based off @tbl-example from p. 253, most employees work between 20-30 days each pay period, with the average being around 27, so most employees work at least 6 days/week. In Chapter IV of Constance Green's *Holyoke, Massachusetts: A Case History of the Industrial Revolution in America* [@green:1939], it is reported that male Holyoke paper makers worked 58-72 hours a week. Working 11.25 hours five days a week in addition to 8.75 hours on Saturday was typical for Holyoke textile mills, while women tended to work slightly shorter hours.
+As mentioned in the introduction, the Parsons Paper Company register stored in the Holyoke Public Library comprises monthly pay periods from January 1861-April 1869 (p.1-316 of the register). Pay periods appear to be a month long with employees typically getting paid on the 1st of the next month. Based off @tbl-example from p. 253, most employees work between 20-30 days each pay period, with the average being around 27, so most employees work at least 6 days/week.
 
-Pgs. 223-225 (see Figure 4) appear to comprise an entire pay period for the month of April in 1868 (most pay periods span \~3 pages in the register)
+In Chapter IV of Constance Green's *Holyoke, Massachusetts: A Case History of the Industrial Revolution in America* [@green:1939], it is reported that male Holyoke paper makers worked 58-72 hours a week. Working 11.25 hours five days a week in addition to 8.75 hours on Saturday was typical for Holyoke textile mills, while women tended to work slightly shorter hours.
+
+Pgs. 223-225 (see Figure 4) appear to comprise an entire pay period for the month of April in 1868 (most pay periods span 3 pages in the register)
 
 \newpage
 
 ```{r}
 #| label: fig4
-#| fig.cap: "p. 223 of register (April 1st, 1867), see p.224-225 in 'Appendix'"
+#| fig.cap: "Page 223 of register (April 1st, 1867), also see pages 224-225 in 'Appendix.'"
 #| out.width: "75%"
 #| echo: false
 knitr::include_graphics("images/223.jpeg")
@@ -105,7 +113,7 @@ Pgs. 223-225 and Pgs. 261-263 (see Figure 5) are exactly one year apart in the r
 
 ```{r}
 #| label: fig5
-#| fig.cap: "p. 261 of register (April 1st, 1868), see p.262-263 in 'Appendix'"
+#| fig.cap: "Page 261 of register (April 1st, 1868), also see pages 262-263 in 'Appendix.'"
 #| out.width: "75%"
 #| echo: false
 knitr::include_graphics("images/261.jpeg")
@@ -115,12 +123,12 @@ knitr::include_graphics("images/261.jpeg")
 
 ## How many employees during this era?
 
-To quantify this, we counted the number of employees throughout each of the following pay periods by hand by going through the pages of the register one by one. We found that the average number of workers employed at Parsons Paper Company across the measured 9 years spanning the register is **136 employees between 1861-1869**. From @tbl-employees, we can see that the number of employees generally increased over the years, with a noticeable boom in employment towards the end of the Civil War in 1865. In Chapter IV of *Holyoke, Massachusetts: A Case History of the Industrial Revolution in America,* Green mentions that these paper mills had abnormally high employee retention rates compared to other industries. We also know that at the end of 1867, Parsons employed 150 people and had "nineteen engines for grinding rags,"turning out "800 tons of paper yearly" [@burt:1867, page 79].
+To quantify this, we counted the number of employees throughout each of the following pay periods by hand by going through the pages of the register one by one. We found that the average number of workers employed at Parsons Paper Company across the measured 9 years spanning the register is **136 employees between 1861-1869**. From @tbl-employees, we can see that the number of employees generally increased over the years, with a noticeable boom in employment towards the end of the Civil War in 1865. In Chapter IV of *Holyoke, Massachusetts: A Case History of the Industrial Revolution in America,* Green mentions that these paper mills had abnormally high employee retention rates compared to other industries. We also know that at the end of 1867, Parsons employed 150 people and had "nineteen engines for grinding rags," turning out "800 tons of paper yearly" [@burt:1867, 79].
 
 ```{r}
 #| echo: false
 #| label: tbl-employees
-#| tbl-cap: "Number of Parsons Paper Company Employees by Year"
+#| tbl-cap: "Number of Parsons Paper Company Employees by Year Each April"
 
 employees <- read.csv("parsons_employment.csv")
 
