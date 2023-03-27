@@ -1,5 +1,6 @@
 ---
 title: "Parsons Paper Company Payroll & Employment Analysis - Stat 210"
+number-sections: true
 author: "Anna Zhou and Sarah Edelson"
 date: "2023-03-27"
 date-format: iso
@@ -24,7 +25,7 @@ options(digits = 4)
 knitr::opts_chunk$set(fig.pos = "H", out.extra = "")
 ```
 
-## Introduction
+## Introduction {#sec-introduction}
 
 The Parsons Paper Register contains nearly 400 pages of employee, payroll, and financial records from January 1861 to April 1869 from Parsons Paper Company in Holyoke, Massachusetts. Founded in 1853 by Joseph Parsons, Parsons Paper Company was the oldest and largest manufacturer of cotton-based high quality writing papers in Holyoke until its liquidation in 2005.
 
@@ -32,13 +33,19 @@ The original pages of the register, which is now property of the Holyoke Public 
 
 The goal of the following report is to explore patterns in employment by groups of employees over time by analyzing the payroll records in the 1861-1869 time period, both before and after the end of the Civil War.
 
-In the first section we aimed to quantify the length of a single pay period as well as the number of employees working at Parsons Paper Company during the era spanning the register.
+In @sec-payperiod we aimed to quantify the length of a single pay period as well as the number of employees working at Parsons Paper Company during the era spanning the register.
 
-The 1860s were a time of great growth for the company, and by the beginning of the Civil War in 1861 Parsons Paper Company had already become the largest manufacturer of writing and envelope paper in the United States. Secondly, we examined the distribution of different roles within the company, ranging from women who worked in the "rag room" where the raw material for paper was cut and processed, to men who worked in the engine room and repairs. Most paper mills in the North purchased rags from companies in the South, and Parsons' rag room was considered an "anomaly" [@holyoke:1891]. Finally, we are also interested in clarifying the meaning of the "Price" column of the payroll, which appears to denote the daily wage rate of the different employees in cents, although the exact meaning and calculation of the fractions remains unclear.
+The 1860s were a time of great growth for the company, and by the beginning of the Civil War in 1861 Parsons Paper Company had already become the largest manufacturer of writing and envelope paper in the United States.
 
-One of the central goals of this class is to make the information contained in the Parsons Paper Register and related materials more accessible and widely available to those interested in the rich history of Holyoke. A Shiny app is available to view individual scans of the register at [r.amherst.edu/apps/nhorton/Parsons-Paper/](https://r.amherst.edu/apps/nhorton/Parsons-Paper/). We hope that this report can provide some insight into the different day-to-day operations at Parsons Paper Company, as well as the individuals who worked there, many of whom stayed for several years.
+In @sec-jobs, we examined the distribution of different roles within the company, ranging from women who worked in the "rag room" where the raw material for paper was cut and processed, to men who worked in the engine room and repairs. Most paper mills in the North purchased rags from companies in the South, and Parsons' rag room was considered an "anomaly" [@holyoke:1891].
 
-In the illustrative analysis below, we used a transcribed copy of page 253 (see Figure 1) of the register to compare the number of employees who were able to sign their own signatures to the number of employees who were not able to on a singular page, and examine whether there was a relationship between literacy and pay. @tbl-example displays the transcript of page 253.
+One of the central goals of this report is to make the information contained in the Parsons Paper Register and related materials more accessible and widely available to those interested in the rich history of Holyoke. A Shiny app is available to view individual scans of the register at [r.amherst.edu/apps/nhorton/Parsons-Paper/](https://r.amherst.edu/apps/nhorton/Parsons-Paper/). We hope that this report can provide some insight into the different day-to-day operations at Parsons Paper Company, as well as the individuals who worked there, many of whom stayed for several years.
+
+In @sec-register analysis below, we used a transcribed copy of page 253 (see Figure 1) of the register to compare the number of employees who were able to sign their own signatures to the number of employees who were not able to on a singular page, and examine whether there was a relationship between literacy and pay. @tbl-example displays the transcript of page 253.
+
+## Analysis of the Register
+
+### What's in the register? {#sec-register}
 
 ```{r}
 #| label: fig1
@@ -91,9 +98,7 @@ gf_boxplot(total ~ signature_x, data = register) +
 
 ```
 
-## Analysis of the Register
-
-### How many days in a pay period?
+### How many days in a pay period? {#sec-payperiod}
 
 As mentioned in the introduction, the Parsons Paper Company register stored in the Holyoke Public Library comprises monthly pay periods from January 1861-April 1869 (page 1-316 of the register). Pay periods appear to be a month long with employees typically getting paid on the 1st of the next month. Based off @tbl-example from page 253, most employees work between 20-30 days each pay period, with the average being around 27, so most employees work at least 6 days/week.
 
@@ -139,7 +144,7 @@ kable(employees, col.names = c("Year", "Number of Employees", "Subset Page Numbe
   row_spec(0,bold=TRUE)
 ```
 
-### What types of jobs are there?
+### What types of jobs are there? {#sec-jobs}
 
 In *History of the Connecticut Valley in Massachusetts, with Illustrations and Biographical Sketches of Some of Its Prominent Men and Pioneers*, L.H Everts provides more information about the layout of the two Parsons Paper Company mills and the different departments of employment, which helped us determine job names that we could not originally decipher (i.e. "jobber"). Everts writes that,
 
