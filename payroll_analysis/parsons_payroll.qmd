@@ -47,9 +47,11 @@ In @sec-register analysis below, we used a transcribed copy of page 253 (see Fig
 
 ### What's in the register? {#sec-register}
 
+The figures below are scans of the original Parsons Paper Company register.
+
 ```{r}
 #| label: fig1
-#| fig.cap: "Page 253 of register - February 1st, 1867. Payroll of the Parsons Paper Company (Holyoke, MA)"
+#| fig.cap: "Page 253 of register - February 1st, 1867. Payroll of the Parsons Paper Company (Holyoke, MA)."
 #| out.width: "75%"
 #| echo: false
 knitr::include_graphics("images/253.jpg")
@@ -59,7 +61,7 @@ knitr::include_graphics("images/253.jpg")
 
 ```{r}
 #| label: fig2
-#| fig.cap: "Close-up of page 253 of register from Figure 1. Signatures with an 'x' in the middle (like John Flynn above) indicate the worker was not able to sign their own name"
+#| fig.cap: "Close-up of page 253 of register from Figure 1. Signatures with an 'x' in the middle (like John Flynn above) indicate the worker was not able to sign their own name."
 #| out.width: "75%"
 #| echo: false
 knitr::include_graphics("images/253mini.jpeg")
@@ -85,11 +87,11 @@ kable(register_clean, col.names = c("Last Name", "First Name", "# of Days", "Pri
 
 \newpage
 
-55% (22/44) of the employees at Parsons Paper Company were illiterate, especially the women and immigrants, who largely lacked formal education. Additionally, employees who were literate received significantly higher wages compared to employees who were illiterate (see Figure 3).
+55% (24/44) of the employees at Parsons Paper Company were illiterate, especially the women and immigrants, who largely lacked formal education. Additionally, employees who were literate received significantly higher wages compared to employees who were illiterate (see Figure 3).
 
 ```{r}
 #| label: fig3
-#| fig.cap: "This plot shows the distribution of total wages for 44 employees at Parsons Paper Company in February 1867 from Table 1. Literacy is measured by an employee's ability to sign their own name in the payroll."
+#| fig.cap: "This plot shows the distribution of total wages for 44 employees at Parsons Paper Company in February 1867 from Table 1. Literacy is measured by an employee's ability to sign their own name in the payroll. Employees who were literate, on average, earned high wages."
 #| echo: false
 #| message: false
 
@@ -104,23 +106,21 @@ As mentioned in the introduction, the Parsons Paper Company register stored in t
 
 In Chapter IV of Constance Green's *Holyoke, Massachusetts: A Case History of the Industrial Revolution in America* [@green:1939], it is reported that male Holyoke paper makers worked 58-72 hours a week. Working 11.25 hours five days a week in addition to 8.75 hours on Saturday was typical for Holyoke textile mills, while women tended to work slightly shorter hours.
 
-Pgs. 223-225 (see Figure 4) appear to comprise an entire pay period for the month of April in 1867 (most pay periods span 3 pages in the register)
-
-\newpage
+Pages 223-225 (see Figure 4) appear to comprise an entire pay period for the month of April in 1867 (most pay periods span 3 pages in the register).
 
 ```{r}
 #| label: fig4
-#| fig.cap: "Page 223 of register (April 1st, 1867), also see pages 224-225 in 'Appendix.'"
+#| fig.cap: "Page 223 of register (April 1st, 1867), also see pages 224-225 in @sec-appendix."
 #| out.width: "75%"
 #| echo: false
 knitr::include_graphics("images/223.jpeg")
 ```
 
-Pgs. 223-225 and Pgs. 261-263 (see Figure 5) are exactly one year apart in the register (April 1st 1867 vs. April 1st 1868).
+Pages 223-225 and pages 261-263 (see Figure 5) are exactly one year apart in the register (April 1st 1867 vs. April 1st 1868).
 
 ```{r}
 #| label: fig5
-#| fig.cap: "Page 261 of register (April 1st, 1868), also see pages 262-263 in 'Appendix.'"
+#| fig.cap: "Page 261 of register (April 1st, 1868), also see pages 262-263 in @sec-appendix."
 #| out.width: "75%"
 #| echo: false
 knitr::include_graphics("images/261.jpeg")
@@ -135,7 +135,7 @@ To quantify this, we counted the number of employees throughout each of the foll
 ```{r}
 #| echo: false
 #| label: tbl-employees
-#| tbl-cap: "Number of Parsons Paper Company Employees by Year Each April"
+#| tbl-cap: "Number of Parsons Paper Company Employees by Year Each April."
 
 employees <- read.csv("parsons_employment.csv")
 
@@ -148,7 +148,7 @@ kable(employees, col.names = c("Year", "Number of Employees", "Subset Page Numbe
 
 In *History of the Connecticut Valley in Massachusetts, with Illustrations and Biographical Sketches of Some of Its Prominent Men and Pioneers*, L.H Everts provides more information about the layout of the two Parsons Paper Company mills and the different departments of employment, which helped us determine job names that we could not originally decipher (i.e. "jobber"). Everts writes that,
 
-"The buildings of this company are situated on the river-bank near the dam, and were built in 1853. They are two in number, the **main mill**, where the paper is made, and what is known as the **finishing-mill**, where it is finished. The former is a structure three stories and a basement high. The upper floor and attic are devoted to drying purposes, while the second story contains the storehouse and **rag-rooms**. About 175 persons are employed on the two floors. On the ground-floor is the **engine-room**, which contains sixteen 450-pound and fourteen 250-pound engines. The mill has three Fourdrinier machines, two of them are 62-inch and the other 72-inch. It has two bleach-boilers, of 3 1/2 and 2 1/2 tons respectively, and 4 sheet calendars and a web calendar and 2 hydraulic presses. The finishing-mill is also situated on the bank of the river, a short distance from the other mill, and, like that, is a brick structure three stories high. The attic and third floor are used for **packing**, and on the second floor the paper is **reeled** and **jogged**. On the first floor are eight 6-roll calendars and three powerful hydraulic presses, and in the basement is a box-factory and plating-machines" (Everts 1879, page 919).
+> "The buildings of this company are situated on the river-bank near the dam, and were built in 1853. They are two in number, the **main mill**, where the paper is made, and what is known as the **finishing-mill**, where it is finished. The former is a structure three stories and a basement high. The upper floor and attic are devoted to drying purposes, while the second story contains the storehouse and **rag-rooms**. About 175 persons are employed on the two floors. On the ground-floor is the **engine-room**, which contains sixteen 450-pound and fourteen 250-pound engines. The mill has three Fourdrinier machines, two of them are 62-inch and the other 72-inch. It has two bleach-boilers, of 3 1/2 and 2 1/2 tons respectively, and 4 sheet calendars and a web calendar and 2 hydraulic presses. The finishing-mill is also situated on the bank of the river, a short distance from the other mill, and, like that, is a brick structure three stories high. The attic and third floor are used for **packing**, and on the second floor the paper is **reeled** and **jogged**. On the first floor are eight 6-roll calendars and three powerful hydraulic presses, and in the basement is a box-factory and plating-machines" (Everts 1879, page 919).
 
 ### Tracking employment by job type for first 6 months of the register (Jan-Jun 1861)
 
@@ -156,7 +156,7 @@ In *History of the Connecticut Valley in Massachusetts, with Illustrations and B
 #| warning: false
 #| echo: false
 #| label: tbl-roles
-#| tbl-cap: "Parsons Paper Company Employment by Job Type (January-June 1861)"
+#| tbl-cap: "Parsons Paper Company Employment by Job Type (January-June 1861)."
 employment <- read.csv("parsons_jobs.csv")
 
 employment2 <- employment |>
@@ -169,7 +169,7 @@ kable(employment2, col.names = c("Month", "Year", "Page #", "Job", "Count", "Mon
   row_spec(0,bold=TRUE)
 ```
 
-@tbl-roles displays the different roles recorded for the first six months of the register, from January to June of 1861. The role labels on the register become very sporadic and difficult to track after 1861, however, 'Repairs' and 'Repairs and Watchmen' remain in their own section at the bottom of the register pages throughout all of the pay periods. There were 5 people under "Repairs" for April 1st, 1867 (see Figure 10 in 'Appendix') and 8 people under April 1st, 1868 (see Figure 11 in 'Appendix'). Refer to the Appendix for the link to the full spreadsheet.
+@tbl-roles displays the different roles recorded for the first six months of the register, from January to June of 1861. The role labels on the register become very sporadic and difficult to track after 1861, however, 'Repairs' and 'Repairs and Watchmen' remain in their own section at the bottom of the register pages throughout all of the pay periods. There were 5 people under "Repairs" for April 1st, 1867 (see Figure 10 in @sec-appendix) and 8 people under April 1st, 1868 (see Figure 11 in @sec-appendix). Refer to @sec-appendix for the link to the full spreadsheet.
 
 The first pages of each pay period are typically comprised of unlabeled laborers (presumably the majority worked in the engine and machine rooms), in addition to Repairs and Watchmen, who are all males. The sorters, stampers, sealers, count and folders, and rag room/cutter roles all appear to remain throughout 1861-1869, although there are much fewer of them compared to the unlabeled male laborers. These roles are largely held by women, and their wages tend to be significantly lower than male workers, which can be seen in the next section.
 
@@ -196,7 +196,7 @@ ggplot(data=employment, aes(x=fct_inorder(Month), y=Count, fill=Job)) +
 #| fig.height: 4
 #| fig.width: 7
 #| label: tbl-wages
-#| tbl-cap: "Weekly Wages of Massachusetts Paper Workers, 1860-78 (all wages in US dollars)"
+#| tbl-cap: "Weekly Wages of Massachusetts Paper Workers, 1860-78 (all wages in US dollars)."
 
 # MA Wages
 
@@ -235,7 +235,7 @@ scale_x_discrete(labels=c("Wages_1860" = "1860", "Wages_1872" = "1872","Wages_18
 #| echo: false
 #| fig.height: 4
 #| fig.width: 7
-#| tbl-cap: "Parsons Weekly Wages - 1861"
+#| tbl-cap: "Parsons Weekly Wages - 1861."
 #| label: tbl-parsons
 
 # Parsons Wages
@@ -252,7 +252,7 @@ kable(parsons_weekly_wages, col.names = c("Job", "Weekly Wages ($)")) |>
 #| warning: false
 #| echo: false
 #| label: fig-ggplot8
-#| fig-cap: "Weekly wage breakdown for various worker roles in Parsons Paper Company in 1861"
+#| fig-cap: "Weekly wage breakdown for various worker roles in Parsons Paper Company in 1861."
 #| fig.height: 4
 #| fig.width: 7
 
@@ -277,7 +277,7 @@ From Hickey's thesis, we also found the following quote:
 ::: {#refs}
 :::
 
-## Appendix
+## Appendix {#sec-appendix}
 
 ```{r}
 #| label: fig9
