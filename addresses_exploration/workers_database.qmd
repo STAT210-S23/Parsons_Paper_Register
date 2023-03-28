@@ -78,13 +78,6 @@ knitr::include_graphics("Eliza and lucy allen page 34.png")
 knitr::include_graphics("Lucy_Allen.jpeg")
 ```
 
-```{r, out.width="70%"}
-#| label: fig-sample7
-#| echo: false
-#| fig.cap: "The blue dots shows the 5 residences for Lucy Allen between 1869-91"
-knitr::include_graphics("Lucy Allen map.png")
-```
-
 ```{r, out.height="40%"}
 #| label: fig-sample8
 #| echo: false
@@ -96,57 +89,34 @@ knitr::include_graphics("Joseph_Clark.jpeg")
 
 ```{r}
 #| echo: false
+#| message: false
+#| label: fig-sample7
+#| fig.cap: "The black dots shows the 3 residences for Lucy Allen from years 1869-90"
+library(tidyverse)
+library(mosaic)
+library(sf)
+library(ggspatial)
+locations <- tibble(
+  lng = c(-72.60885324421784, -72.59690708839962, -72.610583),
+  lat = c(42.207205320691806, 42.2048726160808, 42.208699),
+  place = c(
+    "Lucy's residence in 1883, 236 Maple Street",
+    "Lucy's residence in 1888-1890, rooms 5 Mosher",
+    "Lucy's residence in 1869, Dwight Street")
+  )
 
-#library(leaflet)
-#library(mapview)
-#m <- leaflet() %>%
- # addTiles() %>%  # Add default OpenStreetMap map tiles
-# addMarkers(lng=-72.610583, lat=42.208699, popup="Lucy's residence in 1869, Dwight Street")%>%
-  # addMarkers(lng=-72.60885324421784, lat=42.207205320691806, popup=paste("Lucy's residence in 1883, 236 Maple Street"))%>%
-  #  addMarkers(lng=-72.59690708839962, lat=42.2048726160808, popup="Lucy's residence in 1888-1890, rooms 5 Mosher")%>%
-  #   addMarkers(lng=-72.59879076909023, lat=42.20659749781258, popup="Lucy's residence in 1887 and 1891")%>%
- #   addMarkers(lng=-72.61248214421803, lat=42.199421732536955, popup="Parsons Paper Company in the 1800s")
-
-
- # m  # Print the map
-
- 
-```
-
-```{r}
-#| echo: false
-#library(sf)
-#library(ggplot2)
-#library(ggspatial)
-
-# Create a data frame with the point coordinates and pop-up information
-#points_df <- data.frame(
-#  name = c("Lucy's residence in 1869, Dwight Street",
- #          "Lucy's residence in 1883, 236 Maple Street",
-   #        "Lucy's residence in 1888-1890, rooms 5 Mosher",
-  #         "Lucy's residence in 1887 and 1891",
-  #         "Parsons Paper Company in the 1800s"),
- # lng = c(-72.610583, -72.60885324421784, -72.59690708839962, -72.59879076909023, -72.61248214421803),
- # lat = c(42.208699, 42.207205320691806, 42.2048726160808, 42.20659749781258, 42.199421732536955)
-#)
-
-# Convert the data frame to a sf object with point geometry
-#points_sf <- st_as_sf(points_df, coords = c("lng", "lat"), crs = 4326)
-
-# Plot the points with popups using ggspatial
-#ggplot() +
-# annotation_map_tile(zoom = 10) +
-#  geom_sf(data = points_sf, aes(color = name, text = name)) +
-  
- # ggspatial::annotation_north_arrow(location = "bl", height = unit(0.7, "cm"), width = unit(0.7, "cm")) +
- # ggspatial::annotation_scale(location = "bl", bar_cols = "black", text_size = 2) +
- # ggplot2::labs(title = "Points with Pop-ups in Holyoke, MA")
+ ggplot(locations, aes(x = lng, y = lat)) + 
+   annotation_map_tile(type = "osm", zoomin = 0) + 
+   geom_spatial_point() +
+   labs(y= "Lattitude", x = "Longitude", title = "Lucy's Places of residence") +
+   geom_spatial_label_repel(aes(label = place), box.padding = 1) +
+   coord_sf(crs = 4326)
 
 ```
 
 ## Database
 
-Here is the database we created. It displays personal information about Parson's Paper employees. We can find who they are, when they were born, their address, family members, and place of origin. Naturally, with data this old, we could not find each and every piece of information for all of the employees. This is just a start that will hopefully fuel other individuals to contribute to this document. If we had extended time and resources, we would search up more employees on Ancestry.com and try and find their living descendants today. For this project, we were only able to access basic information on Ancestry.com. It would be great to access the full database and find more documentation of the employees as each additional document provides more information about someone's life that we might not have had before. The table shown below shows some of the columns of the data set. More information is viewable in the full spreadsheet. This is the aggregated info for some of the workers who worked in Parsons' paper in the 1860s:
+Here\ref{table} is the database we created. It displays personal information about Parson's Paper employees. We can find who they are, when they were born, their address, family members, and place of origin. Naturally, with data this old, we could not find each and every piece of information for all of the employees. This is just a start that will hopefully fuel other individuals to contribute to this document. If we had extended time and resources, we would search up more employees on Ancestry.com and try and find their living descendants today. For this project, we were only able to access basic information on Ancestry.com. It would be great to access the full database and find more documentation of the employees as each additional document provides more information about someone's life that we might not have had before. The table shown below shows some of the columns of the data set. More information is viewable in the full spreadsheet. This is the aggregated info for some of the workers who worked in Parsons' paper in the 1860s:
 
 ```{r}
 #| label: setup
@@ -162,7 +132,7 @@ options(digits = 4)
 ancestry <- readr::read_csv("ancestry_addresses_updated.csv",  show_col_types = FALSE)
 ancestry|>
   select('Last Name', 'Birthday', 'Death Day', 'Spouse', Birthplace) |>
-  kable(caption = "\\label{table}Employee Databse") |>
+  kable(caption = "\\label{table}Aggregated Data from Employees on Page 253 of the Registry From Ancestry.com") |>
   kable_styling(latex_options="scale_down")
 
 ```
