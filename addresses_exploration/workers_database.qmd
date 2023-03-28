@@ -97,17 +97,18 @@ knitr::include_graphics("Joseph_Clark.jpeg")
 ```{r}
 #| echo: false
 
-#library(leaflet)
-#m <- leaflet() %>%
-  #addTiles() %>%  # Add default OpenStreetMap map tiles
- # addMarkers(lng=-72.610583, lat=42.208699, popup="Lucy's residence in 1869, Dwight Street")%>%
- # addMarkers(lng=-72.60885324421784, lat=42.207205320691806, popup="Lucy's residence in 1883, 236 Maple Street")%>%
- # addMarkers(lng=-72.59690708839962, lat=42.2048726160808, popup="Lucy's residence in 1888-1890, rooms 5 Mosher")%>%
-  # addMarkers(lng=-72.59879076909023, lat=42.20659749781258, popup="Lucy's residence in 1887 and 1891")%>%
- # addMarkers(lng=-72.61248214421803, lat=42.199421732536955, popup="Parsons Paper Company in the 1800s")
+library(leaflet)
+library(mapview)
+m <- leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lng=-72.610583, lat=42.208699, popup="Lucy's residence in 1869, Dwight Street")%>%
+ addMarkers(lng=-72.60885324421784, lat=42.207205320691806, popup="Lucy's residence in 1883, 236 Maple Street")%>%
+  addMarkers(lng=-72.59690708839962, lat=42.2048726160808, popup="Lucy's residence in 1888-1890, rooms 5 Mosher")%>%
+   addMarkers(lng=-72.59879076909023, lat=42.20659749781258, popup="Lucy's residence in 1887 and 1891")%>%
+  addMarkers(lng=-72.61248214421803, lat=42.199421732536955, popup="Parsons Paper Company in the 1800s")
 
 
-#m  # Print the map
+m  # Print the map
 
  
 ```
