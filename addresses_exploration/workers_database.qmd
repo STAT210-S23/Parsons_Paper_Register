@@ -1,7 +1,7 @@
 ---
 title: "STAT 210 Parsons' Paper Company Workers Database"
 author: "Lorraine Oloo and Camden Heafitz"
-date: "2023-03-03"
+date: "2023-03-30"
 date-format: iso
 format:
   pdf:
@@ -41,6 +41,7 @@ If we continued our research, we would aim to find descendants of the Parsons Pa
 #| echo: false
 #| fig.cap: "This is page 259 of the PPP registry, demonstrating how the name, days worked, wages, whether or not the worker had rent or board due, final balance owed, and signature were recorded"
 knitr::include_graphics("Registry_page_header.jpeg")
+
 ```
 
 ```{r, out.width="70%"}
