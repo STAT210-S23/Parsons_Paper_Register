@@ -57,7 +57,6 @@ The figures below are direct scans of the original Parsons Paper Company registe
 knitr::include_graphics("images/253 2.jpg")
 ```
 
-
 ```{r}
 #| label: fig1
 #| fig.cap: "Page 253 of register - February 1st, 1867. Payroll of the Parsons Paper Company (Holyoke, MA)."
@@ -329,5 +328,3 @@ knitr::include_graphics("images/263.jpeg")
 #| echo: false
 knitr::include_graphics("images/bureau.jpg")
 ```
-
-
