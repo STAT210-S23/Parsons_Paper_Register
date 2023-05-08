@@ -15,3 +15,8 @@ See https://drive.google.com/drive/folders/18Aw57Hhga52E3skMttF7sxDfL6KWO-7q?usp
 
 See https://r.amherst.edu/apps/nhorton/Parsons-Paper for a Shiny app that can be used to view the pages.
 
+See https://github.com/STAT210-S23/STAT210-Holyoke-History-Room for more resources made accessible by the class for the Holyoke Public Library History Room.
+
+See https://github.com/STAT210-S23/STAT210-Wistariahurst for more resources made accessible by the class for the Wistariahurst Museum.
+
+
