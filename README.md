@@ -23,6 +23,14 @@ Note that pages 255-256 and 309-312 had been cut out of the register.
 The first pages are payroll.
 Financial accounting records for 1861 and beyond start on page 317.
 
+Additional transcriptions of employee names can be found here: https://github.com/STAT210-S23/STAT210-Holyoke-History-Room/tree/main/Parsons_Paper_Company_payroll_register
+
+Additional information regarding the ledger curation process can be found here: https://github.com/STAT210-S23/Parsons_Paper_Register/blob/main/ledger_curation/ledger_curation.pdf
+
+Additional exploration of a set of workers listed therein can be found here: https://github.com/STAT210-S23/Parsons_Paper_Register/blob/main/addresses_exploration/workers_database.pdf
+
+Analysis of payroll trends can be found here: https://github.com/STAT210-S23/Parsons_Paper_Register/blob/main/payroll_analysis/parsons_payroll.pdf
+
 # Additional resources
 
 See https://drive.google.com/drive/folders/18Aw57Hhga52E3skMttF7sxDfL6KWO-7q?usp=sharing for the shared Google Drive containing the files in various formats
