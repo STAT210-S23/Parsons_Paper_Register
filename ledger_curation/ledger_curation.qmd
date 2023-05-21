@@ -1,12 +1,12 @@
 ---
 title: "STAT210: Parsons Paper Company Payroll Register Curation"
 author: "Kevin Jin and Nahia Pino"
-date: "2023-03-02"
+date: "2023-05-21"
 date-format: iso
 format: 
   pdf:
-    toc: TRUE
-    number-sections: TRUE
+    toc: true
+    number-sections: true
 editor: visual
 ---
 
@@ -46,7 +46,7 @@ knitr::include_graphics("lc_images/Figure_1.jpg")
 
 ```{r}
 #| label: fig2
-#| fig.cap: "\\label{fig:fig2} page 286 of register after color correcting. On the left is a large rectangle cut off, a little bigger than the width of the stamps, suggesting they were cut off."
+#| fig.cap: "\\label{fig:fig2} page 286 of register after color correcting. On the right is a large rectangle cut off, a little bigger than the width of the stamps, suggesting they were cut off."
 #| out.width: "75%"
 #| echo: false
 knitr::include_graphics("lc_images/Figure_2.jpg")
